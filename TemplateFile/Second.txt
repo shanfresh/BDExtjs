@@ -1,0 +1,25 @@
+HIGH_LOAD_RATE NUM 60
+LOW_LOAD_RATE NUM 40
+cmd STR sh -x ./bin/start_vc_extractor.sh
+core NUM 1500
+expect_hour NUM 30
+fast_alloc_res NUM 1
+guarantee_core NUM 1
+init_grp_num NUM 300
+init_res NUM 3500
+init_sec NUM 72000
+input_dir STR /user/root/bvc_env/se-parser_extractor.extractor.tar
+limit NUM 5000
+max_cpu NUM 100
+memory NUM 6000
+priority NUM 
+queue STR qb
+res_inc_rate NUM 200
+seize_level NUM 1
+tag_avoid STR 
+tag_favor STR 
+tag_loathe STR 
+tag_need STR 
+total_task_sec NUM 486000000
+unit_id_max NUM 0
+unit_id_min NUM 0

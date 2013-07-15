@@ -1,0 +1,87 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "JobsModel"
+    },
+    "designerId": "4b05db5b-64e8-4399-a5e9-beb8487004e1",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ID",
+                "persist": null
+            },
+            "designerId": "81254703-df2f-473e-ab82-b06bef5e3441"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "JobID"
+            },
+            "designerId": "5eca3dde-522d-42e3-bc96-2a7f008de916"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "JobName"
+            },
+            "designerId": "53a68ce3-604a-4f03-b450-a367a6edec89"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "JobGuarantee"
+            },
+            "designerId": "f445b7f0-a240-4062-8220-839166029396"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "InputPath"
+            },
+            "designerId": "9cc76f1f-c98b-4bc6-90c8-b0465658a93c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "RunCmd"
+            },
+            "designerId": "c948c321-75ab-43b6-8700-04ebb47e0921"
+        }
+    ]
+}

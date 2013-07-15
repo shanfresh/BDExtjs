@@ -1,0 +1,24 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "JobsModel",
+        "storeId": "MyStore",
+        "designer|userClassName": "JobStore",
+        "data": [
+            "[{ID:\"1\",JobID:\"1\",JobName:\"update-train.train-model\",JobGuarantee:\"1\",InputPath:\"/user/root/bvc_env/update -train.train-model.tar\",RunCmd:\"sh -x ./bvc/bin/run_map.sh update-train train-model\"},\r",
+            " {ID:\"2\",\r",
+            "  JobID:\"2\",\r",
+            "  JobName:\"update-train_train-model.map\",\r",
+            "  JobGuarantee:\"0\",\r",
+            "  InputPath:\"/user/root/bvc_env/update -train_train-model.map.tar\",\r",
+            "  RunCmd:\"sh -x ./bvc/bin/multi_map.sh update-train_train-model\"}\r",
+            "]"
+        ]
+    },
+    "designerId": "3a3167c0-924c-4d70-9e08-7fba52209cff"
+}
