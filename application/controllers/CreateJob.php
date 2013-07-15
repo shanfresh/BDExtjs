@@ -24,7 +24,24 @@ class CreateJob extends CI_Controller {
 		
 	}
 	function CreateApp(){
+		$result=array();
+		$data=$_POST['data'];
+		$id=$_POST['newID'];
+		$arrayres=json_decode($data, true);
+		$resultStr="";
+		foreach ($arrayres as $value) {
+			$resultStr=$resultStr.$value['Name']." ".$value['Type']." ".$value['Value']."\n\r";
+		}
 		
+		$jobInfoJson=$_POST['jobinfo'];
+		$jobInfoRes=json_decode($jobInfoJson, true);
+		$jobInfoStr="";
+		foreach ($jobInfoRes as $value) {
+			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\n\r";
+		}
+		echo $resultStr;
+		echo $jobInfoStr;
+
 	}
 }
 ?>

@@ -53,19 +53,26 @@ Ext.define('MyApp.controller.CreateControl', {
     	var dataSource=button.up().down('AppInfoPanel').down('gridpanel').store;
     	var result=dataSource.getRange();
     	var data=new Array();
+    	
     	for(var i=0;i<result.length;i++){
     		data.push(result[i].data);
+    	}
+    	var jobsource=button.up().down('JobInfoPanel').down('gridpanel').store;
+    	var jobrange=jobsource.getRange();
+    	var jobinfo=new Array();
+    	for(var i=0;i<jobrange.length;i++){
+    		jobinfo.push(jobrange[i].data);
     	}
     	 Ext.Ajax.request({
              method:'POST',
              url:'CreateJob/CreateApp',
              success:function(response){//这里值的是请求失败，与业务逻没的任何关系
-                 //Ext.Msg.alert('信息',"发送CreateAPP信息成功");
+                 Ext.Msg.alert('信息',"发送CreateAPP信息成功");
              },
              failure:function(){
                  Ext.Msg.alert('错误',"与后台联系时出错")
              },
-             params:{data:Ext.encode(data),method:create}
+             params:{data:Ext.encode(data),jobinfo:Ext.encode(jobinfo),newID:action.result.newRecordID}
          });
     	
     	
