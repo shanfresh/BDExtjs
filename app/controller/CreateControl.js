@@ -52,10 +52,10 @@ Ext.define('MyApp.controller.CreateControl', {
     	var csvData    = new Array();
     	var dataSource=button.up().down('AppInfoPanel').down('gridpanel').store;
     	var result=dataSource.getRange();
-    	var data=new Array();
+    	var appinfo=new Array();
     	
     	for(var i=0;i<result.length;i++){
-    		data.push(result[i].data);
+    		appinfo.push(result[i].data);
     	}
     	var jobsource=button.up().down('JobInfoPanel').down('gridpanel').store;
     	var jobrange=jobsource.getRange();
@@ -72,7 +72,7 @@ Ext.define('MyApp.controller.CreateControl', {
              failure:function(){
                  Ext.Msg.alert('错误',"与后台联系时出错")
              },
-             params:{data:Ext.encode(data),jobinfo:Ext.encode(jobinfo),newID:action.result.newRecordID}
+             params:{appinfo:Ext.encode(appinfo),jobinfo:Ext.encode(jobinfo),newID:action.result.newRecordID}
          });
     	
     	

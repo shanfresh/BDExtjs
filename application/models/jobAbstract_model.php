@@ -29,18 +29,21 @@ class JobAbstract_model extends CI_Model {
     	return array(false,-1);;
     }
     
+    /*
+     * 根据ID返回行
+     */
+	function LoadTheJobInfoByID($ID){
+	  	$this->load->database();
+    	$query2=$this->db->query("SELECT * FROM jobinfo WHERE job_id=?",array($ID));
+    	if($query2->num_rows() > 0){
+    		$row = $query2->row_array();
+    	}else{
+    		return null;
+    	}    	
+    	return $row;
+	}    
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+	
     function get_last_ten_entries()
     {
         $query = $this->db->get('entries', 10);

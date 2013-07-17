@@ -38,9 +38,16 @@ Ext.define('MyApp.view.JobInfoPanel', {
                             xtype: 'gridcolumn',
                             dataIndex: 'Value',
                             text: 'Value',
-                            flex:3
+                            flex:3,
+                            editor: 'textfield'
                         }
-                    ]
+                    ],
+                    plugins: [
+                              Ext.create('Ext.grid.plugin.CellEditing', {
+                                  clicksToEdit: 1
+                              })
+                    ],
+                    selType: 'cellmodel'
                 }
             ]
         });

@@ -34,7 +34,7 @@ Ext.define('MyApp.view.AppInfoPanel', {
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'Name',
-                            flex: 3,
+                            flex: 2,
                             text: 'Name'
                         },
                         {

@@ -131,15 +131,41 @@ Ext.define('MyApp.view.MyWindow', {
                     width: 160,
                     items: [
                         {
-                            xtype: 'menucheckitem',
+                            xtype: 'menuitem',
                             text: '批量修改参数'
                         },
                         {
-                            xtype: 'menucheckitem',
+                            xtype: 'menuitem',
                             text: 'Menu Item'
                         },
                         {
-                            xtype: 'menucheckitem',
+                            xtype: 'menuitem',
+                            text: 'Menu Item'
+                        }
+                    ]
+                }
+            },
+            {
+                xtype: 'splitbutton',
+                text:'[删-除]',
+                width: 120,
+                x: 580,
+                y: 10,
+                showText: true,
+                menu: {
+                    xtype: 'menu',
+                    width: 160,
+                    items: [
+                        {
+                            xtype: 'menuitem',
+                            text: '删除'
+                        },
+                        {
+                            xtype: 'menuitem',
+                            text: '批量删除'
+                        },
+                        {
+                            xtype: 'menuitem',
                             text: 'Menu Item'
                         }
                     ]

@@ -31,9 +31,10 @@ Ext.define('MyApp.view.DetailInfoPanel', {
                     x: 20,
                     y: 30,
                     width: 100,
-                    fieldLabel: 'ID',
+                    fieldLabel: '原始ID',
                     labelWidth: 50,
-                    name: 'JobID'
+                    name: 'JobID',
+                    readOnly:true
                 },
                 {
                     xtype: 'textfield',
