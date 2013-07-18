@@ -22,10 +22,19 @@ Ext.define('MyApp.store.JobStore', {
     ],
     autoLoad:true,
     proxy: {
+    	
         type: 'ajax',
         url : 'GetJobInfo/index',
+        api: {
+            destroy : 'DeleteAbsJob/doDelete/delete.json'
+        },
         reader: {
+            type: 'json'
+        },
+        writer: {
             type: 'json',
+            encode: true,
+            root:'data'
         }
     },
     data: [

@@ -7,13 +7,17 @@ Ext.define('MyApp.controller.DeleteControl', {
     	console.log("Start MyController");
     	this.control({
     		'MyWindow > splitbutton > menu > menuitem[text=删除]':{
-    			click:this.CreateBySelectItem
+    			click:this.DeleteBySelectItem
+    		},
+    		'MyWindow > splitbutton > menu > menuitem[text=批量删除]':{
+    			click:this.MulityDeleteBySelectItem
     		}
     	    
     	});
     	//Ext.getCmp('updatebutton').click();
     },
-    CreateBySelectItem:function(){
+    DeleteBySelectItem:function(){
+    	var allpanel=Ext.getCmp('AllJobPanel');
     	var sm=Ext.getCmp('AllJobPanel').getSelectionModel();
     	var selected=sm.getSelection();
     	if(selected.length>1){
@@ -24,7 +28,35 @@ Ext.define('MyApp.controller.DeleteControl', {
     		alert("尚未勾选模块")
     		return;
     	}
+    	allpanel.store.remove(selected);
+    	allpanel.store.sync({
+    		success :function(){
+	    		alert("删除成功")
+	    	},
+	    	failure:function(){
+	    		alert("删除失败")
+	    	}
+	    })
     	
+    },
+    MulityDeleteBySelectItem:function(){
+    	var allpanel=Ext.getCmp('AllJobPanel');
+    	var sm=Ext.getCmp('AllJobPanel').getSelectionModel();
+    	var selected=sm.getSelection();
+    	if(selected.length==0){
+    		alert("尚未勾选模板，返回操作")
+    		return;
+    	}
+    	allpanel.store.remove(selected);
+    	allpanel.store.sync({
+    		success :function(){
+	    		alert("删除成功")
+	    	},
+	    	failure:function(){
+	    		alert("删除失败")
+	    	}
+	    })
     }
+    
    
 });

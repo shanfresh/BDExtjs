@@ -47,6 +47,20 @@
     		return $row;
 	    }
 
+	    function deleteRow($JobName,$UserName){
+	    	$this->load->database();
+	    	$this->db->query("lock TABLES appop WRITE,appop as t1 WRITE");
+	    	$this->db->query("FLUSH TABLES");
+	    	$this->db->query("INSERT into appop (JobName,UserName,OpIndex,Status,AppInfo,JobInfo,SubmitTime) (select JobName,UserName,OpIndex+1,4,AppInfo,JobInfo,SubmitTime from appop AS t1 where JobName=? AND UserName=?  order by OpIndex desc limit 1);",array($JobName,$UserName));
+	    	if($this->db->affected_rows()>0){
+	    		$this->db->query("unlock tables");
+	    		return true;
+			}else{
+				echo mysql_error();
+				$this->db->query("unlock tables");
+				return false;
+			}	    	
+	    }
 	    
 	}
 

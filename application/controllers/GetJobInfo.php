@@ -11,7 +11,11 @@ class GetJobInfo extends CI_Controller {
 	 */
 	function __construct()
 	{
+		
+		
 	 	parent::__construct();
+	 	$this->load->library('session');
+	 	$this->session->set_userdata('UserName', 'Shanjixi');
 	}
 	function AppInfo()
 	{
