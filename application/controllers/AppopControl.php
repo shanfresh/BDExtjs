@@ -50,12 +50,33 @@ class AppopControl extends CI_Controller{
 		echo json_encode($arr);
 	}
 	//通过多个申请单据
-	function passbyIDs(){
-		$ID=json_decode($_POST['ID']);
-		$JobName=json_decode($_POST['jobname']);
+	function MarkAsPassed(){
+		$this->load->database();
+		$IDs=json_decode($_POST['ID']);
+		$this->load->model('AppOPModel');
+		$result=$AppAndJobInfo=$this->AppOPModel->MarkAsApproval($IDs);	
+		echo json_encode($result);
+	}
+	
+	function loadPassed(){
+		$this->load->database();
+		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status=3');
+		$arr=array();
+		if($query->num_rows()==0){
+			return $arr;
+		}
 		
-		
-		
+		foreach ($query->result() as $row)
+		{
+			$arr2 = array ('ID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,
+			'Status'=>$row->Status,
+			'SubmitTime'=>$row->SubmitTime,
+			'ApprovalTime'=>$row->ApprovalTime			
+			);
+			
+			array_push($arr, $arr2);
+		}
+		echo json_encode($arr);
 	}
 }
 ?>

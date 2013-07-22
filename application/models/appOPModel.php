@@ -78,19 +78,23 @@
 			return $result;
 	    }
 	    
-	    function MarkAsApproval($JobNames,$UserName){
+	    function MarkAsApproval($JOBIDS){
 	    	$this->load->database();
-	    	$this->db->query("lock TABLES appop WRITE,appop as t1 WRITE");
-	    	foreach ($JobNames as $eachJobName){
-	    		$query=$this->db->query("INSERT into appop (JobName,UserName,Status,AppInfo,JobInfo,SubmitTime) (select JobName,UserName,3,AppInfo,JobInfo,SubmitTime from appop AS t1 where JobName=? and UserName=? order by OpIndex desc limit 1",array($eachJobName,$UserName));
+	    	$result=array();
+	    	$this->db->query("lock TABLES appop WRITE,appop as t1 READ");
+	    	foreach ($JOBIDS as $JobID){
+	    		$query=$this->db->query("insert into appop(JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime) select JobName,UserName,3,AppInfo,JobInfo,SubmitTime,now() from appop as t1 where ID=?",$JobID);
 	    		if($this->db->affected_rows()<0){
+	    			$result['Msg']=mysql_error();
 	    			$this->db->query("unlock tables");
 	    			$this->db->query("FLUSH TABLES");
-	    			return false;
+	    			$result['success']=false;
 	    		}
 	    	}
 	    	$this->db->query("unlock tables");
-	    	$this->db->query("FLUSH TABLES");			    	
+	    	$this->db->query("FLUSH TABLES");
+	    	$result['success']=true;
+	    	return $result;			    	
 	    }
 	    
 	    

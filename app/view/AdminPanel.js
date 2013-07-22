@@ -114,7 +114,7 @@ Ext.define('MyApp.view.AdminPanel', {
                     activeTab: 0,
                     items: [
                         {
-                            xtype: 'panel',
+                        	xtype: 'panel',
                             height: 337,
                             width: 200,
                             title: '等待处理',
@@ -135,6 +135,7 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'JobName',
+                                            width:280,
                                             text: 'JobName'
                                         },
                                         {
@@ -144,8 +145,56 @@ Ext.define('MyApp.view.AdminPanel', {
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'OpIndex',
-                                            text: 'OpIndex'
+                                            dataIndex: 'Status',
+                                            text: 'Status'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'SubmitTime',
+                                            text: 'SubmitTime',
+                                            flex:3
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'ApprovalTime',
+                                            text: 'ApprovalTime'
+                                        }
+                                    ],
+                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                                    })
+                                }
+                            ]                            
+                        },
+                        {
+                        	xtype: 'panel',
+                            height: 337,
+                            width: 200,
+                            title: '等待上线',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    height: 477,
+                                    width: 840,
+                                    id:'AdminAppopPassed',
+                                    title: '待上线',
+                                    store: 'AppopPassedStore',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'ID',
+                                            text: 'ID'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'JobName',
+                                            width:280,
+                                            text: 'JobName'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'UserName',
+                                            text: 'UserName'
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -169,10 +218,6 @@ Ext.define('MyApp.view.AdminPanel', {
                                     })
                                 }
                             ]
-                        },
-                        {
-                            xtype: 'panel',
-                            title: '已经处理'
                         }
                     ]
                 }
