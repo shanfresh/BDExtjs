@@ -117,14 +117,6 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                 {
                     xtype: 'textfield',
                     x: 10,
-                    y: 70,
-                    width: 220,
-                    fieldLabel: '操作号',
-                    labelWidth: 50
-                },
-                {
-                    xtype: 'textfield',
-                    x: 10,
                     y: 100,
                     width: 220,
                     fieldLabel: '状态',

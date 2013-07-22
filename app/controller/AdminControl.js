@@ -49,13 +49,8 @@ Ext.define('MyApp.controller.AdminControl', {
     AddResult:function(obj,createWindow){
     	createWindow.down("#JobName").setValue(obj.JobName);
     	createWindow.down("textfield[fieldLabel='申请人']").setValue(obj.UserName);
-    	createWindow.down("textfield[fieldLabel='操作号']").setValue(obj.OpIndex);
     	createWindow.down("textfield[fieldLabel='状态']").setValue(obj.Status);
     	createWindow.down("textfield[fieldLabel='申请时间']").setValue(obj.SubmitTime);
-    	
-
-    	//createWindow.down("#AppInfoDetailPanel").store=store;
-
     	
     	createWindow.down("#AppInfoDetailPanel").store.loadData(obj.AppInfo, false); 
     	createWindow.down("#JobInfoDetailPanel").store.loadData(obj.JobInfo, false); 

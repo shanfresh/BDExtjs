@@ -27,9 +27,6 @@ Ext.define('MyApp.model.AppopModel', {
             name: 'UserName'
         },
         {
-            name: 'OpIndex'
-        },
-        {
             name: 'Status'
         },
         {
