@@ -33,13 +33,13 @@ Ext.define('MyApp.controller.AdminControl', {
     	var target=selected[0];
     	var JobName=target.get("JobName");
     	var ID=target.get("ID");
-    	
+    	var control=this;
     	Ext.Ajax.request({
             method:'POST',
             url:'AppopControl/loadById',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
                 var obj = Ext.decode(response.responseText);
-                AddResult(obj,createWindow);
+                control.AddResult(obj,createWindow);
                 //Ext.Msg.alert("返回结果:",obj['JobName']);
             },
             failure:function(){
@@ -51,7 +51,12 @@ Ext.define('MyApp.controller.AdminControl', {
     	
     },
     AddResult:function(obj,createWindow){
-    	createWindow.down();
+    	createWindow.down("#JobName").setValue(obj.JobName);
+    	createWindow.down("textfield[fieldLabel='申请人']").setValue(obj.UserName);
+    	createWindow.down("textfield[fieldLabel='操作号']").setValue(obj.OpIndex);
+    	createWindow.down("textfield[fieldLabel='状态']").setValue(obj.Status);
+    	createWindow.down("textfield[fieldLabel='申请时间']").setValue(obj.SubmitTime);
+    	
     }
 
 });

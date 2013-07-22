@@ -75,17 +75,17 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'string',
+                                            dataIndex: 'Name',
                                             text: 'Name'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'string',
+                                            dataIndex: 'Type',
                                             text: 'Type'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'string',
+                                            dataIndex: 'Value',
                                             text: 'Value'
                                         }
                                     ]
@@ -98,8 +98,10 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                     xtype: 'textfield',
                     x: 10,
                     y: 10,
-                    width: 220,
+                    width: 320,
                     fieldLabel: 'JobName',
+                    name:'JobName',
+                    id:'JobName',
                     labelWidth: 50
                 },
                 {
@@ -136,11 +138,10 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                 },
                 {
                     xtype: 'button',
+                    text: '关闭',
                     x: 250,
-                    y: 400,
-                    height: 50,
-                    width: 100,
-                    text: '关闭'
+                    y: 400
+                    
                 }
             ]
         });
