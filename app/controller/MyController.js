@@ -65,6 +65,8 @@ function getDetail(target){
 	createWindow.down('DetailInfoPanel').getForm().loadRecord(target);
 	createWindow.down('AppInfoPanel').down('gridpanel').store.load();
 	createWindow.down('JobInfoPanel').down('gridpanel').store.load();
+
+	
 	console.log("Load gridpanel OK");
 	
 	

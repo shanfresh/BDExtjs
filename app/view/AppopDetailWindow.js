@@ -41,7 +41,8 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                                 {
                                     xtype: 'gridpanel',
                                     height: 209,
-                                    
+                                    id:'AppInfoDetailPanel',
+                                    store:'AppConfigStore',
                                     title: 'AppInfoPanel',
                                     columns: [
                                         {
@@ -70,8 +71,9 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                                 {
                                     xtype: 'gridpanel',
                                     height: 204,
+                                    id:'JobInfoDetailPanel',
                                     title: 'JobInfoPanel',
-                                    
+                                    store:'JobConfigStore',
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',

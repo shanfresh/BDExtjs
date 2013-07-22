@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 Ext.define('MyApp.controller.AdminControl', {
 	extend:'Ext.app.Controller',
 	views:['MyApp.view.AdminPanel','MyApp.view.AppopDetailWindow'
@@ -56,6 +52,13 @@ Ext.define('MyApp.controller.AdminControl', {
     	createWindow.down("textfield[fieldLabel='操作号']").setValue(obj.OpIndex);
     	createWindow.down("textfield[fieldLabel='状态']").setValue(obj.Status);
     	createWindow.down("textfield[fieldLabel='申请时间']").setValue(obj.SubmitTime);
+    	
+
+    	//createWindow.down("#AppInfoDetailPanel").store=store;
+
+    	
+    	createWindow.down("#AppInfoDetailPanel").store.loadData(obj.AppInfo, false); 
+    	createWindow.down("#JobInfoDetailPanel").store.loadData(obj.JobInfo, false); 
     	
     }
 

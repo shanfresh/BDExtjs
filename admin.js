@@ -27,7 +27,7 @@ Ext.application({
         'AppopModel'
     ],
     stores: [
-        'AppopStore'
+        'AppopStore','JobConfigStore','AppConfigStore'
     ],
     views: [
         'AdminPanel'

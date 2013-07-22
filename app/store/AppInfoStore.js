@@ -41,10 +41,9 @@ Ext.define('MyApp.store.AppInfoStore', {
         type: 'ajax',
         url : 'GetJobInfo/AppInfo',
         api: {
-            create  : 'GetJobInfo/Create',
             read    : 'GetJobInfo/AppInfo',
-            update  : 'CreateJob/CreateApp',
-            destroy : '/controller/destroy_action'
+            //update  : 'CreateJob/CreateApp',
+
         },
         reader: {
             type: 'json',
