@@ -27,7 +27,7 @@ Ext.application({
         'AppopModel'
     ],
     stores: [
-        'AppopStore','JobConfigStore','AppConfigStore','AppopPassedStore'
+        'AppopStore','JobConfigStore','AppConfigStore','AppopPassedStore','AppopOnlineStore'
     ],
     views: [
         'AdminPanel'
@@ -49,5 +49,5 @@ Ext.onReady(function() {
     });
 	Ext.getCmp('AdminAppop').store.load();
 	Ext.getCmp('AdminAppopPassed').store.load();
-	
+	Ext.getCmp('AdminAppopOnline').store.load();
 });

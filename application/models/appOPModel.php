@@ -97,7 +97,24 @@
 	    	return $result;			    	
 	    }
 	    
-	    
+	    function MarkAsOnline($JOBIDS){
+	    	$this->load->database();
+	    	$result=array();
+	    	$this->db->query("lock TABLES appop WRITE,appop as t1 READ");
+	    	foreach ($JOBIDS as $JobID){
+	    		$query=$this->db->query("insert into appop(JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime) select JobName,UserName,5,AppInfo,JobInfo,SubmitTime,now() from appop as t1 where ID=?",$JobID);
+	    		if($this->db->affected_rows()<0){
+	    			$result['Msg']=mysql_error();
+	    			$this->db->query("unlock tables");
+	    			$this->db->query("FLUSH TABLES");
+	    			$result['success']=false;
+	    		}
+	    	}
+	    	$this->db->query("unlock tables");
+	    	$this->db->query("FLUSH TABLES");
+	    	$result['success']=true;
+	    	return $result;			    	
+	    }
 	}
 
 ?>

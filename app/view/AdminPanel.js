@@ -218,6 +218,59 @@ Ext.define('MyApp.view.AdminPanel', {
                                     })
                                 }
                             ]
+                        },
+                        {
+                        	xtype: 'panel',
+                            height: 337,
+                            width: 200,
+                            title: '已经上线',
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    height: 477,
+                                    width: 840,
+                                    id:'AdminAppopOnline',
+                                    title: '已经上线',
+                                    store: 'AppopOnlineStore',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'ID',
+                                            text: 'ID'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'JobName',
+                                            width:280,
+                                            text: 'JobName'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'UserName',
+                                            text: 'UserName'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'Status',
+                                            text: 'Status'
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'SubmitTime',
+                                            text: 'SubmitTime',
+                                            flex:3
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'ApprovalTime',
+                                            text: 'ApprovalTime'
+                                        }
+                                    ],
+                                    selModel: Ext.create('Ext.selection.CheckboxModel', {
+
+                                    })
+                                }
+                            ]
                         }
                     ]
                 }

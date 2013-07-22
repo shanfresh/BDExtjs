@@ -15,8 +15,11 @@ Ext.define('MyApp.controller.AdminControl', {
        		'splitbutton[text=管理员审核] > menu > menuitem[text=通过]':{
        			//alert("点击详细信息了");
        			click:this.MarkSelectAsPassed
+       		},
+       		'splitbutton[text=管理员上线] > menu > menuitem[text=单一上线]':{
+       			//alert("点击详细信息了");
+       			click:this.MarkSelectAsOnline
        		}
-       	    
        	});
        	
     },
@@ -86,6 +89,33 @@ Ext.define('MyApp.controller.AdminControl', {
         });
     	Ext.getCmp('AdminAppopPassed').store.load();
     	
+    },
+    MarkSelectAsOnline:function(){
+    	var allpanel=Ext.getCmp('AdminAppopPassed');
+    	var sm=Ext.getCmp('AdminAppopPassed').getSelectionModel();
+    	var selected=sm.getSelection();
+    	if(selected.length<1){
+    		alert("尚未选择");
+    		return;
+    	}
+    	var ids=new Array();
+    	for(var i=0;i<selected.length;i++){
+    		var target=selected[i];
+    		ids[i]=target.get('ID');
+    	}
+    	Ext.Ajax.request({
+            method:'POST',
+            url:'AppopControl/MarkAsOnline',
+            success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
+                var obj = Ext.decode(response.responseText);
+                Ext.Msg.alert("返回结果:","上线成功O(∩_∩)O哈哈~");
+            },
+            failure:function(){
+                Ext.Msg.alert('错误',"与后台联系时出错")
+            },
+            params:{ID:Ext.encode(ids)}
+        });
+    	Ext.getCmp('AdminAppopOnline').store.load();
     }
     
 
