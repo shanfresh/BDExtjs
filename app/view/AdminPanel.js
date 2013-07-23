@@ -97,7 +97,7 @@ Ext.define('MyApp.view.AdminPanel', {
                                 items: [
                                     {
                                         xtype: 'menuitem',
-                                        text: '单一回滚'
+                                        text: '回滚选中至'
                                     }
                                 ]
                             }

@@ -25,8 +25,9 @@ Ext.define('MyApp.controller.AdminControl', {
     },
     ShowDetail:function(){
     	//Adminappop 是相关的GridPanel
-    	var allpanel=Ext.getCmp('AdminAppop');
-    	var sm=Ext.getCmp('AdminAppop').getSelectionModel();
+    	var TabbedPanel=Ext.ComponentQuery.query('MyAdminPanel > tabpanel')[0];
+    	var allpanel=TabbedPanel.getActiveTab().down('gridpanel');
+    	var sm=allpanel.getSelectionModel();
     	var selected=sm.getSelection();
     	if(selected.length!=1){
     		alert("尚未选择或者选择数目大于1");
@@ -65,10 +66,13 @@ Ext.define('MyApp.controller.AdminControl', {
     },
     MarkSelectAsPassed:function(){
     	var allpanel=Ext.getCmp('AdminAppop');
+    	var TabbedPanel=Ext.ComponentQuery.query('MyAdminPanel > tabpanel')[0];
+    	TabbedPanel.setActiveTab(allpanel.up());
     	var sm=Ext.getCmp('AdminAppop').getSelectionModel();
     	var selected=sm.getSelection();
     	if(selected.length<1){
     		alert("尚未选择要通过的申请");
+    		return;
     	}
     	var ids=new Array();
     	for(var i=0;i<selected.length;i++){
@@ -95,10 +99,12 @@ Ext.define('MyApp.controller.AdminControl', {
     },
     MarkSelectAsOnline:function(){
     	var allpanel=Ext.getCmp('AdminAppopPassed');
+    	var TabbedPanel=Ext.ComponentQuery.query('MyAdminPanel > tabpanel')[0];
+    	TabbedPanel.setActiveTab(allpanel.up());
     	var sm=Ext.getCmp('AdminAppopPassed').getSelectionModel();
     	var selected=sm.getSelection();
     	if(selected.length<1){
-    		alert("尚未选择");
+    		alert("尚未选择需要上线的项目");
     		return;
     	}
     	var ids=new Array();
