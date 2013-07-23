@@ -44,7 +44,6 @@ Ext.define('MyApp.controller.AdminControl', {
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
                 var obj = Ext.decode(response.responseText);
                 control.AddResult(obj,createWindow);
-                //Ext.Msg.alert("返回结果:",obj['JobName']);
             },
             failure:function(){
                 Ext.Msg.alert('错误',"与后台联系时出错")
