@@ -4,6 +4,8 @@ class CreateJob extends CI_Controller {
 	{
 		
 	 	parent::__construct();
+	 	$this->load->library('session');
+	 	$this->session->set_userdata('UserName', 'Shanjixi');
 	}
 	function CreateNewJob(){
 		$this->load->model('JobAbstract_model');
@@ -30,6 +32,7 @@ class CreateJob extends CI_Controller {
 		$result=array();
 		$data=$_POST['appinfo'];
 		$id=intval($_POST['newID']);
+		$UserName=$this->session->userdata('UserName');
 		$arrayres=json_decode($data, true);
 		$appInfoStr="";
 		foreach ($arrayres as $value) {
@@ -44,7 +47,7 @@ class CreateJob extends CI_Controller {
 		}
 		
 		$jobinforow=$this->JobAbstract_model->LoadTheJobInfoByID($id);
-		$result=$this->AppOPModel->insertIntoAppOP($jobinforow['job_name'],'Shanjixi',$appInfoStr,$jobInfoStr);
+		$result=$this->AppOPModel->insertIntoAppOP($jobinforow['job_name'],$UserName,$appInfoStr,$jobInfoStr);
 		echo $result;
 
 	}

@@ -133,6 +133,9 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                 {
                     xtype: 'button',
                     text: '关闭',
+                    handler: function(button, e){
+                    	button.up().close();
+                    },
                     x: 250,
                     y: 400
                     

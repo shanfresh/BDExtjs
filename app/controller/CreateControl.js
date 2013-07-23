@@ -26,7 +26,13 @@ Ext.define('MyApp.controller.CreateControl', {
     		},
     		'CreateWindow > button[text=关闭窗口]':{
     			click:this.OnClickCloseButton
-    		}
+    		},
+    		'CreateWindow DetailInfoPanel  textareafield[name=InputPath]': {
+    			change:this.OnChangeCmdOrPath
+            },
+    		'CreateWindow DetailInfoPanel  textareafield[name=RunCmd]': {
+    			change:this.OnChangeRunCmd
+            }
     	    
     	});
     	//Ext.getCmp('updatebutton').click();
@@ -53,7 +59,7 @@ Ext.define('MyApp.controller.CreateControl', {
     	var button=Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
       	var countRows  = button.up().down('AppInfoPanel').down('gridpanel').store.getCount();
     	var csvData    = new Array();
-    	var dataSource=button.up().down('AppInfoPanel').down('gridpanel').store;
+    	var dataSource = button.up().down('AppInfoPanel').down('gridpanel').store;
     	var result=dataSource.getRange();
     	var appinfo=new Array();
     	
@@ -85,5 +91,50 @@ Ext.define('MyApp.controller.CreateControl', {
     },
     OnClickCloseButton:function(button){
     	button.up().close();
+    },
+    OnChangeInputPath:function(obj,newvalue,oldvalue,eopts){
+    	this.setActiveAppInfoPanel();
+    	var button = Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
+      	var store = button.up().down('JobInfoPanel').down('gridpanel').store;
+      	var index=store.find("Name","input_dir");
+      	if(index==-1)
+      		return;
+      	var target=store.getAt(index);
+      	target.set("Value",newvalue);
+      	
+    },
+    OnChangeRunCmd:function(obj,newvalue,oldvalue,eopts){
+    	this.setActiveAppInfoPanel();
+    	var button = Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
+      	var store = button.up().down('JobInfoPanel').down('gridpanel').store;
+      	var index=store.find("Name","cmd");
+      	if(index==-1)
+      		return;
+      	var target=store.getAt(index);
+      	target.set("Value",newvalue);
+      	
+    },
+    setActiveAppInfoPanel:function(){
+    	console.log("StartActiveAppPanel");
+    	var TabInfoPanel = Ext.ComponentQuery.query('CreateWindow > TabInfoPanel')[0];
+    	TabInfoPanel.setActiveTab(1);
+    },
+    OnChangeCmdOrPath:function(obj,newvalue,oldvalue,eopts){
+    	this.setActiveAppInfoPanel();
+    	var textfieldName=obj.getName();
+    	var storeIndexName;
+    	if(textfieldName=="InputPath"){
+    		storeIndexName="input_dir";
+    	}else if(textfieldName=="RunCmd"){
+    		storeIndexName="cmd";
+    	}
+    	var button = Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
+      	var store = button.up().down('JobInfoPanel').down('gridpanel').store;
+      	var index=store.find("Name",storeIndexName);
+      	if(index==-1)
+      		return;
+      	var target=store.getAt(index);
+      	target.set("Value",newvalue);
+      
     }
 });

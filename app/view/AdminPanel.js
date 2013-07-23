@@ -18,7 +18,7 @@ Ext.define('MyApp.view.AdminPanel', {
     alias : 'widget.AdminPanel',
     xtype: 'MyAdminPanel',
     height: 616,
-    width: 847,
+    //width: 847,
     layout: {
         type: 'absolute'
     },

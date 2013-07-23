@@ -69,9 +69,19 @@
 			$result=array();
 	    	$tok = strtok($string, "\n\r");
 			while ($tok !== false) {
-    			
-    			$eacharray=explode(" ",$tok);
-    			$each=array("Name"=>$eacharray[0],"Type"=>$eacharray[1],"Value"=>$eacharray[2]);
+    			$newPosition=-1;
+    			$lastPosition=0;
+    			$eachLineArray=array();
+    			$eachline=$tok;
+    			for($i=0;$i<2;$i++){
+    				$newPosition=stripos($eachline," ",$lastPosition);
+    				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
+  					array_push($eachLineArray, $eachWord);
+  					$lastPosition=$newPosition+1;
+    			}
+    			$endWord=substr($eachline,$lastPosition);
+    			array_push($eachLineArray,$endWord);
+    			$each=array("Name"=>$eachLineArray[0],"Type"=>$eachLineArray[1],"Value"=>$eachLineArray[2]);
     			array_push($result,$each);
     			$tok = strtok("\n\r");
 			}

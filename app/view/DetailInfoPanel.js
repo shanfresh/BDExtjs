@@ -24,12 +24,9 @@ Ext.define('MyApp.view.DetailInfoPanel', {
     items: [{
     	xtype: 'fieldset',
         title: 'Job基本信息',
-        defaultType: 'textfield',
         items: [
                 {
                     xtype: 'textfield',
-                    x: 20,
-                    y: 30,
                     width: 100,
                     fieldLabel: '原始ID',
                     labelWidth: 50,
@@ -38,17 +35,13 @@ Ext.define('MyApp.view.DetailInfoPanel', {
                 },
                 {
                     xtype: 'textfield',
-                    x: 140,
-                    y: 30,
-                    width: 210,
+                    width: 400,
                     fieldLabel: '名称',
                     labelWidth: 50,
                     name: 'JobName'
                 },
                 {
                     xtype: 'textfield',
-                    x: 360,
-                    y: 30,
                     width: 90,
                     fieldLabel: '状态',
                     labelWidth: 50,
@@ -56,18 +49,15 @@ Ext.define('MyApp.view.DetailInfoPanel', {
                 },
                 {
                     xtype: 'textareafield',
-                    x: 20,
-                    y: 70,
                     height: 30,
                     width: 400,
                     fieldLabel: 'InputPath',
                     labelWidth: 50,
-                    name: 'InputPath'
+                    name: 'InputPath',
+                    enableKeyEvents:true
                 },
                 {
                     xtype: 'textareafield',
-                    x: 20,
-                    y: 120,
                     height: 30,
                     width: 400,
                     fieldLabel: 'RunCmd',

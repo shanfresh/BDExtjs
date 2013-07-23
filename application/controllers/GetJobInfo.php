@@ -25,16 +25,20 @@ class GetJobInfo extends CI_Controller {
   		{
   			$eachline=fgets($file);
   			$eachLineArray=array();
-  			$token = strtok($eachline, " ");  			
-			while ($token !== false)
-  			{
-  				array_push($eachLineArray, $token);
-  				$token = strtok(" ");
+  			$lastPosition=0;
+  			$newPosition=-1;
+  			for($i=0;$i<2;$i++){
+  				$newPosition=stripos($eachline," ",$lastPosition);
+  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
+  				array_push($eachLineArray, $eachWord);
+  				$lastPosition=$newPosition+1;
   			}
+  			
+  			$endWord=substr($eachline,$lastPosition);
   			$temp=array();
 			$temp['Name']=$eachLineArray[0];
 			$temp['Type']=$eachLineArray[1];
-			$temp['Value']=trim($eachLineArray[2]);
+			$temp['Value']=trim($endWord);
 			array_push($arr, $temp);
   		}
 		fclose($file);
@@ -49,16 +53,22 @@ class GetJobInfo extends CI_Controller {
   		{
   			$eachline=fgets($file);
   			$eachLineArray=array();
-  			$token = strtok($eachline, " ");  			
-			while ($token !== false)
-  			{
-  				array_push($eachLineArray, $token);
-  				$token = strtok(" ");
+  			$lastPosition=0;
+  			$newPosition=-1;
+  			for($i=0;$i<2;$i++){
+  				$newPosition=stripos($eachline," ",$lastPosition);
+  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
+  				array_push($eachLineArray, $eachWord);
+  				$lastPosition=$newPosition+1;
   			}
+  			
+  			$endWord=substr($eachline,$lastPosition);
+  			
+  			
   			$temp=array();
 			$temp['Name']=$eachLineArray[0];
 			$temp['Type']=$eachLineArray[1];
-			$temp['Value']=trim($eachLineArray[2]);
+			$temp['Value']=trim($endWord);
 			array_push($arr, $temp);
   		}
 		fclose($file);

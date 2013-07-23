@@ -28,7 +28,7 @@ Ext.define('MyApp.view.AppInfoPanel', {
                 {
                     xtype: 'gridpanel',
                     height: 181,
-                    title: 'My Grid Panel',
+                    title: 'App信息',
                     store:'AppInfoStore',
                     columns: [
                         {
