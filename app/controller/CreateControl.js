@@ -21,8 +21,11 @@ Ext.define('MyApp.controller.CreateControl', {
     init:function(){
     	console.log("Start MyController");
     	this.control({
-    		'CreateWindow > button[text=创建]':{
+    		'CreateWindow > button[text=立即创建]':{
     			click:this.OnClickButton
+    		},
+    		'CreateWindow > button[text=关闭窗口]':{
+    			click:this.OnClickCloseButton
     		}
     	    
     	});
@@ -47,7 +50,7 @@ Ext.define('MyApp.controller.CreateControl', {
     CommitAppInfo:function(action){
     	Ext.Msg.alert('创建Basic JobInfo 成功', action.result.msg+action.result.newRecordID);
     	console.log("创建AppInfo");
-    	var button=Ext.ComponentQuery.query('CreateWindow > button[text=创建]')[0];
+    	var button=Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
       	var countRows  = button.up().down('AppInfoPanel').down('gridpanel').store.getCount();
     	var csvData    = new Array();
     	var dataSource=button.up().down('AppInfoPanel').down('gridpanel').store;
@@ -79,5 +82,8 @@ Ext.define('MyApp.controller.CreateControl', {
     },
     CommitJobInfo:function(action){
     	console.log("创建JobInfo");
+    },
+    OnClickCloseButton:function(button){
+    	button.up().close();
     }
 });

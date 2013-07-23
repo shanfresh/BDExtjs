@@ -70,11 +70,11 @@ Ext.define('MyApp.view.MyWindow', {
 					        items: [
 					            {
 					                xtype: 'menuitem',
-					                text: '批量修改参数'
+					                text: '单一修改'
 					            },
 					            {
 					                xtype: 'menuitem',
-					                text: 'Menu Item'
+					                text: '批量修改'
 					            },
 					            {
 					                xtype: 'menuitem',

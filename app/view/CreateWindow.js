@@ -44,21 +44,14 @@ Ext.define('MyApp.view.CreateWindow', {
     	                id:'commitButton',
     	                x: 100,
     	                y: 450,
-    	                text: '创建'
-        			},
-        			{
-        				xtype: 'button',
-    	                id:'MofifyButton',
-    	                x: 200,
-    	                y: 450,
-    	                text: '修改'
+    	                text: '立即创建'
         			},
         			{
         				xtype: 'button',
     	                id:'CancleButton',
     	                x: 300,
     	                y: 450,
-    	                text: '取消'
+    	                text: '关闭窗口'
         			}
         	]
         });
