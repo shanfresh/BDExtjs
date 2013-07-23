@@ -14,7 +14,7 @@
  */
 
 Ext.define('MyApp.view.MyWindow', {
-    extend: 'Ext.window.Window',
+    extend: 'Ext.panel.Panel',
     alias : 'widget.MyWindow',
     autoShow: true,
     height: 500,
@@ -24,15 +24,120 @@ Ext.define('MyApp.view.MyWindow', {
     },
     title: 'CreateWindow',
     maximizable: true,
+    dockedItems: [
+           {
+        	   xtype: 'toolbar',
+        	   x: 180,
+               y: 55,
+               dock: 'top',
+               height: 40,
+               items: [
+					{
+					    xtype: 'splitbutton',
+					    x: 10,
+					    y: 10,
+					    text:'创建',
+					    width: 60,
+					    showText: true,
+					    menu: {
+					        xtype: 'menu',
+					        width: 160,
+					        items: [
+					            {
+					                xtype: 'menuitem',
+					                text: '创建(模板)'
+					         
+					            },
+					            {
+					                xtype: 'menuitem',
+					                text: '创建(默认值)'
+					            },
+					            {
+					                xtype: 'menuitem',
+					                text: 'Menu Item'
+					            }
+					        ]
+					    }
+					},
+					{
+					    xtype: 'splitbutton',
+					    text:'修改',
+					    width: 80,
+					    showText: true,
+					    menu: {
+					        xtype: 'menu',
+					        width: 160,
+					        items: [
+					            {
+					                xtype: 'menuitem',
+					                text: '批量修改参数'
+					            },
+					            {
+					                xtype: 'menuitem',
+					                text: 'Menu Item'
+					            },
+					            {
+					                xtype: 'menuitem',
+					                text: 'Menu Item'
+					            }
+					        ]
+					    }
+					},
+					{
+					    xtype: 'splitbutton',
+					    text:'删除',
+					    width: 80,
+					    showText: true,
+					    menu: {
+					        xtype: 'menu',
+					        width: 160,
+					        items: [
+					            {
+					                xtype: 'menuitem',
+					                text: '删除'
+					            },
+					            {
+					                xtype: 'menuitem',
+					                text: '批量删除'
+					            },
+					            {
+					                xtype: 'menuitem',
+					                text: 'Menu Item'
+					            }
+					        ]
+					    }
+					},
+          
+					{
+					    xtype: 'textfield',
+					    x: 800,
+					    y: 10,
+					    fieldLabel: ''
+					},
+					{
+					    xtype: 'button',
+					    x: 490,
+					    y: 10,
+					    text: '搜索'
+					},
+					{
+					    xtype: 'button',
+					    id:'updatebutton',
+					    width: 60,
+					    text: '更新'
+					}
+
+               ]
+               
+           }
+    ],
     items: [
             {
                 xtype: 'gridpanel',
                 id:'AllJobPanel',
-                x: 10,
-                y: 40,
+                y: 10,
                 height: 400,
-                width: 800,
-                title: 'My Grid Panel',
+                title: '默认列表',
                 store: 'JobStore',
                 columns: [
                     {
@@ -72,105 +177,8 @@ Ext.define('MyApp.view.MyWindow', {
                 selModel: Ext.create('Ext.selection.CheckboxModel', {
 
                 })
-            },
-            {
-                xtype: 'splitbutton',
-                x: 10,
-                y: 10,
-                text:'[创-建]',
-                width: 120,
-                showText: true,
-                menu: {
-                    xtype: 'menu',
-                    width: 160,
-                    items: [
-                        {
-                            xtype: 'menuitem',
-                            text: '创建(模板)'
-                     
-                        },
-                        {
-                            xtype: 'menuitem',
-                            text: '创建(默认值)'
-                        },
-                        {
-                            xtype: 'menuitem',
-                            text: 'Menu Item'
-                        }
-                    ]
-                }
-            },
-            {
-                xtype: 'button',
-                id:'updatebutton',
-                x: 300,
-                y: 10,
-                text: '更新'
-            },            
-            {
-                xtype: 'textfield',
-                x: 350,
-                y: 10,
-                fieldLabel: ''
-            },
-            {
-                xtype: 'button',
-                x: 490,
-                y: 10,
-                text: '搜索'
-            },
-            {
-                xtype: 'splitbutton',
-                text:'[修-改]',
-                width: 120,
-                x: 150,
-                y: 10,
-                showText: true,
-                menu: {
-                    xtype: 'menu',
-                    width: 160,
-                    items: [
-                        {
-                            xtype: 'menuitem',
-                            text: '批量修改参数'
-                        },
-                        {
-                            xtype: 'menuitem',
-                            text: 'Menu Item'
-                        },
-                        {
-                            xtype: 'menuitem',
-                            text: 'Menu Item'
-                        }
-                    ]
-                }
-            },
-            {
-                xtype: 'splitbutton',
-                text:'[删-除]',
-                width: 120,
-                x: 580,
-                y: 10,
-                showText: true,
-                menu: {
-                    xtype: 'menu',
-                    width: 160,
-                    items: [
-                        {
-                            xtype: 'menuitem',
-                            text: '删除'
-                        },
-                        {
-                            xtype: 'menuitem',
-                            text: '批量删除'
-                        },
-                        {
-                            xtype: 'menuitem',
-                            text: 'Menu Item'
-                        }
-                    ]
-                }
             }
+            
         ],
     initComponent: function() {
         var me = this;

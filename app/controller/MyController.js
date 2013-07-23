@@ -27,10 +27,10 @@ Ext.define('MyApp.controller.MyController', {
     init:function(){
     	console.log("Start MyController");
     	this.control({
-    		'MyWindow > button[text=更新]':{
+    		'MyWindow > toolbar >button[text=更新]':{
     			click:this.TryInitMyWindow
     		},
-    		'MyWindow > splitbutton > menu > menuitem[text=创建(模板)]':{
+    		'MyWindow > toolbar > splitbutton > menu > menuitem[text=创建(模板)]':{
     			click:this.CreateBySelectItem
     		}
     	    
@@ -39,7 +39,7 @@ Ext.define('MyApp.controller.MyController', {
     },
     TryInitMyWindow:function (button){
 		console.log("准备拉取数据到Store");
-		button.up().down('gridpanel').store.load();
+		Ext.getCmp('AllJobPanel').store.load();
 	},
     
     CreateBySelectItem:function(button){
