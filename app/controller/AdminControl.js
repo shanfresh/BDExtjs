@@ -80,6 +80,9 @@ Ext.define('MyApp.controller.AdminControl', {
             url:'AppopControl/MarkAsPassed',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
                 var obj = Ext.decode(response.responseText);
+                Ext.getCmp('AdminAppop').store.remove(selected);
+                Ext.getCmp('AdminAppopPassed').store.removeAll();
+                Ext.getCmp('AdminAppopPassed').store.load();
                 Ext.Msg.alert("返回结果:","操作成功O(∩_∩)O哈哈~");
             },
             failure:function(){
@@ -87,7 +90,7 @@ Ext.define('MyApp.controller.AdminControl', {
             },
             params:{ID:Ext.encode(ids)}
         });
-    	Ext.getCmp('AdminAppopPassed').store.load();
+    	
     	
     },
     MarkSelectAsOnline:function(){
@@ -108,6 +111,9 @@ Ext.define('MyApp.controller.AdminControl', {
             url:'AppopControl/MarkAsOnline',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
                 var obj = Ext.decode(response.responseText);
+                Ext.getCmp('AdminAppopPassed').store.remove(selected);
+                Ext.getCmp('AdminAppopOnline').store.removeAll();
+                Ext.getCmp('AdminAppopOnline').store.load();
                 Ext.Msg.alert("返回结果:","上线成功O(∩_∩)O哈哈~");
             },
             failure:function(){
@@ -115,8 +121,9 @@ Ext.define('MyApp.controller.AdminControl', {
             },
             params:{ID:Ext.encode(ids)}
         });
-    	Ext.getCmp('AdminAppopOnline').store.load();
+    	
     }
+    
     
 
 });
