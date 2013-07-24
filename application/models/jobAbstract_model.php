@@ -43,7 +43,15 @@ class JobAbstract_model extends CI_Model {
     	return $row;
 	}    
     
-	
+	function ModifybyID($ID,$input_path,$run_cmd){
+		$this->load->database();
+    	$query=$this->db->query("UPDATE jobinfo set input_path=?,run_cmd=? where job_id =? ",array($input_path,$run_cmd,$ID));
+		if($this->db->affected_rows()>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	
 
 }

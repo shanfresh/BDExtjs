@@ -49,7 +49,24 @@ Ext.define('MyApp.controller.UserModifyControl',{
       
     },
     OnClickUpdateNow:function(){
-    	console.log("User Click Update");
+    	this.ModifyAbatractJobInfo();
+    },
+    ModifyAbatractJobInfo:function(){
+    	console.log("Modify AbatractJobInfo Update");
+    	var Control=this;
+    	var DetailInfoPanel = Ext.ComponentQuery.query('UserModifyWindow DetailInfoPanel')[0];
+    	var form = DetailInfoPanel.getForm();
+    	form.url='AbstractJobInfoControl/ModifyByID';
+        if (form.isValid()) {
+            form.submit({
+                success: function(form, action) {
+                	Ext.Msg.alert('Success', action.result.msg);
+                },
+                failure: function(form, action) {
+                    Ext.Msg.alert('Failed', action.result.msg);
+                }
+            });
+        }
     }
 
 
