@@ -17,6 +17,15 @@
 Ext.Loader.setConfig({
     enabled: true
 });
+Ext.Loader.setPath('Ext.ux', 'extjs/src/ux');
+Ext.require([
+             'Ext.data.*',
+             'Ext.panel.Panel',
+             'Ext.view.View',
+             'Ext.layout.container.Fit',
+             'Ext.toolbar.Paging',
+             'Ext.ux.form.SearchField'
+         ]);
 
 Ext.application({
     models: [

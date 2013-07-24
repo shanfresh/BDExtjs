@@ -37,24 +37,7 @@ Ext.define('MyApp.store.JobStore', {
             root:'data'
         }
     },
-    data: [
-//           {
-//               ID: '1',
-//               JobID: '1',
-//               JobName: 'update-train.train-model',
-//               JobGuarantee: '1',
-//               InputPath: '/user/root/bvc_env/update -train.train-model.tar',
-//               RunCmd: 'sh -x ./bvc/bin/run_map.sh update-train train-model'
-//           },
-//           {
-//               ID: '2',
-//               JobID: '2',
-//               JobName: 'update-train_train-model.map',
-//               JobGuarantee: '0',
-//               InputPath: '/user/root/bvc_env/update -train_train-model.map.tar',
-//               RunCmd: 'sh -x ./bvc/bin/multi_map.sh update-train_train-model'
-//           }
-       ],
+    
     constructor: function(cfg) {
         var me = this;
         cfg = cfg || {};
