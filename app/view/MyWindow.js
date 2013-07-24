@@ -93,15 +93,6 @@ Ext.define('MyApp.view.MyWindow', {
 					    }
 					},
 					{
-<<<<<<< HEAD
-=======
-//					    xtype: 'textfield',
-//					    x: 800,
-//					    y: 10,
-//					    fieldLabel: 'xxxxxxx'
-					},
-					{
->>>>>>> 1f7c4172360695a29d32b3aafed380720d838e5a
 						xtype:'searchfield',
 					    width:200,
 					    fieldLabel:'Search',
