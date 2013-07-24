@@ -110,61 +110,137 @@ Ext.define('MyApp.view.MyWindow', {
                
            }
     ],
-    items: [
+    items:[
             {
-                xtype: 'gridpanel',
-                id:'AllJobPanel',
+                xtype: 'tabpanel',
+                x: 0,
                 y: 10,
-                height: 400,
-                title: '默认列表',
-                store: 'JobStore',
-                columns: [
-                    {
-                        xtype: 'numbercolumn',
-                        dataIndex: 'JobID',
-                        text: 'JobID',
-                        flex: 1,
-                        format: '0000'
-                    },
-                    {
-                        xtype: 'gridcolumn',
-                        dataIndex: 'JobName',
-                        text: 'JobName',
-                        flex: 4
-                    },
-                    {
-                        xtype: 'gridcolumn',
-                        width: 30,
-                        dataIndex: 'JobGuarantee',
-                        text: 'JobGuarantee',
-                        flex: 1
-                    },
-                    {
-                        xtype: 'gridcolumn',
-                        width: 200,
-                        dataIndex: 'InputPath',
-                        text: 'InputPath',
-                        flex: 5
-                    },
-                    {
-                        xtype: 'gridcolumn',
-                        dataIndex: 'RunCmd',
-                        text: 'RunCmd',
-                        flex: 5
-                    }
-                ],
-                selModel: Ext.create('Ext.selection.CheckboxModel', {
+                height: 500,
+                items:[
+				{
+				    xtype: 'gridpanel',
+				    id:'AllJobPanel',
+				    y: 10,
+				    height: 400,
+				    title: '目前线上任务表',
+				    store: 'JobStore',
+				    columns: [
+				        {
+				            xtype: 'numbercolumn',
+				            dataIndex: 'JobID',
+				            text: 'JobID',
+				            flex: 1,
+				            format: '0000'
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'JobName',
+				            text: 'JobName',
+				            flex: 4
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            width: 30,
+				            dataIndex: 'JobGuarantee',
+				            text: 'JobGuarantee',
+				            flex: 1
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            width: 200,
+				            dataIndex: 'InputPath',
+				            text: 'InputPath',
+				            flex: 5
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'RunCmd',
+				            text: 'RunCmd',
+				            flex: 5
+				        }
+				    ],
+					    selModel: Ext.create('Ext.selection.CheckboxModel', {
+					
+					    })
+				},
+				{
+				    xtype: 'gridpanel',
+				    id:'MyJobPanel',
+				    y: 10,
+				    height: 400,
+				    title: '我的任务表',
+				    store: 'user.MyJobStore',
+				    columns: [
+				        {
+				            xtype: 'numbercolumn',
+				            dataIndex: 'JobID',
+				            text: 'JobID',
+				            flex: 1,
+				            format: '0000'
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'JobName',
+				            text: 'JobName',
+				            flex: 1
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            width: 30,
+				            dataIndex: 'UserName',
+				            text: '所属用户',
+				            flex: 1
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            width: 30,
+				            dataIndex: 'Status',
+				            text: '当前状态',
+				            flex: 1
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            width: 200,
+				            dataIndex: 'InputPath',
+				            text: 'InputPath',
+				            flex: 3
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'RunCmd',
+				            text: 'RunCmd',
+				            flex: 3
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'SubmitTime',
+				            text: '提交时间',
+				            flex: 1
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'ApprovalTime',
+				            text: '通过时间',
+				            flex: 1
+				        },
+				        {
+				            xtype: 'gridcolumn',
+				            dataIndex: 'EffectTime',
+				            text: '上线时间',
+				            flex: 1
+				        }
+				        
+				    ],
+					    selModel: Ext.create('Ext.selection.CheckboxModel', {
+					
+					    })
+					
+				}
+				]
+                
+				
+            }            
+        ]
 
-                })
-            }
-            
-        ],
-    initComponent: function() {
-        var me = this;
-        Ext.applyIf(me, {
-            
-        });       
-        me.callParent(arguments);
-    }
 
 });

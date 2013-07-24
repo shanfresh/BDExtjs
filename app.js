@@ -32,7 +32,7 @@ Ext.application({
         'JobsModel'
     ],
     stores: [
-        'JobStore','AppInfoStore','JobInfoStore'
+        'JobStore','AppInfoStore','JobInfoStore','user.MyJobStore'
     ],
     controllers: [
         'MyController','CreateControl','DeleteControl'

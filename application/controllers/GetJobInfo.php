@@ -85,5 +85,19 @@ class GetJobInfo extends CI_Controller {
 		}
 		echo json_encode($arr);
 	}
+	function userJob(){
+		$this->load->database();
+		$username=$this->session->userdata("UserName");
+		
+		
+		$query = $this->db->query('SELECT job_id,JobName,UserName,Status,input_path,run_cmd ,SubmitTime,ApprovalTime,EffectTime FROM jobinfo,bvc_platform.appop where jobinfo.job_name=appop.JobName AND appop.UserName=? AND ID in (select max(id) from appop group by JobName) order by job_id desc',$username);
+		$arr=array();
+		foreach ($query->result() as $row)
+		{
+			$arr2 = array ('ID'=>$row->job_id,'JobID'=>$row->job_id,'JobName'=>$row->JobName,'UserName'=>$row->UserName,'Status'=>$row->Status,'InputPath'=>$row->input_path,'RunCmd'=>$row->run_cmd,'ApprovalTime'=>$row->ApprovalTime,'EffectTime'=>$row->EffectTime,'SubmitTime'=>$row->SubmitTime);
+			array_push($arr, $arr2);
+		}
+		echo json_encode($arr);
+	}
 }
 ?>

@@ -84,7 +84,7 @@ class AppopControl extends CI_Controller{
 		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status=5');
 		$arr=array();
 		if($query->num_rows()==0){
-			return $arr;
+			echo json_encode($arr);
 		}
 		
 		foreach ($query->result() as $row)
