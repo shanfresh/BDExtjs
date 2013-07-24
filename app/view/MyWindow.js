@@ -116,6 +116,7 @@ Ext.define('MyApp.view.MyWindow', {
                 x: 0,
                 y: 10,
                 height: 500,
+                activeTab:1,
                 items:[
 				{
 				    xtype: 'gridpanel',
@@ -177,6 +178,13 @@ Ext.define('MyApp.view.MyWindow', {
 				            text: 'JobID',
 				            flex: 1,
 				            format: '0000'
+				        },
+				        {
+//				            xtype: 'numbercolumn',
+//				            dataIndex: 'AppopID',
+//				            text: 'AppopID',
+//				            flex: 1,
+//				            format: '0000'
 				        },
 				        {
 				            xtype: 'gridcolumn',

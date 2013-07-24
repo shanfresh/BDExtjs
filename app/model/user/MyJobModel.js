@@ -3,11 +3,12 @@ Ext.define('MyApp.model.user.MyJobModel', {
     extend: 'Ext.data.Model',
 
     fields: [
-         {
-             name: 'ID'
-         },
+
          {
              name: 'JobID'
+         },
+         {
+             name: 'AppopID'
          },
          {
              name: 'JobName'

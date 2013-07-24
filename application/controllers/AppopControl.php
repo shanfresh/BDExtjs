@@ -26,7 +26,6 @@ class AppopControl extends CI_Controller{
 	function loadById(){
 		$this->load->database();
 		$ID=json_decode($_POST['ID']);
-		$JobName=json_decode($_POST['jobname']);
 		$query = $this->db->query('select ID,JobName,UserName,Status,SubmitTime,ApprovalTime from appop where ID=?',array($ID));
 		$arr=array();
 		if($query->num_rows() == 1){

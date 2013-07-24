@@ -22,7 +22,6 @@ Ext.define('Ext.ux.form.SearchField', {
         // We're going to use filtering
         
         me.store = Ext.data.StoreManager.get("JobStore");
-        console.log(me.store);
         //me.store.remoteFilter = true;
 
         // Set up the proxy to encode the filter in the simplest way as a name/value pair
