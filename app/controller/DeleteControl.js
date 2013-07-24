@@ -6,10 +6,10 @@ Ext.define('MyApp.controller.DeleteControl', {
 	init:function(){
     	console.log("Start MyController");
     	this.control({
-    		'MyWindow > splitbutton > menu > menuitem[text=删除]':{
+    		'MyWindow toolbar splitbutton  > menuitem[text=删除]':{
     			click:this.DeleteBySelectItem
     		},
-    		'MyWindow > splitbutton > menu > menuitem[text=批量删除]':{
+    		'MyWindow toolbar splitbutton > menu > menuitem[text=批量删除]':{
     			click:this.MulityDeleteBySelectItem
     		}
     	    

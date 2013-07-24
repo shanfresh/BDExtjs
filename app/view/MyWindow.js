@@ -92,18 +92,12 @@ Ext.define('MyApp.view.MyWindow', {
 					        ]
 					    }
 					},
-          
 					{
-					    xtype: 'textfield',
-					    x: 800,
-					    y: 10,
-					    fieldLabel: ''
-					},
-					{
-					    xtype: 'button',
-					    x: 490,
-					    y: 10,
-					    text: '搜索'
+						xtype:'searchfield',
+					    width:200,
+					    fieldLabel:'Search',
+					    labelWidth:40,
+					    paramName:'JobName'
 					},
 					{
 					    xtype: 'button',
