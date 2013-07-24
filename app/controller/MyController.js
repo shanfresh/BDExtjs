@@ -40,6 +40,7 @@ Ext.define('MyApp.controller.MyController', {
     TryInitMyWindow:function (button){
 		console.log("准备拉取数据到Store");
 		Ext.getCmp('AllJobPanel').store.load();
+		Ext.getCmp('MyJobPanel').store.load();
 	},
     
     CreateBySelectItem:function(button){
