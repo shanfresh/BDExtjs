@@ -8,7 +8,7 @@ class AppopControl extends CI_Controller{
 	function load(){
 		
 		$this->load->database();
-		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status in(1,2)');
+		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status in(1,2,4)');
 		$arr=array();
 		foreach ($query->result() as $row)
 		{
@@ -104,6 +104,28 @@ class AppopControl extends CI_Controller{
 		$IDs=json_decode($_POST['ID']);
 		$this->load->model('AppOPModel');
 		$result=$AppAndJobInfo=$this->AppOPModel->MarkAsOnline($IDs);	
+		echo json_encode($result);
+	}
+	
+	function UserModifyByJobName(){
+		$this->load->model('UserAppopModel');
+		$JobName=json_decode($_POST['JobName']);
+		$AppInfo=$_POST['AppInfo'];
+		$JobInfo=$_POST['JobInfo'];
+		$arrayres=json_decode($AppInfo, true);
+		$appInfoStr="";
+		foreach ($arrayres as $value) {
+			$appInfoStr=$appInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r\n";
+		}
+		$arrayres2=json_decode($JobInfo, true);
+		$jobInfoStr="";
+		foreach ($arrayres2 as $value) {
+			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r\n";
+		}
+	
+		
+		$UserName=$this->session->userdata('UserName');
+		$result=$this->UserAppopModel->UserModify($JobName,$UserName,$appInfoStr,$jobInfoStr);
 		echo json_encode($result);
 	}
 }

@@ -56,18 +56,34 @@ Ext.define('MyApp.controller.UserModifyControl',{
     	var Control=this;
     	var DetailInfoPanel = Ext.ComponentQuery.query('UserModifyWindow DetailInfoPanel')[0];
     	var form = DetailInfoPanel.getForm();
-    	form.url='AbstractJobInfoControl/ModifyByID';
-        if (form.isValid()) {
-            form.submit({
-                success: function(form, action) {
-                	Ext.Msg.alert('Success', action.result.msg);
-                },
-                failure: function(form, action) {
-                    Ext.Msg.alert('Failed', action.result.msg);
-                }
-            });
-        }
+    	var value=form.getValues();
+    	var AppInfoPanel = Ext.ComponentQuery.query('UserModifyWindow TabInfoPanel AppInfoPanel')[0];
+    	var JobInfoPanel = Ext.ComponentQuery.query('UserModifyWindow TabInfoPanel JobInfoPanel')[0];
+    	var apparray=getResult(AppInfoPanel);
+    	var jobarray=getResult(JobInfoPanel);
+    	Ext.Ajax.request({
+            method:'POST',
+            url:'AppopControl/UserModifyByJobName',
+            success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
+                var obj = Ext.decode(response.responseText);
+                Ext.Msg.alert('成功','修改成功，等待管理员批复');
+            	var window=Ext.ComponentQuery.query('UserModifyWindow')[0];
+            	window.close();
+            },
+            failure:function(){
+                Ext.Msg.alert('错误',"与后台联系时出错")
+            },
+            params:{JobName:Ext.encode(value.JobName),AppInfo:Ext.encode(apparray),JobInfo:Ext.encode(jobarray)}
+        });
+
     }
-
-
 });
+function getResult(panel){
+	var grid=panel.down('gridpanel');
+	var result=grid.store.getRange();
+	var appinfo=new Array();	
+	for(var i=0;i<result.length;i++){
+		appinfo.push(result[i].data);
+	}
+	return appinfo;
+}

@@ -115,9 +115,12 @@ function setvalue(detail,name,value){
 	var t=detail.down('textfield[name='+name+']');
 	t.setValue(value);
 };
+/*
+ * 创建时刻加载信息
+ */
 function addResult(obj,window){
 	window.down('TabInfoPanel').down("AppInfoPanel").down('gridpanel').store.loadData(obj.AppInfo, false); 
 	window.down('TabInfoPanel').down("JobInfoPanel").down('gridpanel').store.loadData(obj.JobInfo, false); 
 
 	
-}
+};

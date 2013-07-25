@@ -88,13 +88,15 @@ class GetJobInfo extends CI_Controller {
 	function userJob(){
 		$this->load->database();
 		$username=$this->session->userdata("UserName");
-		
-		
-		$query = $this->db->query('SELECT ID,job_id,JobName,UserName,Status,input_path,run_cmd ,SubmitTime,ApprovalTime,EffectTime FROM jobinfo,bvc_platform.appop where jobinfo.job_name=appop.JobName AND appop.UserName=? AND ID in (select max(id) from appop group by JobName) order by job_id desc',$username);
+		$query = $this->db->query('SELECT ID,job_id,JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime,EffectTime FROM appop,jobinfo where appop.UserName=? AND appop.JobName=jobinfo.job_name AND ID in (select max(id) from appop group by JobName) order by job_id desc',$username);
 		$arr=array();
+		$this->load->model("AnalysePathAndCmd");
 		foreach ($query->result() as $row)
 		{
-			$arr2 = array ('JobID'=>$row->job_id,'AppopID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,'Status'=>$row->Status,'InputPath'=>$row->input_path,'RunCmd'=>$row->run_cmd,'ApprovalTime'=>$row->ApprovalTime,'EffectTime'=>$row->EffectTime,'SubmitTime'=>$row->SubmitTime);
+			$eacharray=$this->AnalysePathAndCmd->analyse($row->JobInfo);
+			$inputpath=$eacharray['input_dir'];
+			$cmd=$eacharray['cmd'];
+			$arr2 = array ('JobID'=>$row->job_id,'AppopID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,'Status'=>$row->Status,'InputPath'=>$inputpath,'RunCmd'=>$cmd,'ApprovalTime'=>$row->ApprovalTime,'EffectTime'=>$row->EffectTime,'SubmitTime'=>$row->SubmitTime);
 			array_push($arr, $arr2);
 		}
 		echo json_encode($arr);

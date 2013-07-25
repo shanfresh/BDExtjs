@@ -58,7 +58,8 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Value',
-                                            text: 'Value'
+                                            text: 'Value',
+                                            flex:4
                                         }
                                     ]
                                 }
@@ -88,7 +89,8 @@ Ext.define('MyApp.view.AppopDetailWindow', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Value',
-                                            text: 'Value'
+                                            text: 'Value',
+                                            flex:4
                                         }
                                     ]
                                 }

@@ -6,7 +6,7 @@ class AbstractJobInfoControl extends CI_Controller {
 	 	$this->load->library('session');
 	 	$this->session->set_userdata('UserName', 'Shanjixi');
 	}
-	function ModifyByID(){
+	function UserModifyByID(){
 		$this->load->model('JobAbstract_model');
 		$ID=$_POST['JobID'];
 		$InputPath=$_POST['InputPath'];
@@ -15,7 +15,7 @@ class AbstractJobInfoControl extends CI_Controller {
 		$result=array();
 		$result['success']=$flag;
 		if($flag)
-			$result['msg']='修改JobInfo主表成功，需要进一步修改配置信息';
+			$result['msg']='修改JobInfo提交申请成功，需要进一步修改配置信息';
 		else{
 			$erro=mysql_error();
 			$result['msg']='修改JobInfo主表失败，原因是'.$erro;
