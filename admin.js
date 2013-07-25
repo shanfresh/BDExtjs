@@ -51,4 +51,5 @@ Ext.onReady(function() {
 	Ext.getCmp('AdminAppop').store.load();
 	Ext.getCmp('AdminAppopPassed').store.load();
 	Ext.getCmp('AdminAppopOnline').store.load();
+	Ext.getCmp('AdminAppop').up().up().doLayout();
 });

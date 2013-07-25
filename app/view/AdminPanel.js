@@ -23,7 +23,25 @@ Ext.define('MyApp.view.AdminPanel', {
         type: 'absolute'
     },
     title: '管理员窗口',
-
+    MyRender:function(value){
+    	if(value=="1"){
+    		return "已提交";
+    	}else if(value==2){
+    		return "已修改";
+    	}else if(value==3){
+    		return "通过审核";
+    	}else if(value==4){
+    		return "用户删除";
+    	}else if(value==5){
+    		return "已经上线";
+    	}else if(value==6){
+    		return "审核失败,作废";
+    	}else if(value==7){
+    		return "审核失败,重新修改";
+    	}else if(value==8){
+    		return "停止运行";
+    	}        
+    },
     initComponent: function() {
         var me = this;
 
@@ -146,7 +164,8 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
-                                            text: 'Status'
+                                            text: 'Status',
+                                            renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -199,7 +218,8 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
-                                            text: 'Status'
+                                            text: 'Status',
+                                            renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -252,7 +272,8 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
-                                            text: 'Status'
+                                            text: 'Status',
+                                            renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
