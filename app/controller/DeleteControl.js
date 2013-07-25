@@ -4,7 +4,7 @@ Ext.define('MyApp.controller.DeleteControl', {
         'MyWindow'
     ],
 	init:function(){
-    	console.log("Start MyController");
+    	console.log("Start DeleteControl");
     	this.control({
     		'MyWindow toolbar splitbutton  > menuitem[text=删除]':{
     			click:this.DeleteBySelectItem

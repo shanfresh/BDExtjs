@@ -22,6 +22,7 @@ Ext.define('Ext.ux.form.SearchField', {
         // We're going to use filtering
         
         me.store = Ext.data.StoreManager.get("JobStore");
+
         //me.store.remoteFilter = true;
 
         // Set up the proxy to encode the filter in the simplest way as a name/value pair
@@ -54,8 +55,9 @@ Ext.define('Ext.ux.form.SearchField', {
 
     onTrigger2Click : function(){
         var me = this,
-            value = me.getValue();
-
+        value = me.getValue();
+        var TabInfoPanel=me.up().up().down("tabpanel");
+    	TabInfoPanel.setActiveTab(0);
         if (value.length > 0) {
             // Param name is ignored here since we use custom encoding in the proxy.
             // id is used by the Store to replace any previous filter

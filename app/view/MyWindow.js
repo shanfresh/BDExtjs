@@ -123,7 +123,7 @@ Ext.define('MyApp.view.MyWindow', {
 				    id:'AllJobPanel',
 				    y: 10,
 				    height: 400,
-				    title: '目前线上任务表',
+				    title: '目前线上JOB表',
 				    store: 'JobStore',
 				    columns: [
 				        {
@@ -169,7 +169,7 @@ Ext.define('MyApp.view.MyWindow', {
 				    id:'MyJobPanel',
 				    y: 10,
 				    height: 400,
-				    title: '我的任务表',
+				    title: '我的Job列表',
 				    store: 'user.MyJobStore',
 				    columns: [
 				        {
@@ -179,13 +179,13 @@ Ext.define('MyApp.view.MyWindow', {
 				            flex: 1,
 				            format: '0000'
 				        },
-				        {
+//				        {
 //				            xtype: 'numbercolumn',
 //				            dataIndex: 'AppopID',
 //				            text: 'AppopID',
 //				            flex: 1,
 //				            format: '0000'
-				        },
+//				        },
 				        {
 				            xtype: 'gridcolumn',
 				            dataIndex: 'JobName',

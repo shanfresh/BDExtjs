@@ -36,6 +36,7 @@ Ext.define('MyApp.view.CreateWindow', {
         			},
         			{
         				xtype:'TabInfoPanel',
+        				id:'CreateTabInfoPanel',
         				width:600,
         				y:200
         			},

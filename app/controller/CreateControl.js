@@ -19,7 +19,6 @@ Ext.define('MyApp.controller.CreateControl', {
         'CreateWindow','TabInfoPanel','AppInfoPanel','DetailInfoPanel','JobInfoPanel'
     ],
     init:function(){
-    	console.log("Start MyController");
     	this.control({
     		'CreateWindow > button[text=立即创建]':{
     			click:this.OnClickButton

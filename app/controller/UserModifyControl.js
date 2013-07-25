@@ -7,7 +7,7 @@ Ext.define('MyApp.controller.UserModifyControl',{
                'MyApp.model.AppInfoModel'
            ],
     init:function(){
-    	console.log("Start MyController");
+    	console.log("Start UserModifyControl");
     	this.control({
     		'UserModifyWindow > button[text=关闭窗口]':{
     			click:this.OnClickCloseButton
