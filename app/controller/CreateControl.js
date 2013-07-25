@@ -31,7 +31,7 @@ Ext.define('MyApp.controller.CreateControl', {
     			change:this.OnChangeCmdOrPath
             },
     		'CreateWindow DetailInfoPanel  textareafield[name=RunCmd]': {
-    			change:this.OnChangeRunCmd
+    			change:this.OnChangeCmdOrPath
             }
     	    
     	});
@@ -39,6 +39,11 @@ Ext.define('MyApp.controller.CreateControl', {
     },
     OnClickButton:function(button){
     	console.log("准备创建新的JOB");
+    	var RunCmdTextfield=Ext.ComponentQuery.query('CreateWindow DetailInfoPanel  textareafield[name=RunCmd]')[0];
+    	RunCmdTextfield.fireEvent('change', RunCmdTextfield,RunCmdTextfield.getValue());
+      	var InputPathTextfield=Ext.ComponentQuery.query('CreateWindow DetailInfoPanel  textareafield[name=InputPath]')[0];
+      	InputPathTextfield.fireEvent('change', InputPathTextfield,InputPathTextfield.getValue());
+      	
     	var Control=this;
     	var form = button.up().down('form').getForm();
     	form.url='CreateJob/CreateNewJob';
@@ -120,6 +125,7 @@ Ext.define('MyApp.controller.CreateControl', {
     	TabInfoPanel.setActiveTab(1);
     },
     OnChangeCmdOrPath:function(obj,newvalue,oldvalue,eopts){
+    	console.log("Fire Change "+obj.getName()+" "+oldvalue+"->"+newvalue);
     	this.setActiveAppInfoPanel();
     	var textfieldName=obj.getName();
     	var storeIndexName;

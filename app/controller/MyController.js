@@ -85,12 +85,9 @@ function getDetail(target){
 	//alert(target.get("JobID")+" "+target.get("JobName")+" "+target.get("JobGuarantee")+" "+target.get("InputPath")+" "+target.get("RunCmd"));
 	var createWindow=Ext.widget('CreateWindow');
 	createWindow.show();
-	createWindow.down('DetailInfoPanel').getForm().loadRecord(target);
 	createWindow.down('AppInfoPanel').down('gridpanel').store.load();
 	createWindow.down('JobInfoPanel').down('gridpanel').store.load();
-	console.log("Load gridpanel OK");
-	
-	
+	createWindow.down('DetailInfoPanel').getForm().loadRecord(target);
 };
 function loadDetailToModifyWindow(selected,target){
 	console.log("Prepare To LoadData To ModifyWindow");
@@ -121,5 +118,6 @@ function setvalue(detail,name,value){
 function addResult(obj,window){
 	window.down('TabInfoPanel').down("AppInfoPanel").down('gridpanel').store.loadData(obj.AppInfo, false); 
 	window.down('TabInfoPanel').down("JobInfoPanel").down('gridpanel').store.loadData(obj.JobInfo, false); 
+
 	
 }
