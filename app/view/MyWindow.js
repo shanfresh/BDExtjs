@@ -191,10 +191,6 @@ Ext.define('MyApp.view.MyWindow', {
     		   					            {
     		   					                xtype: 'menuitem',
     		   					                text: '创建(默认值)'
-    		   					            },
-    		   					            {
-    		   					                xtype: 'menuitem',
-    		   					                text: 'Menu Item'
     		   					            }
     		   					        ]
 		   					    }
@@ -215,10 +211,6 @@ Ext.define('MyApp.view.MyWindow', {
 		   					            {
 		   					                xtype: 'menuitem',
 		   					                text: '批量修改'
-		   					            },
-		   					            {
-		   					                xtype: 'menuitem',
-		   					                text: 'Menu Item'
 		   					            }
 		   					        ]
 		   					    }
