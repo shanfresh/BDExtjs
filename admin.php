@@ -16,6 +16,8 @@
 </head>
 
 <body>
-
+<h3 align="right">欢迎您:<?php echo phpCAS::getUser(); ?>  &nbsp&nbsp<a href="?logout=">登出</a></h3>
+<div id="content" width="100%" align="center">
+<div id="adminpanel"></div>
 </body>
 </html>

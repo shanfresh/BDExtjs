@@ -149,30 +149,36 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'ID',
-                                            text: 'ID'
+                                            text: 'ID',
+                                            width:50
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'JobName',
-                                            width:280,
-                                            text: 'JobName'
+                                           
+                                            text: 'JobName',
+                                            width:300
+                                            	
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'UserName',
-                                            text: 'UserName'
+                                            text: 'UserName',
+                                            flex:1
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
                                             text: '类型',
+                                            flex:1,
                                             renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'SubmitTime',
                                             text: '提交时间',
-                                            width:150
+                                            flex:1
+                                            
                                         }
                                         
                                     ],
@@ -197,24 +203,28 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'ID',
-                                            text: 'ID'
+                                            text: 'ID',
+                                            width:50
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'JobName',
                                             width:280,
-                                            text: 'JobName'
+                                            text: 'JobName',
+                                            width:300
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'UserName',
-                                            text: 'UserName'
+                                            text: 'UserName',
+                                            flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
                                             text: '类型',
-                                            renderer:this.MyRender
+                                            renderer:this.MyRender,
+                                            flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -250,24 +260,28 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'ID',
-                                            text: 'ID'
+                                            text: 'ID',
+                                            width:50
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'JobName',
                                             width:280,
-                                            text: 'JobName'
+                                            text: 'JobName',
+                                            width:300
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'UserName',
-                                            text: 'UserName'
+                                            text: 'UserName',
+                                            flex:1
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
                                             text: '类型',
-                                            renderer:this.MyRender
+                                            renderer:this.MyRender,
+                                            flex:1
                                         },
                                         {
                                             xtype: 'gridcolumn',

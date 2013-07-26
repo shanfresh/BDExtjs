@@ -40,14 +40,9 @@ Ext.application({
 });
 Ext.onReady(function() {
 	console.log("Admin is Ready");
-    Ext.create('Ext.container.Viewport', {
-    	layout: 'border',
-    	renderTo: Ext.getBody(),
-    	items:[{
-    		region: 'center',
-            xtype: 'MyAdminPanel'
-    	}
-    	]    	 
+	var target=Ext.get("adminpanel");
+    Ext.create('MyApp.view.AdminPanel', {
+    	renderTo:target	 
     });
 	Ext.getCmp('AdminAppop').store.load();
 	Ext.getCmp('AdminAppopPassed').store.load();
