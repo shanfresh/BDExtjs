@@ -1,3 +1,7 @@
+<?php 
+	include_once('authentication.php');
+?>
+
 <!DOCTYPE html>
 
 <!-- Auto Generated with Sencha Architect -->
@@ -10,5 +14,8 @@
     <link rel="stylesheet" href="http://extjs.cachefly.net/ext-4.1.1-gpl/resources/css/ext-all.css">
     <script type="text/javascript" src="admin.js"></script>
 </head>
-<body></body>
+<?php echo phpCAS::getUser(); ?>
+<body>
+
+</body>
 </html>
