@@ -43,19 +43,8 @@ Ext.onReady(function() {
 	console.log("Applation is Ready");
 	var mycontent=Ext.get("content");
 	console.log(mycontent);
-	Ext.create('Ext.container.Viewport', {
-    	layout: 'border',
-    	renderTo:mycontent,
-    	items:[
-    	    {
-    	    	region:'center',
-    	    	xtype: 'MyWindow'
-            },
-            {
-            	region:'north',
-            	html: '<h1 class="x-panel-header" align="right">欢迎用户</h1>',
-            }
-    	]    	 
+	Ext.create('MyApp.view.MyWindow', {
+    	renderTo:mycontent  	 
     });
 	//Ext.getCmp('AllJobPanel').store.load();
 	

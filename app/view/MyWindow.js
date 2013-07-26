@@ -3,11 +3,10 @@ Ext.define('MyApp.view.MyWindow', {
     alias : 'widget.MyWindow',
     autoShow: true,
     height: 500,
-    width: 858,
     layout: {
         type: 'absolute'
     },
-    title: 'CreateWindow',
+    title: '用户系统',
     maximizable: true,
     MyRender:function(value){
     	if(value=="1"){
