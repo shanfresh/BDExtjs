@@ -31,7 +31,6 @@
 
 	    function deleteRow($JobName,$UserName){
 	    	$this->load->database();
-	    	
 	    	$result=$this->db->query("select count(*) as totalcount from appop where JobName=? AND UserName=?",array($JobName,$UserName));
 	    	$row = $result->row_array(); 
 	    	if($row['totalcount']==0){
@@ -87,14 +86,14 @@
 			}
 			return $result;
 	    }
-	    
+	    //是否添加Approval
 	    function MarkAsApproval($JOBIDS){
 	    	$this->load->database();
 	    	$result=array();
 	    	$this->db->query("lock TABLES appop WRITE,appop as t1 READ");
 	    	foreach ($JOBIDS as $JobID){
-	    		$query=$this->db->query("insert into appop(JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime) select JobName,UserName,3,AppInfo,JobInfo,SubmitTime,now() from appop as t1 where ID=?",$JobID);
-	    		if($this->db->affected_rows()<0){
+	    		$query=$this->db->query("UPDATE appop SET Review=1,ApprovalTime=now() where ID=?",$JobID);
+	    		if($this->db->affected_rows()==0){
 	    			$result['Msg']=mysql_error();
 	    			$this->db->query("unlock tables");
 	    			$this->db->query("FLUSH TABLES");
@@ -112,8 +111,8 @@
 	    	$result=array();
 	    	$this->db->query("lock TABLES appop WRITE,appop as t1 READ");
 	    	foreach ($JOBIDS as $JobID){
-	    		$query=$this->db->query("insert into appop(JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime,EffectTime) select JobName,UserName,5,AppInfo,JobInfo,SubmitTime,ApprovalTime,now() from appop as t1 where ID=?",$JobID);
-	    		if($this->db->affected_rows()<0){
+	    		$query=$this->db->query("UPDATE appop SET Online=1,EffectTime=now() where ID=? AND Review=1",$JobID);
+	    		if($this->db->affected_rows()==0){
 	    			$result['Msg']=mysql_error();
 	    			$this->db->query("unlock tables");
 	    			$this->db->query("FLUSH TABLES");

@@ -25,9 +25,9 @@ Ext.define('MyApp.view.AdminPanel', {
     title: '管理员窗口',
     MyRender:function(value){
     	if(value=="1"){
-    		return "已提交";
+    		return "用户新创建";
     	}else if(value==2){
-    		return "已修改";
+    		return "用户修改";
     	}else if(value==3){
     		return "通过审核";
     	}else if(value==4){
@@ -78,6 +78,10 @@ Ext.define('MyApp.view.AdminPanel', {
                                     {
                                         xtype: 'menuitem',
                                         text: '通过'
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        text: '重新修改'
                                     },
                                     {
                                         xtype: 'menuitem',
@@ -134,14 +138,12 @@ Ext.define('MyApp.view.AdminPanel', {
                         {
                         	xtype: 'panel',
                             height: 337,
-                            width: 200,
                             title: '等待处理',
                             items: [
                                 {
                                     xtype: 'gridpanel',
                                     id:'AdminAppop',
                                     height: 477,
-                                    width: 840,
                                     title: '待处理提交',
                                     store: 'AppopStore',
                                     columns: [
@@ -164,20 +166,16 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
-                                            text: 'Status',
+                                            text: '类型',
                                             renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'SubmitTime',
-                                            text: 'SubmitTime',
-                                            flex:3
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            dataIndex: 'ApprovalTime',
-                                            text: 'ApprovalTime'
+                                            text: '提交时间',
+                                            width:150
                                         }
+                                        
                                     ],
                                     selModel: Ext.create('Ext.selection.CheckboxModel', {
 
@@ -188,13 +186,11 @@ Ext.define('MyApp.view.AdminPanel', {
                         {
                         	xtype: 'panel',
                             height: 337,
-                            width: 200,
-                            title: '等待上线',
+                            title: '已审核,待上线',
                             items: [
                                 {
                                     xtype: 'gridpanel',
                                     height: 477,
-                                    width: 840,
                                     id:'AdminAppopPassed',
                                     title: '待上线',
                                     store: 'AppopPassedStore',
@@ -218,19 +214,20 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
-                                            text: 'Status',
+                                            text: '类型',
                                             renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'SubmitTime',
-                                            text: 'SubmitTime',
-                                            flex:3
+                                            text: '提交时间',
+                                            width:150
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'ApprovalTime',
-                                            text: 'ApprovalTime'
+                                            text: '审核时间',
+                                            width:150
                                         }
                                     ],
                                     selModel: Ext.create('Ext.selection.CheckboxModel', {
@@ -242,13 +239,11 @@ Ext.define('MyApp.view.AdminPanel', {
                         {
                         	xtype: 'panel',
                             height: 337,
-                            width: 200,
                             title: '已经上线',
                             items: [
                                 {
                                     xtype: 'gridpanel',
                                     height: 477,
-                                    width: 840,
                                     id:'AdminAppopOnline',
                                     title: '已经上线',
                                     store: 'AppopOnlineStore',
@@ -272,20 +267,28 @@ Ext.define('MyApp.view.AdminPanel', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'Status',
-                                            text: 'Status',
+                                            text: '类型',
                                             renderer:this.MyRender
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'SubmitTime',
-                                            text: 'SubmitTime',
-                                            flex:3
+                                            text: '提交时间',
+                                            width:150
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'ApprovalTime',
-                                            text: 'ApprovalTime'
+                                            text: '审核时间',
+                                            width:150
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'EffectTime',
+                                            text: '上线时间',
+                                            width:150
                                         }
+                                        
                                     ],
                                     selModel: Ext.create('Ext.selection.CheckboxModel', {
 

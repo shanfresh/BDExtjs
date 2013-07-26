@@ -8,7 +8,7 @@ class AppopControl extends CI_Controller{
 	function load(){
 		
 		$this->load->database();
-		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status in(1,2,4)');
+		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop WHERE Review=0 group by JobName) order by ID desc ');
 		$arr=array();
 		foreach ($query->result() as $row)
 		{
@@ -52,7 +52,8 @@ class AppopControl extends CI_Controller{
 	
 	function loadPassed(){
 		$this->load->database();
-		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status=3');
+		//$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status=3');
+		$query = $this->db->query('select * from appop where ID in (select max(ID) from appop where Review=1 AND Online=0 group by JobName) order by ID desc');
 		$arr=array();
 		if($query->num_rows()==0){
 			echo json_encode($arr);
@@ -80,7 +81,7 @@ class AppopControl extends CI_Controller{
 	}
 	function loadOnline(){
 		$this->load->database();
-		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop group by JobName) AND status=5');
+		$query = $this->db->query('select * from appop where ID in(select max(ID) from appop WHERE Review=1 AND Online=1 group by JobName) order by ID desc');
 		$arr=array();
 		if($query->num_rows()==0){
 			echo json_encode($arr);
@@ -91,7 +92,8 @@ class AppopControl extends CI_Controller{
 			$arr2 = array ('ID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,
 			'Status'=>$row->Status,
 			'SubmitTime'=>$row->SubmitTime,
-			'ApprovalTime'=>$row->ApprovalTime			
+			'ApprovalTime'=>$row->ApprovalTime,
+			'EffectTime'=>$row->EffectTime				
 			);
 			
 			array_push($arr, $arr2);
