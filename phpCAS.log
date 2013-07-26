@@ -1,0 +1,940 @@
+E1A9 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+E1A9 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:7]
+E1A9 .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+E1A9 .|    |    Starting a new session [client.php:680]
+E1A9 .|    <= ''
+E1A9 .<= ''
+E1A9 .=> phpCAS::setNoCasServerValidation() [test.php:9]
+E1A9 .<= ''
+E1A9 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+E1A9 .|    Not a logout request [client.php:1305]
+E1A9 .<= ''
+E1A9 .=> phpCAS::forceAuthentication() [test.php:12]
+E1A9 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+E1A9 .|    |    => CASClient::isAuthenticated() [client.php:952]
+E1A9 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+E1A9 .|    |    |    |    no user found [client.php:1229]
+E1A9 .|    |    |    <= false
+E1A9 .|    |    |    no ticket found [client.php:1110]
+E1A9 .|    |    <= false
+E1A9 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+E1A9 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+E1A9 .|    |    |    |    => CASClient::getURL() [client.php:439]
+E1A9 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+E1A9 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+E1A9 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+E1A9 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+E1A9 .|    |    |    exit()
+E1A9 .|    |    |    -
+E1A9 .|    |    -
+E1A9 .|    -
+6F55 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+6F55 .=> phpCAS::client('2.0', 'bb-art-dev09.bb01.baidu.com', 443, '') [test.php:7]
+6F55 .|    => CASClient::CASClient('2.0', false, 'bb-art-dev09.bb01.baidu.com', 443, '', true) [CAS.php:374]
+6F55 .|    |    Starting a new session [client.php:680]
+6F55 .|    <= ''
+6F55 .<= ''
+6F55 .=> phpCAS::setNoCasServerValidation() [test.php:9]
+6F55 .<= ''
+6F55 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+6F55 .|    Not a logout request [client.php:1305]
+6F55 .<= ''
+6F55 .=> phpCAS::forceAuthentication() [test.php:12]
+6F55 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+6F55 .|    |    => CASClient::isAuthenticated() [client.php:952]
+6F55 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+6F55 .|    |    |    |    no user found [client.php:1229]
+6F55 .|    |    |    <= false
+6F55 .|    |    |    no ticket found [client.php:1110]
+6F55 .|    |    <= false
+6F55 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+6F55 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+6F55 .|    |    |    |    => CASClient::getURL() [client.php:439]
+6F55 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+6F55 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+6F55 .|    |    |    <= 'https://bb-art-dev09.bb01.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+6F55 .|    |    |    Redirect to : https://bb-art-dev09.bb01.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+6F55 .|    |    |    exit()
+6F55 .|    |    |    -
+6F55 .|    |    -
+6F55 .|    -
+92CD .START phpCAS-1.2.1 ****************** [CAS.php:473]
+92CD .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:7]
+92CD .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+92CD .|    |    Starting a new session [client.php:680]
+92CD .|    <= ''
+92CD .<= ''
+92CD .=> phpCAS::setNoCasServerValidation() [test.php:9]
+92CD .<= ''
+92CD .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+92CD .|    Not a logout request [client.php:1305]
+92CD .<= ''
+92CD .=> phpCAS::forceAuthentication() [test.php:12]
+92CD .|    => CASClient::forceAuthentication() [CAS.php:1016]
+92CD .|    |    => CASClient::isAuthenticated() [client.php:952]
+92CD .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+92CD .|    |    |    |    no user found [client.php:1229]
+92CD .|    |    |    <= false
+92CD .|    |    |    no ticket found [client.php:1110]
+92CD .|    |    <= false
+92CD .|    |    => CASClient::redirectToCas(false) [client.php:961]
+92CD .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+92CD .|    |    |    |    => CASClient::getURL() [client.php:439]
+92CD .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+92CD .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+92CD .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+92CD .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+92CD .|    |    |    exit()
+92CD .|    |    |    -
+92CD .|    |    -
+92CD .|    -
+221A .START phpCAS-1.2.1 ****************** [CAS.php:473]
+221A .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:7]
+221A .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+221A .|    |    Starting a new session [client.php:680]
+221A .|    <= ''
+221A .<= ''
+221A .=> phpCAS::setNoCasServerValidation() [test.php:9]
+221A .<= ''
+221A .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+221A .|    Not a logout request [client.php:1305]
+221A .<= ''
+221A .=> phpCAS::forceAuthentication() [test.php:12]
+221A .|    => CASClient::forceAuthentication() [CAS.php:1016]
+221A .|    |    => CASClient::isAuthenticated() [client.php:952]
+221A .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+221A .|    |    |    |    no user found [client.php:1229]
+221A .|    |    |    <= false
+221A .|    |    |    no ticket found [client.php:1110]
+221A .|    |    <= false
+221A .|    |    => CASClient::redirectToCas(false) [client.php:961]
+221A .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+221A .|    |    |    |    => CASClient::getURL() [client.php:439]
+221A .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+221A .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+221A .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+221A .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+221A .|    |    |    exit()
+221A .|    |    |    -
+221A .|    |    -
+221A .|    -
+43D8 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+43D8 .=> phpCAS::client('2.0', 'jx-iit-dev00.jx.baidu.com', 443, '') [test.php:6]
+43D8 .|    => CASClient::CASClient('2.0', false, 'jx-iit-dev00.jx.baidu.com', 443, '', true) [CAS.php:374]
+43D8 .|    |    Starting a new session [client.php:680]
+43D8 .|    <= ''
+43D8 .<= ''
+43D8 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+43D8 .<= ''
+43D8 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+43D8 .|    Not a logout request [client.php:1305]
+43D8 .<= ''
+43D8 .=> phpCAS::forceAuthentication() [test.php:14]
+43D8 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+43D8 .|    |    => CASClient::isAuthenticated() [client.php:952]
+43D8 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+43D8 .|    |    |    |    no user found [client.php:1229]
+43D8 .|    |    |    <= false
+43D8 .|    |    |    no ticket found [client.php:1110]
+43D8 .|    |    <= false
+43D8 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+43D8 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+43D8 .|    |    |    |    => CASClient::getURL() [client.php:439]
+43D8 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+43D8 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+43D8 .|    |    |    <= 'https://jx-iit-dev00.jx.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+43D8 .|    |    |    Redirect to : https://jx-iit-dev00.jx.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+43D8 .|    |    |    exit()
+43D8 .|    |    |    -
+43D8 .|    |    -
+43D8 .|    -
+E105 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+E105 .=> phpCAS::client('2.0', 'jx-iit-dev00.jx.baidu.com', 443, '') [test.php:6]
+E105 .|    => CASClient::CASClient('2.0', false, 'jx-iit-dev00.jx.baidu.com', 443, '', true) [CAS.php:374]
+E105 .|    |    Starting a new session [client.php:680]
+E105 .|    <= ''
+E105 .<= ''
+E105 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+E105 .<= ''
+E105 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+E105 .|    Not a logout request [client.php:1305]
+E105 .<= ''
+E105 .=> phpCAS::forceAuthentication() [test.php:14]
+E105 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+E105 .|    |    => CASClient::isAuthenticated() [client.php:952]
+E105 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+E105 .|    |    |    |    no user found [client.php:1229]
+E105 .|    |    |    <= false
+E105 .|    |    |    no ticket found [client.php:1110]
+E105 .|    |    <= false
+E105 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+E105 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+E105 .|    |    |    |    => CASClient::getURL() [client.php:439]
+E105 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+E105 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+E105 .|    |    |    <= 'https://jx-iit-dev00.jx.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+E105 .|    |    |    Redirect to : https://jx-iit-dev00.jx.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+E105 .|    |    |    exit()
+E105 .|    |    |    -
+E105 .|    |    -
+E105 .|    -
+B217 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+B217 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:6]
+B217 .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+B217 .|    |    Starting a new session [client.php:680]
+B217 .|    <= ''
+B217 .<= ''
+B217 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+B217 .<= ''
+B217 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+B217 .|    Not a logout request [client.php:1305]
+B217 .<= ''
+B217 .=> phpCAS::forceAuthentication() [test.php:14]
+B217 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+B217 .|    |    => CASClient::isAuthenticated() [client.php:952]
+B217 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+B217 .|    |    |    |    no user found [client.php:1229]
+B217 .|    |    |    <= false
+B217 .|    |    |    no ticket found [client.php:1110]
+B217 .|    |    <= false
+B217 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+B217 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+B217 .|    |    |    |    => CASClient::getURL() [client.php:439]
+B217 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+B217 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+B217 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+B217 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+B217 .|    |    |    exit()
+B217 .|    |    |    -
+B217 .|    |    -
+B217 .|    -
+DC63 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+DC63 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:6]
+DC63 .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+DC63 .|    |    Starting a new session [client.php:680]
+DC63 .|    <= ''
+DC63 .<= ''
+DC63 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+DC63 .<= ''
+DC63 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+DC63 .|    Not a logout request [client.php:1305]
+DC63 .<= ''
+DC63 .=> phpCAS::forceAuthentication() [test.php:14]
+DC63 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+DC63 .|    |    => CASClient::isAuthenticated() [client.php:952]
+DC63 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+DC63 .|    |    |    |    no user found [client.php:1229]
+DC63 .|    |    |    <= false
+DC63 .|    |    |    no ticket found [client.php:1110]
+DC63 .|    |    <= false
+DC63 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+DC63 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+DC63 .|    |    |    |    => CASClient::getURL() [client.php:439]
+DC63 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+DC63 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+DC63 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+DC63 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+DC63 .|    |    |    exit()
+DC63 .|    |    |    -
+DC63 .|    |    -
+DC63 .|    -
+EB3C .START phpCAS-1.2.1 ****************** [CAS.php:473]
+EB3C .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:10]
+EB3C .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+EB3C .|    |    Starting a new session [client.php:680]
+EB3C .|    <= ''
+EB3C .<= ''
+EB3C .=> phpCAS::setNoCasServerValidation() [test.php:15]
+EB3C .<= ''
+EB3C .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+EB3C .|    Not a logout request [client.php:1305]
+EB3C .<= ''
+EB3C .=> phpCAS::forceAuthentication() [test.php:18]
+EB3C .|    => CASClient::forceAuthentication() [CAS.php:1016]
+EB3C .|    |    => CASClient::isAuthenticated() [client.php:952]
+EB3C .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+EB3C .|    |    |    |    no user found [client.php:1229]
+EB3C .|    |    |    <= false
+EB3C .|    |    |    no ticket found [client.php:1110]
+EB3C .|    |    <= false
+EB3C .|    |    => CASClient::redirectToCas(false) [client.php:961]
+EB3C .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+EB3C .|    |    |    |    => CASClient::getURL() [client.php:439]
+EB3C .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+EB3C .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+EB3C .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+EB3C .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+EB3C .|    |    |    exit()
+EB3C .|    |    |    -
+EB3C .|    |    -
+EB3C .|    -
+D53F .START phpCAS-1.2.1 ****************** [CAS.php:473]
+D53F .=> phpCAS::client('2.0', 'itebeta.baidu.com', 8100, '') [test.php:10]
+D53F .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 8100, '', true) [CAS.php:374]
+D53F .|    |    Starting a new session [client.php:680]
+D53F .|    <= ''
+D53F .<= ''
+D53F .=> phpCAS::setNoCasServerValidation() [test.php:16]
+D53F .<= ''
+D53F .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+D53F .|    Not a logout request [client.php:1305]
+D53F .<= ''
+D53F .=> phpCAS::forceAuthentication() [test.php:19]
+D53F .|    => CASClient::forceAuthentication() [CAS.php:1016]
+D53F .|    |    => CASClient::isAuthenticated() [client.php:952]
+D53F .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+D53F .|    |    |    |    no user found [client.php:1229]
+D53F .|    |    |    <= false
+D53F .|    |    |    no ticket found [client.php:1110]
+D53F .|    |    <= false
+D53F .|    |    => CASClient::redirectToCas(false) [client.php:961]
+D53F .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+D53F .|    |    |    |    => CASClient::getURL() [client.php:439]
+D53F .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+D53F .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+D53F .|    |    |    <= 'https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+D53F .|    |    |    Redirect to : https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+D53F .|    |    |    exit()
+D53F .|    |    |    -
+D53F .|    |    -
+D53F .|    -
+4559 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+4559 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 8100, '') [test.php:17]
+4559 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 8100, '', true) [CAS.php:374]
+4559 .|    |    Starting a new session [client.php:680]
+4559 .|    <= ''
+4559 .<= ''
+4559 .=> phpCAS::setNoCasServerValidation() [test.php:26]
+4559 .<= ''
+4559 .=> phpCAS::forceAuthentication() [test.php:29]
+4559 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+4559 .|    |    => CASClient::isAuthenticated() [client.php:952]
+4559 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+4559 .|    |    |    |    no user found [client.php:1229]
+4559 .|    |    |    <= false
+4559 .|    |    |    no ticket found [client.php:1110]
+4559 .|    |    <= false
+4559 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+4559 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+4559 .|    |    |    |    => CASClient::getURL() [client.php:439]
+4559 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+4559 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+4559 .|    |    |    <= 'https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+4559 .|    |    |    Redirect to : https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+4559 .|    |    |    exit()
+4559 .|    |    |    -
+4559 .|    |    -
+4559 .|    -
+40C0 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+40C0 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 8100, '') [test.php:17]
+40C0 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 8100, '', true) [CAS.php:374]
+40C0 .|    |    Starting a new session [client.php:680]
+40C0 .|    <= ''
+40C0 .<= ''
+40C0 .=> phpCAS::setNoCasServerValidation() [test.php:26]
+40C0 .<= ''
+40C0 .=> phpCAS::forceAuthentication() [test.php:29]
+40C0 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+40C0 .|    |    => CASClient::isAuthenticated() [client.php:952]
+40C0 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+40C0 .|    |    |    |    no user found [client.php:1229]
+40C0 .|    |    |    <= false
+40C0 .|    |    |    no ticket found [client.php:1110]
+40C0 .|    |    <= false
+40C0 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+40C0 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+40C0 .|    |    |    |    => CASClient::getURL() [client.php:439]
+40C0 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+40C0 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+40C0 .|    |    |    <= 'https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+40C0 .|    |    |    Redirect to : https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+40C0 .|    |    |    exit()
+40C0 .|    |    |    -
+40C0 .|    |    -
+40C0 .|    -
+4975 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+4975 .=> phpCAS::client('2.0', 'jx-iit-dev00.jx.baidu.com', 443, '') [test.php:6]
+4975 .|    => CASClient::CASClient('2.0', false, 'jx-iit-dev00.jx.baidu.com', 443, '', true) [CAS.php:374]
+4975 .|    |    Starting a new session [client.php:680]
+4975 .|    <= ''
+4975 .<= ''
+4975 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+4975 .<= ''
+4975 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+4975 .|    Not a logout request [client.php:1305]
+4975 .<= ''
+4975 .=> phpCAS::forceAuthentication() [test.php:14]
+4975 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+4975 .|    |    => CASClient::isAuthenticated() [client.php:952]
+4975 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+4975 .|    |    |    |    no user found [client.php:1229]
+4975 .|    |    |    <= false
+4975 .|    |    |    no ticket found [client.php:1110]
+4975 .|    |    <= false
+4975 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+4975 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+4975 .|    |    |    |    => CASClient::getURL() [client.php:439]
+4975 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+4975 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+4975 .|    |    |    <= 'https://jx-iit-dev00.jx.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+4975 .|    |    |    Redirect to : https://jx-iit-dev00.jx.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+4975 .|    |    |    exit()
+4975 .|    |    |    -
+4975 .|    |    -
+4975 .|    -
+B0A9 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+B0A9 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:6]
+B0A9 .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+B0A9 .|    |    Starting a new session [client.php:680]
+B0A9 .|    <= ''
+B0A9 .<= ''
+B0A9 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+B0A9 .<= ''
+B0A9 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+B0A9 .|    Not a logout request [client.php:1305]
+B0A9 .<= ''
+B0A9 .=> phpCAS::forceAuthentication() [test.php:14]
+B0A9 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+B0A9 .|    |    => CASClient::isAuthenticated() [client.php:952]
+B0A9 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+B0A9 .|    |    |    |    no user found [client.php:1229]
+B0A9 .|    |    |    <= false
+B0A9 .|    |    |    no ticket found [client.php:1110]
+B0A9 .|    |    <= false
+B0A9 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+B0A9 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+B0A9 .|    |    |    |    => CASClient::getURL() [client.php:439]
+B0A9 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+B0A9 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+B0A9 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+B0A9 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+B0A9 .|    |    |    exit()
+B0A9 .|    |    |    -
+B0A9 .|    |    -
+B0A9 .|    -
+9C26 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+9C26 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [test.php:6]
+9C26 .|    => CASClient::CASClient('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:374]
+9C26 .|    |    Starting a new session [client.php:680]
+9C26 .|    <= ''
+9C26 .<= ''
+9C26 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+9C26 .<= ''
+9C26 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+9C26 .|    Not a logout request [client.php:1305]
+9C26 .<= ''
+9C26 .=> phpCAS::forceAuthentication() [test.php:14]
+9C26 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+9C26 .|    |    => CASClient::isAuthenticated() [client.php:952]
+9C26 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+9C26 .|    |    |    |    no user found [client.php:1229]
+9C26 .|    |    |    <= false
+9C26 .|    |    |    no ticket found [client.php:1110]
+9C26 .|    |    <= false
+9C26 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+9C26 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+9C26 .|    |    |    |    => CASClient::getURL() [client.php:439]
+9C26 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+9C26 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+9C26 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+9C26 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+9C26 .|    |    |    exit()
+9C26 .|    |    |    -
+9C26 .|    |    -
+9C26 .|    -
+90E5 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+90E5 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+90E5 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+90E5 .|    |    Starting a new session [client.php:680]
+90E5 .|    <= ''
+90E5 .<= ''
+90E5 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+90E5 .<= ''
+90E5 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+90E5 .|    Not a logout request [client.php:1305]
+90E5 .<= ''
+90E5 .=> phpCAS::forceAuthentication() [test.php:14]
+90E5 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+90E5 .|    |    => CASClient::isAuthenticated() [client.php:952]
+90E5 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+90E5 .|    |    |    |    no user found [client.php:1229]
+90E5 .|    |    |    <= false
+90E5 .|    |    |    no ticket found [client.php:1110]
+90E5 .|    |    <= false
+90E5 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+90E5 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+90E5 .|    |    |    |    => CASClient::getURL() [client.php:439]
+90E5 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+90E5 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+90E5 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+90E5 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+90E5 .|    |    |    exit()
+90E5 .|    |    |    -
+90E5 .|    |    -
+90E5 .|    -
+B7B9 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+B7B9 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+B7B9 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+B7B9 .|    |    Starting a new session [client.php:680]
+B7B9 .|    <= ''
+B7B9 .<= ''
+B7B9 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+B7B9 .<= ''
+B7B9 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+B7B9 .|    Not a logout request [client.php:1305]
+B7B9 .<= ''
+B7B9 .=> phpCAS::forceAuthentication() [test.php:14]
+B7B9 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+B7B9 .|    |    => CASClient::isAuthenticated() [client.php:952]
+B7B9 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+B7B9 .|    |    |    |    no user found [client.php:1229]
+B7B9 .|    |    |    <= false
+B7B9 .|    |    |    no ticket found [client.php:1110]
+B7B9 .|    |    <= false
+B7B9 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+B7B9 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+B7B9 .|    |    |    |    => CASClient::getURL() [client.php:439]
+B7B9 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+B7B9 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+B7B9 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+B7B9 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+B7B9 .|    |    |    exit()
+B7B9 .|    |    |    -
+B7B9 .|    |    -
+B7B9 .|    -
+FE0C .START phpCAS-1.2.1 ****************** [CAS.php:473]
+FE0C .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+FE0C .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+FE0C .|    |    Starting a new session [client.php:680]
+FE0C .|    |    ST or PT 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' found [client.php:766]
+FE0C .|    <= ''
+FE0C .<= ''
+FE0C .=> phpCAS::setNoCasServerValidation() [test.php:11]
+FE0C .<= ''
+FE0C .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+FE0C .|    Not a logout request [client.php:1305]
+FE0C .<= ''
+FE0C .=> phpCAS::forceAuthentication() [test.php:14]
+FE0C .|    => CASClient::forceAuthentication() [CAS.php:1016]
+FE0C .|    |    => CASClient::isAuthenticated() [client.php:952]
+FE0C .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+FE0C .|    |    |    |    no user found [client.php:1229]
+FE0C .|    |    |    <= false
+FE0C .|    |    |    PT `ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' is present [client.php:1083]
+FE0C .|    |    |    => CASClient::validatePT('', NULL, NULL) [client.php:1084]
+FE0C .|    |    |    |     [client.php:2698]
+FE0C .|    |    |    |    => CASClient::getURL() [client.php:550]
+FE0C .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+FE0C .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+FE0C .|    |    |    |    => CAS_CurlRequest::_sendRequest() [AbstractRequest.php:188]
+FE0C .|    |    |    |    |    Response Body: 
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationSuccess>
+		<cas:user>shanjixi</cas:user>
+
+
+	</cas:authenticationSuccess>
+</cas:serviceResponse>
+ [CurlRequest.php:129]
+FE0C .|    |    |    |    <= true
+FE0C .|    |    |    |    => CASClient::readExtraAttributesCas20(DOMNodeList::__set_state(array())) [client.php:2760]
+FE0C .|    |    |    |    |    Testing for rubycas style attributes [client.php:1653]
+FE0C .|    |    |    |    <= ''
+FE0C .|    |    |    |    => CASClient::renameSession('ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap') [client.php:2789]
+FE0C .|    |    |    |    |    Session ID: ST295491c7s3ASfAgtRDFMMFMyP6uuap [client.php:826]
+FE0C .|    |    |    |    |    Restoring old session vars [client.php:829]
+FE0C .|    |    |    |    <= ''
+FE0C .|    |    |    <= true
+FE0C .|    |    |    PT `ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' was validated [client.php:1085]
+FE0C .|    |    |    => CASClient::getURL() [client.php:1136]
+FE0C .|    |    |    <= 'http://localhost/FirstTry/test.php'
+FE0C .|    |    |    => CASClient::getURL() [client.php:1137]
+FE0C .|    |    |    <= 'http://localhost/FirstTry/test.php'
+FE0C .|    |    |    Prepare redirect to : http://localhost/FirstTry/test.php [client.php:1137]
+FE0C .|    |    |    exit()
+FE0C .|    |    |    -
+FE0C .|    |    -
+FE0C .|    -
+88CA .START phpCAS-1.2.1 ****************** [CAS.php:473]
+88CA .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+88CA .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+88CA .|    |    Starting a new session [client.php:680]
+88CA .|    |    ST or PT 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' found [client.php:766]
+88CA .|    <= ''
+88CA .<= ''
+88CA .=> phpCAS::setNoCasServerValidation() [test.php:11]
+88CA .<= ''
+88CA .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+88CA .|    Not a logout request [client.php:1305]
+88CA .<= ''
+88CA .=> phpCAS::forceAuthentication() [test.php:14]
+88CA .|    => CASClient::forceAuthentication() [CAS.php:1016]
+88CA .|    |    => CASClient::isAuthenticated() [client.php:952]
+88CA .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+88CA .|    |    |    |    no user found [client.php:1229]
+88CA .|    |    |    <= false
+88CA .|    |    |    PT `ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' is present [client.php:1083]
+88CA .|    |    |    => CASClient::validatePT('', NULL, NULL) [client.php:1084]
+88CA .|    |    |    |     [client.php:2698]
+88CA .|    |    |    |    => CASClient::getURL() [client.php:550]
+88CA .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+88CA .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+88CA .|    |    |    |    => CAS_CurlRequest::_sendRequest() [AbstractRequest.php:188]
+88CA .|    |    |    |    |    Response Body: 
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationFailure code='INVALID_TICKET'>
+		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized
+	</cas:authenticationFailure>
+</cas:serviceResponse>
+ [CurlRequest.php:129]
+88CA .|    |    |    |    <= true
+88CA .|    |    |    |    => CASClient::authError('PT not validated', 'https://itebeta.baidu.com/proxyValidate?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php&ticket=ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap', false, false, '<cas:serviceResponse xmlns:cas=\'http://www.yale.edu/tp/cas\'>	<cas:authenticationFailure code=\'INVALID_TICKET\'>		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized	</cas:authenticationFailure></cas:serviceResponse>', 'INVALID_TICKET', 'ticket \'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap\' not recognized') [client.php:2780]
+88CA .|    |    |    |    |    => CASClient::getURL() [client.php:2935]
+88CA .|    |    |    |    |    <= 'http://localhost/FirstTry/test.php'
+88CA .|    |    |    |    |    CAS URL: https://itebeta.baidu.com/proxyValidate?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php&ticket=ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap [client.php:2936]
+88CA .|    |    |    |    |    Authentication failure: PT not validated [client.php:2937]
+88CA .|    |    |    |    |    Reason: [INVALID_TICKET] CAS error: ticket 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' not recognized [client.php:2952]
+88CA .|    |    |    |    |    CAS response: <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationFailure code='INVALID_TICKET'>
+		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized
+	</cas:authenticationFailure>
+</cas:serviceResponse> [client.php:2956]
+88CA .|    |    |    |    |    exit()
+88CA .|    |    |    |    |    -
+88CA .|    |    |    |    -
+88CA .|    |    |    -
+88CA .|    |    -
+88CA .|    -
+14B0 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+14B0 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+14B0 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+14B0 .|    |    Starting a new session [client.php:680]
+14B0 .|    |    ST or PT 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' found [client.php:766]
+14B0 .|    <= ''
+14B0 .<= ''
+14B0 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+14B0 .<= ''
+14B0 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+14B0 .|    Not a logout request [client.php:1305]
+14B0 .<= ''
+14B0 .=> phpCAS::forceAuthentication() [test.php:14]
+14B0 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+14B0 .|    |    => CASClient::isAuthenticated() [client.php:952]
+14B0 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+14B0 .|    |    |    |    no user found [client.php:1229]
+14B0 .|    |    |    <= false
+14B0 .|    |    |    PT `ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' is present [client.php:1083]
+14B0 .|    |    |    => CASClient::validatePT('', NULL, NULL) [client.php:1084]
+14B0 .|    |    |    |     [client.php:2698]
+14B0 .|    |    |    |    => CASClient::getURL() [client.php:550]
+14B0 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+14B0 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+14B0 .|    |    |    |    => CAS_CurlRequest::_sendRequest() [AbstractRequest.php:188]
+14B0 .|    |    |    |    |    Response Body: 
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationFailure code='INVALID_TICKET'>
+		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized
+	</cas:authenticationFailure>
+</cas:serviceResponse>
+ [CurlRequest.php:129]
+14B0 .|    |    |    |    <= true
+14B0 .|    |    |    |    => CASClient::authError('PT not validated', 'https://itebeta.baidu.com/proxyValidate?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php&ticket=ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap', false, false, '<cas:serviceResponse xmlns:cas=\'http://www.yale.edu/tp/cas\'>	<cas:authenticationFailure code=\'INVALID_TICKET\'>		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized	</cas:authenticationFailure></cas:serviceResponse>', 'INVALID_TICKET', 'ticket \'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap\' not recognized') [client.php:2780]
+14B0 .|    |    |    |    |    => CASClient::getURL() [client.php:2935]
+14B0 .|    |    |    |    |    <= 'http://localhost/FirstTry/test.php'
+14B0 .|    |    |    |    |    CAS URL: https://itebeta.baidu.com/proxyValidate?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php&ticket=ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap [client.php:2936]
+14B0 .|    |    |    |    |    Authentication failure: PT not validated [client.php:2937]
+14B0 .|    |    |    |    |    Reason: [INVALID_TICKET] CAS error: ticket 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' not recognized [client.php:2952]
+14B0 .|    |    |    |    |    CAS response: <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationFailure code='INVALID_TICKET'>
+		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized
+	</cas:authenticationFailure>
+</cas:serviceResponse> [client.php:2956]
+14B0 .|    |    |    |    |    exit()
+14B0 .|    |    |    |    |    -
+14B0 .|    |    |    |    -
+14B0 .|    |    |    -
+14B0 .|    |    -
+14B0 .|    -
+1576 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+1576 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+1576 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+1576 .|    |    Starting a new session [client.php:680]
+1576 .|    |    ST or PT 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' found [client.php:766]
+1576 .|    <= ''
+1576 .<= ''
+1576 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+1576 .<= ''
+1576 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+1576 .|    Not a logout request [client.php:1305]
+1576 .<= ''
+1576 .=> phpCAS::forceAuthentication() [test.php:14]
+1576 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+1576 .|    |    => CASClient::isAuthenticated() [client.php:952]
+1576 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+1576 .|    |    |    |    no user found [client.php:1229]
+1576 .|    |    |    <= false
+1576 .|    |    |    PT `ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' is present [client.php:1083]
+1576 .|    |    |    => CASClient::validatePT('', NULL, NULL) [client.php:1084]
+1576 .|    |    |    |     [client.php:2698]
+1576 .|    |    |    |    => CASClient::getURL() [client.php:550]
+1576 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+1576 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+1576 .|    |    |    |    => CAS_CurlRequest::_sendRequest() [AbstractRequest.php:188]
+1576 .|    |    |    |    |    Response Body: 
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationFailure code='INVALID_TICKET'>
+		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized
+	</cas:authenticationFailure>
+</cas:serviceResponse>
+ [CurlRequest.php:129]
+1576 .|    |    |    |    <= true
+1576 .|    |    |    |    => CASClient::authError('PT not validated', 'https://itebeta.baidu.com/proxyValidate?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php&ticket=ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap', false, false, '<cas:serviceResponse xmlns:cas=\'http://www.yale.edu/tp/cas\'>	<cas:authenticationFailure code=\'INVALID_TICKET\'>		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized	</cas:authenticationFailure></cas:serviceResponse>', 'INVALID_TICKET', 'ticket \'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap\' not recognized') [client.php:2780]
+1576 .|    |    |    |    |    => CASClient::getURL() [client.php:2935]
+1576 .|    |    |    |    |    <= 'http://localhost/FirstTry/test.php'
+1576 .|    |    |    |    |    CAS URL: https://itebeta.baidu.com/proxyValidate?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php&ticket=ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap [client.php:2936]
+1576 .|    |    |    |    |    Authentication failure: PT not validated [client.php:2937]
+1576 .|    |    |    |    |    Reason: [INVALID_TICKET] CAS error: ticket 'ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap' not recognized [client.php:2952]
+1576 .|    |    |    |    |    CAS response: <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationFailure code='INVALID_TICKET'>
+		ticket &#039;ST-295491-c7s3ASfAgtRDFMMFMyP6-uuap&#039; not recognized
+	</cas:authenticationFailure>
+</cas:serviceResponse> [client.php:2956]
+1576 .|    |    |    |    |    exit()
+1576 .|    |    |    |    |    -
+1576 .|    |    |    |    -
+1576 .|    |    |    -
+1576 .|    |    -
+1576 .|    -
+D127 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+D127 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+D127 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+D127 .|    |    Starting a new session [client.php:680]
+D127 .|    <= ''
+D127 .<= ''
+D127 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+D127 .<= ''
+D127 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+D127 .|    Not a logout request [client.php:1305]
+D127 .<= ''
+D127 .=> phpCAS::forceAuthentication() [test.php:14]
+D127 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+D127 .|    |    => CASClient::isAuthenticated() [client.php:952]
+D127 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+D127 .|    |    |    |    no user found [client.php:1229]
+D127 .|    |    |    <= false
+D127 .|    |    |    no ticket found [client.php:1110]
+D127 .|    |    <= false
+D127 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+D127 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+D127 .|    |    |    |    => CASClient::getURL() [client.php:439]
+D127 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+D127 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+D127 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+D127 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+D127 .|    |    |    exit()
+D127 .|    |    |    -
+D127 .|    |    -
+D127 .|    -
+8B35 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+8B35 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+8B35 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+8B35 .|    |    Starting a new session [client.php:680]
+8B35 .|    |    ST or PT 'ST-295500-qTUTBvyEnwjBdArnbREy-uuap' found [client.php:766]
+8B35 .|    <= ''
+8B35 .<= ''
+8B35 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+8B35 .<= ''
+8B35 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+8B35 .|    Not a logout request [client.php:1305]
+8B35 .<= ''
+8B35 .=> phpCAS::forceAuthentication() [test.php:14]
+8B35 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+8B35 .|    |    => CASClient::isAuthenticated() [client.php:952]
+8B35 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+8B35 .|    |    |    |    no user found [client.php:1229]
+8B35 .|    |    |    <= false
+8B35 .|    |    |    PT `ST-295500-qTUTBvyEnwjBdArnbREy-uuap' is present [client.php:1083]
+8B35 .|    |    |    => CASClient::validatePT('', NULL, NULL) [client.php:1084]
+8B35 .|    |    |    |     [client.php:2698]
+8B35 .|    |    |    |    => CASClient::getURL() [client.php:550]
+8B35 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+8B35 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+8B35 .|    |    |    |    => CAS_CurlRequest::_sendRequest() [AbstractRequest.php:188]
+8B35 .|    |    |    |    |    Response Body: 
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationSuccess>
+		<cas:user>shanjixi</cas:user>
+
+
+	</cas:authenticationSuccess>
+</cas:serviceResponse>
+ [CurlRequest.php:129]
+8B35 .|    |    |    |    <= true
+8B35 .|    |    |    |    => CASClient::readExtraAttributesCas20(DOMNodeList::__set_state(array())) [client.php:2760]
+8B35 .|    |    |    |    |    Testing for rubycas style attributes [client.php:1653]
+8B35 .|    |    |    |    <= ''
+8B35 .|    |    |    |    => CASClient::renameSession('ST-295500-qTUTBvyEnwjBdArnbREy-uuap') [client.php:2789]
+8B35 .|    |    |    |    |    Session ID: ST295500qTUTBvyEnwjBdArnbREyuuap [client.php:826]
+8B35 .|    |    |    |    |    Restoring old session vars [client.php:829]
+8B35 .|    |    |    |    <= ''
+8B35 .|    |    |    <= true
+8B35 .|    |    |    PT `ST-295500-qTUTBvyEnwjBdArnbREy-uuap' was validated [client.php:1085]
+8B35 .|    |    |    => CASClient::getURL() [client.php:1136]
+8B35 .|    |    |    <= 'http://localhost/FirstTry/test.php'
+8B35 .|    |    |    => CASClient::getURL() [client.php:1137]
+8B35 .|    |    |    <= 'http://localhost/FirstTry/test.php'
+8B35 .|    |    |    Prepare redirect to : http://localhost/FirstTry/test.php [client.php:1137]
+8B35 .|    |    |    exit()
+8B35 .|    |    |    -
+8B35 .|    |    -
+8B35 .|    -
+1BDF .START phpCAS-1.2.1 ****************** [CAS.php:473]
+1BDF .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+1BDF .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+1BDF .|    |    Starting a new session [client.php:680]
+1BDF .|    <= ''
+1BDF .<= ''
+1BDF .=> phpCAS::setNoCasServerValidation() [test.php:11]
+1BDF .<= ''
+1BDF .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+1BDF .|    Not a logout request [client.php:1305]
+1BDF .<= ''
+1BDF .=> phpCAS::forceAuthentication() [test.php:14]
+1BDF .|    => CASClient::forceAuthentication() [CAS.php:1016]
+1BDF .|    |    => CASClient::isAuthenticated() [client.php:952]
+1BDF .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+1BDF .|    |    |    |    no user found [client.php:1229]
+1BDF .|    |    |    <= false
+1BDF .|    |    |    no ticket found [client.php:1110]
+1BDF .|    |    <= false
+1BDF .|    |    => CASClient::redirectToCas(false) [client.php:961]
+1BDF .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+1BDF .|    |    |    |    => CASClient::getURL() [client.php:439]
+1BDF .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+1BDF .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+1BDF .|    |    |    <= 'http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+1BDF .|    |    |    Redirect to : http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+1BDF .|    |    |    exit()
+1BDF .|    |    |    -
+1BDF .|    |    -
+1BDF .|    -
+78EA .START phpCAS-1.2.1 ****************** [CAS.php:473]
+78EA .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+78EA .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+78EA .|    |    Starting a new session [client.php:680]
+78EA .|    <= ''
+78EA .<= ''
+78EA .=> phpCAS::setNoCasServerValidation() [test.php:11]
+78EA .<= ''
+78EA .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+78EA .|    Not a logout request [client.php:1305]
+78EA .<= ''
+78EA .=> phpCAS::forceAuthentication() [test.php:14]
+78EA .|    => CASClient::forceAuthentication() [CAS.php:1016]
+78EA .|    |    => CASClient::isAuthenticated() [client.php:952]
+78EA .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+78EA .|    |    |    |    no user found [client.php:1229]
+78EA .|    |    |    <= false
+78EA .|    |    |    no ticket found [client.php:1110]
+78EA .|    |    <= false
+78EA .|    |    => CASClient::redirectToCas(false) [client.php:961]
+78EA .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+78EA .|    |    |    |    => CASClient::getURL() [client.php:439]
+78EA .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+78EA .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+78EA .|    |    |    <= 'http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+78EA .|    |    |    Redirect to : http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+78EA .|    |    |    exit()
+78EA .|    |    |    -
+78EA .|    |    -
+78EA .|    -
+DCF9 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+DCF9 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+DCF9 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+DCF9 .|    |    Starting a new session [client.php:680]
+DCF9 .|    <= ''
+DCF9 .<= ''
+DCF9 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+DCF9 .<= ''
+DCF9 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+DCF9 .|    Not a logout request [client.php:1305]
+DCF9 .<= ''
+DCF9 .=> phpCAS::forceAuthentication() [test.php:14]
+DCF9 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+DCF9 .|    |    => CASClient::isAuthenticated() [client.php:952]
+DCF9 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+DCF9 .|    |    |    |    no user found [client.php:1229]
+DCF9 .|    |    |    <= false
+DCF9 .|    |    |    no ticket found [client.php:1110]
+DCF9 .|    |    <= false
+DCF9 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+DCF9 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+DCF9 .|    |    |    |    => CASClient::getURL() [client.php:439]
+DCF9 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+DCF9 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+DCF9 .|    |    |    <= 'http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+DCF9 .|    |    |    Redirect to : http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+DCF9 .|    |    |    exit()
+DCF9 .|    |    |    -
+DCF9 .|    |    -
+DCF9 .|    -
+4C00 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+4C00 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+4C00 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+4C00 .|    |    Starting a new session [client.php:680]
+4C00 .|    <= ''
+4C00 .<= ''
+4C00 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+4C00 .<= ''
+4C00 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+4C00 .|    Not a logout request [client.php:1305]
+4C00 .<= ''
+4C00 .=> phpCAS::forceAuthentication() [test.php:14]
+4C00 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+4C00 .|    |    => CASClient::isAuthenticated() [client.php:952]
+4C00 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+4C00 .|    |    |    |    no user found [client.php:1229]
+4C00 .|    |    |    <= false
+4C00 .|    |    |    no ticket found [client.php:1110]
+4C00 .|    |    <= false
+4C00 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+4C00 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+4C00 .|    |    |    |    => CASClient::getURL() [client.php:439]
+4C00 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+4C00 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+4C00 .|    |    |    <= 'http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+4C00 .|    |    |    Redirect to : http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+4C00 .|    |    |    exit()
+4C00 .|    |    |    -
+4C00 .|    |    -
+4C00 .|    -
+73D3 .START phpCAS-1.2.1 ****************** [CAS.php:473]
+73D3 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [test.php:6]
+73D3 .|    => CASClient::CASClient('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:374]
+73D3 .|    |    Starting a new session [client.php:680]
+73D3 .|    <= ''
+73D3 .<= ''
+73D3 .=> phpCAS::setNoCasServerValidation() [test.php:11]
+73D3 .<= ''
+73D3 .=> CASClient::handleLogoutRequests(false, false) [CAS.php:1227]
+73D3 .|    Not a logout request [client.php:1305]
+73D3 .<= ''
+73D3 .=> phpCAS::forceAuthentication() [test.php:14]
+73D3 .|    => CASClient::forceAuthentication() [CAS.php:1016]
+73D3 .|    |    => CASClient::isAuthenticated() [client.php:952]
+73D3 .|    |    |    => CASClient::wasPreviouslyAuthenticated() [client.php:1048]
+73D3 .|    |    |    |    no user found [client.php:1229]
+73D3 .|    |    |    <= false
+73D3 .|    |    |    no ticket found [client.php:1110]
+73D3 .|    |    <= false
+73D3 .|    |    => CASClient::redirectToCas(false) [client.php:961]
+73D3 .|    |    |    => CASClient::getServerLoginURL(false, false) [client.php:1245]
+73D3 .|    |    |    |    => CASClient::getURL() [client.php:439]
+73D3 .|    |    |    |    |    Final URI: http://localhost/FirstTry/test.php [client.php:2850]
+73D3 .|    |    |    |    <= 'http://localhost/FirstTry/test.php'
+73D3 .|    |    |    <= 'http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php'
+73D3 .|    |    |    Redirect to : http://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%2FFirstTry%2Ftest.php [client.php:1247]
+73D3 .|    |    |    exit()
+73D3 .|    |    |    -
+73D3 .|    |    -
+73D3 .|    -
