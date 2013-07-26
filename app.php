@@ -1,4 +1,6 @@
-
+<?php 
+	include_once('authentication.php');
+?>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,6 +9,10 @@
     <link rel="stylesheet" href="http://cdn.sencha.com/ext/gpl/4.2.1/resources/ext-theme-classic/ext-theme-classic-all.css">
     <script type="text/javascript" src="app.js"></script>
 </head>
-
-<body></body>
+<body>
+<?php echo phpCAS::getUser(); ?>
+<div id="content">
+222
+</div>
+</body>
 </html>

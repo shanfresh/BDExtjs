@@ -42,6 +42,7 @@ Ext.onReady(function() {
 	console.log("Admin is Ready");
     Ext.create('Ext.container.Viewport', {
     	layout: 'border',
+    	renderTo: Ext.getBody(),
     	items:[{
     		region: 'center',
             xtype: 'MyAdminPanel'
