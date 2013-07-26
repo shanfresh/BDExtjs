@@ -1,5 +1,12 @@
 <?php 
 	include_once('authentication.php');
+	if(phpCAS::getUser()=="Shanjixi2"){
+		
+	}else{
+		header("Location: Forbidden.html");  
+		exit;
+	}
+	
 ?>
 
 <!DOCTYPE html>

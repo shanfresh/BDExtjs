@@ -1,5 +1,6 @@
 <?php 
 	include_once('authentication.php');
+	
 ?>
 <html>
 <head>
@@ -10,8 +11,8 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body width="100%">
-<h3 align="right">欢迎您:<?php echo phpCAS::getUser(); ?>  &nbsp&nbsp<a href="?logout=">登出</a></h3>
-<div id="content" width="100%" align="center">
+	<h3 align="right">欢迎您:<?php echo phpCAS::getUser(); ?> &nbsp&nbsp<a href="?logout=">登出</a></h3>
+	<div id="content" width="100%">
 </div>
 </body>
 </html>
