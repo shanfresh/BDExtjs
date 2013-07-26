@@ -49,6 +49,6 @@ Ext.onReady(function() {
     	}
     	]    	 
     });
-	Ext.getCmp('AllJobPanel').store.load();
+	//Ext.getCmp('AllJobPanel').store.load();
 	
 });

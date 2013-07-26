@@ -44,7 +44,6 @@ Ext.define('MyApp.view.AdminPanel', {
     },
     initComponent: function() {
         var me = this;
-
         Ext.applyIf(me, {
             dockedItems: [
                 {
@@ -300,7 +299,6 @@ Ext.define('MyApp.view.AdminPanel', {
                 }
             ]
         });
-
         me.callParent(arguments);
     }
 
