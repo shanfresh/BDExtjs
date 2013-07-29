@@ -1,15 +1,3 @@
-<?php 
-	include_once('authentication.php');
-
-	if(phpCAS::getUser()=="Shanjixi"){
-		
-	}else{
-		header("Location: Forbidden.html");  
-		exit;
-	}
-	
-?>
-
 <!DOCTYPE html>
 
 <!-- Auto Generated with Sencha Architect -->
