@@ -13,6 +13,7 @@
 <body width="100%">
 	<h3 align="right">欢迎您:<?php echo phpCAS::getUser(); ?> &nbsp&nbsp<a href="?logout=">登出</a></h3>
 	<div id="content">
+
 </div>
 </body>
 </html>

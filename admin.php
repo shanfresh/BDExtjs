@@ -1,5 +1,6 @@
 <?php 
 	include_once('authentication.php');
+
 	if(phpCAS::getUser()=="Shanjixi"){
 		
 	}else{
