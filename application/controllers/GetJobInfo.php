@@ -76,7 +76,7 @@ class GetJobInfo extends CI_Controller {
 	}
 	function index(){
 		$this->load->database();
-		$query = $this->db->query('select job_id,job_name,job_guarantee,input_path,run_cmd from jobinfo order by job_id desc limit 10');
+		$query = $this->db->query('select job_id,job_name,job_guarantee,input_path,run_cmd from jobinfo order by job_id desc');
 		$arr=array();
 		foreach ($query->result() as $row)
 		{
