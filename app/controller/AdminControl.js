@@ -19,6 +19,10 @@ Ext.define('MyApp.controller.AdminControl', {
        		'splitbutton[text=管理员上线] > menu > menuitem[text=单一上线]':{
        			//alert("点击详细信息了");
        			click:this.MarkSelectAsOnline
+       		},
+       		'splitbutton[text=管理员回滚] > menu > menuitem[text=回滚]':{
+       			//alert("点击详细信息了");
+       			click:this.RollBackSelect
        		}
        	});
        	
@@ -126,6 +130,9 @@ Ext.define('MyApp.controller.AdminControl', {
             },
             params:{ID:Ext.encode(ids)}
         });
+    	
+    }
+    function RollBackSelect(){
     	
     }
     
