@@ -1,7 +1,6 @@
 Ext.define('MyApp.controller.AdminControl', {
 	extend:'Ext.app.Controller',
-	views:['MyApp.view.AdminPanel','MyApp.view.AppopDetailWindow'
-	       ],
+	views:['MyApp.view.AdminPanel','MyApp.view.AppopDetailWindow','MyApp.view.AdminRollWindow'],
     requires:[
                'MyApp.model.AppInfoModel'
            ],
@@ -22,7 +21,7 @@ Ext.define('MyApp.controller.AdminControl', {
        		},
        		'splitbutton[text=管理员回滚] > menu > menuitem[text=回滚]':{
        			//alert("点击详细信息了");
-       			click:this.RollBackSelect
+       			click:this.RollBackSelected
        		}
        	});
        	
@@ -131,8 +130,19 @@ Ext.define('MyApp.controller.AdminControl', {
             params:{ID:Ext.encode(ids)}
         });
     	
-    }
-    function RollBackSelect(){
+    },
+    RollBackSelected:function (){
+    	var TabbedPanel=Ext.ComponentQuery.query('MyAdminPanel > tabpanel')[0];
+    	var allpanel=TabbedPanel.getActiveTab().down('gridpanel');
+    	var sm=allpanel.getSelectionModel();
+    	var selected=sm.getSelection();
+    	if(selected.length!=1){
+    		alert("尚未选择或者选择数目大于1");
+    	}
+    	var rollwindow=Ext.widget('AdminRollWindow');
+    	rollwindow.show();
+    	
+    	
     	
     }
     
