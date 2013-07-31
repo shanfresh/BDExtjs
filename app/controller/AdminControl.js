@@ -22,6 +22,9 @@ Ext.define('MyApp.controller.AdminControl', {
        		'splitbutton[text=管理员回滚] > menu > menuitem[text=回滚]':{
        			//alert("点击详细信息了");
        			click:this.RollBackSelected
+       		},
+       		'AdminRollWindow >button[text=区间筛选]':{
+       			click:this.ClickFilterButton
        		}
        	});
        	
@@ -136,14 +139,25 @@ Ext.define('MyApp.controller.AdminControl', {
     	var allpanel=TabbedPanel.getActiveTab().down('gridpanel');
     	var sm=allpanel.getSelectionModel();
     	var selected=sm.getSelection();
-    	if(selected.length!=1){
-    		alert("尚未选择或者选择数目大于1");
-    	}
+//    	if(selected.length!=1){
+//    		alert("尚未选择或者选择数目大于1");
+//    	}
     	var rollwindow=Ext.widget('AdminRollWindow');
     	rollwindow.show();
+    	var jobname=selected[0].get('JobName');
+    	var operation = new Ext.data.Operation({
+    	    action: 'read',
+    	    page:jobname
+    	});
+    	var store=rollwindow.down('gridpanel').store;
+    	store.read(operation);
     	
     	
     	
+    },
+    ClickFilterButton:function(){
+    	var RollPanel=Ext.getCmp('adminrollpanel');
+    	RollPanel.close();
     }
     
     

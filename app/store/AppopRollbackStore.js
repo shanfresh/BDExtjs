@@ -15,7 +15,9 @@ Ext.define('MyApp.store.AppopRollbackStore', {
                 url : 'AppopControl/loadRollbackList',
                 reader: {
                     type: 'json'
-                }
+                },
+        		startParam:null,
+        		limitParam:null
             }
         }, cfg)]);
     }

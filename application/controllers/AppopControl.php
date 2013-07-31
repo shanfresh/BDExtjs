@@ -165,5 +165,16 @@ class AppopControl extends CI_Controller{
 		$result=$this->UserAppopModel->UserModify($JobName,$UserName,$appInfoStr,$jobInfoStr);
 		echo json_encode($result);
 	}
+	function loadRollbackList(){
+		$jobName=$_GET['page'];
+		$this->load->model('RollbackModel');
+		$alllist=$this->RollbackModel->loadListByJobName($jobName);
+		$result=array();
+		foreach ($alllist as $value) {
+			array_push($result,$value);
+		}
+		echo json_encode($result);
+		
+	}
 }
 ?>

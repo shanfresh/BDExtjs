@@ -8,6 +8,7 @@ Ext.define('MyApp.view.AdminRollWindow', {
     layout: {
         type: 'absolute'
     },
+    id:'adminrollpanel',
     initComponent: function() {
         var me = this;
         Ext.applyIf(me, {
@@ -25,27 +26,55 @@ Ext.define('MyApp.view.AdminRollWindow', {
 							{
 							    xtype: 'gridcolumn',
 							    dataIndex: 'ID',
-							    text: 'ID'
+							    text: 'ID',
+							    width:30
 							},
                             {
                                 xtype: 'gridcolumn',
                                 dataIndex: 'JobName',
-                                text: 'JobName'
+                                text: 'JobName',
+                                flex:3
                             },
                             {
                                 xtype: 'gridcolumn',
-                                dataIndex: 'CreateTime',
-                                text: '创建时间'
+                                dataIndex: 'SubmitTime',
+                                text: '提交时间',
+                                flex:1
                             },
                             {
                                 xtype: 'gridcolumn',
                                 dataIndex: 'EffectTime',
-                                text: '生效时间'
+                                text: '生效时间',
+                                flex:1
                             }
                            
                         ]
 
+                    },
+                      {
+                        xtype: 'datefield',
+                        x: 10,
+                        y: 10,
+                        fieldLabel: '开始时间',
+                        labelWidth: 80,
+                        width:200
+                        
+                    },
+                    {
+                        xtype: 'datefield',
+                        x: 250,
+                        y: 10,
+                        width:200,
+                        fieldLabel: '结束时间',
+                        labelWidth: 80
+                    },
+                    {
+                        xtype: 'button',
+                        x: 500,
+                        y: 10,
+                        text: '区间筛选'
                     }
+                    
                 ]	
         });
         me.callParent(arguments);
