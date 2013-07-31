@@ -109,32 +109,39 @@ class AppopControl extends CI_Controller{
 		$this->load->model('AppOPModel');
 		
 		$result=$AppAndJobInfo=$this->AppOPModel->MarkAsOnline($IDs);
-		$totalresult;
-		if($result['success']){
-			//此处调用zk相关操作，逐一进行。
-			$sum=$this->AppOPModel->loadByIds($IDs);
-			$executeResult=array();
-			$index=0;
-			$sumflag=true;
-			foreach ($sum as $value) {
-				$JobAppName=$value['JobName'];
-				$token = strtok($JobAppName, ".");
-				$AppName=$token;
-				$token = strtok(".");
-				$JobName=$token;
-				$appinfo=$value['AppInfo'];
-				$jobinfo=$value['JobInfo'];
-				$flag=$this->ZkopModel->SetAppAndJobInfo($JobName,$AppName,$appinfo,$jobinfo);
-				$executeResult[$index]=$flag;
-				$sumflag=$sumflag&&$flag;
+		$ZKresult;
+		
+		$sum=$this->AppOPModel->loadByIds($IDs);
+		$executeResult=array();
+		$index=0;
+		$executeResult;
+		$sumflag=true;
+		foreach ($sum as $value) {
+			$JobAppName=$value['JobName'];
+			$token = strtok($JobAppName, ".");
+			$AppName=$token;
+			$token = strtok(".");
+			$JobName=$token;
+			$appinfo=$value['AppInfo'];
+			$jobinfo=$value['JobInfo'];
+			$flag=$this->ZkopModel->SetAppAndJobInfo($JobName,$AppName,$appinfo,$jobinfo);
+			$executeResult[$index]=array('ID'=>$value['ID'],'Flag'=>$flag);
+			$sumflag=$sumflag&&$flag;
+		}
+		$ZKresult['success']=$sumflag;
+		$ZKresult['executeResult']=$executeResult;			
+		$totalresult=array();
+		foreach ($executeResult as $value) {
+			if($value['Flag']){
+				$result=$AppAndJobInfo=$this->AppOPModel->MarkAsOnline(array($value['ID']));
+			}else{
+				$result=false;
 			}
-			$totalresult['success']=$sumflag;
-			$totalresult['msg']=$executeResult;			
-			
-		}else{
-			$AppAndJobInfo=$this->AppOPModel->MarkAsOffline($IDs);
-		}	
-		echo json_encode($totalresult);
+			array_push($totalresult,$result);
+		}
+		
+	
+		echo json_encode($ZKresult);
 	}
 	
 	function UserModifyByJobName(){
