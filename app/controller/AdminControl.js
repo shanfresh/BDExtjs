@@ -23,9 +23,15 @@ Ext.define('MyApp.controller.AdminControl', {
        			//alert("点击详细信息了");
        			click:this.RollBackSelected
        		},
-       		'AdminRollWindow >button[text=区间筛选]':{
+       		'AdminRollWindow > button[text=区间筛选]':{
        			click:this.ClickFilterButton
-       		}
+       		},
+       		'AdminRollWindow > gridpanel':{
+       			selectionchange:this.OnChaneSelect
+       		},
+       		'AdminRollWindow > button[text=回滚]':{
+       			click:this.ConfirmRollback
+       		},
        	});
        	
     },
@@ -143,6 +149,11 @@ Ext.define('MyApp.controller.AdminControl', {
 //    		alert("尚未选择或者选择数目大于1");
 //    	}
     	var rollwindow=Ext.widget('AdminRollWindow');
+    	rollwindow.title=rollwindow.title+"--"+selected[0].get('JobName');
+    	var jobappname=selected[0].get('JobName');
+    	var split=jobappname.split(".")
+    	rollwindow.setValue(split[0],split[1]);
+    	rollwindow.appjobname=jobappname;
     	rollwindow.show();
     	var jobname=selected[0].get('JobName');
     	var operation = new Ext.data.Operation({
@@ -156,8 +167,16 @@ Ext.define('MyApp.controller.AdminControl', {
     	
     },
     ClickFilterButton:function(){
-    	var RollPanel=Ext.getCmp('adminrollpanel');
-    	RollPanel.close();
+    	var RollWindow=Ext.getCmp('adminrollwindow');
+    	
+    },
+    OnChaneSelect:function(current,target,selected){
+    	var changeID=target[0].get('ID');
+    	var rollwindow=Ext.getCmp('adminrollwindow');
+    	rollwindow.down('textfield[name=RollBackTo]').setValue(changeID);
+    },
+    ConfirmRollback:function(){
+    	alert("确定要回滚");
     }
     
     

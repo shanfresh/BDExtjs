@@ -159,8 +159,6 @@ class AppopControl extends CI_Controller{
 		foreach ($arrayres2 as $value) {
 			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r\n";
 		}
-	
-		
 		$UserName=$this->session->userdata('UserName');
 		$result=$this->UserAppopModel->UserModify($JobName,$UserName,$appInfoStr,$jobInfoStr);
 		echo json_encode($result);
