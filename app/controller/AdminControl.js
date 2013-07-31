@@ -176,7 +176,34 @@ Ext.define('MyApp.controller.AdminControl', {
     	rollwindow.down('textfield[name=RollBackTo]').setValue(changeID);
     },
     ConfirmRollback:function(){
-    	alert("确定要回滚");
+    	var rollwindow=Ext.getCmp('adminrollwindow');
+    	var targetID=rollwindow.down('textfield[name=RollBackTo]').getValue();
+    	if(isNaN(targetID)){
+    		Ext.Msg.alert("错误","要回滚的目标ID不正确");
+    		return;
+    	}
+    	Ext.Ajax.request({
+            method:'POST',
+            url:'RollBackControl/doRollBack',
+            success:function(response,opts){
+            	 var result = Ext.decode(response.responseText);
+            	 if(result.success){
+            		 Ext.Msg.alert('回滚成功',result.msg)
+            	 }else{
+                     Ext.Msg.show({
+                         title : '错误',
+                         msg : result.msg,
+                         buttons : Ext.Msg.OK,
+                         icon : Ext.Msg.ERROR
+                     });
+            	 }
+            	
+            },
+            failure:function(){
+                Ext.Msg.alert('回滚错误');
+            },
+            params:{ID:Ext.encode(targetID),JobName:Ext.encode(rollwindow.appjobname)}
+        });
     }
     
     

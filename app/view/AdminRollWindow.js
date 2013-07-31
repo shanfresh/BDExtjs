@@ -17,6 +17,19 @@ Ext.define('MyApp.view.AdminRollWindow', {
     	jobtextfield.setValue(jobname);
     	
     },
+    MyRender:function(value){
+    	if(value=="1"){
+    		return "用户新创建";
+    	}else if(value==2){
+    		return "用户修改";
+    	}else if(value==3){
+    		return "通过审核";
+    	}else if(value==4){
+    		return "用户删除";
+    	}else if(value==9){
+    		return "Admin回滚";
+    	}        
+    },
     initComponent: function() {
         var me = this;
         Ext.applyIf(me, {
@@ -42,6 +55,13 @@ Ext.define('MyApp.view.AdminRollWindow', {
                                 dataIndex: 'JobName',
                                 text: 'JobName',
                                 flex:3
+                            },
+                            {
+                                xtype: 'gridcolumn',
+                                dataIndex: 'Status',
+                                text: '状态',
+                                width:80,
+                                renderer:this.MyRender
                             },
                             {
                                 xtype: 'gridcolumn',
