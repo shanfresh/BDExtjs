@@ -4,6 +4,7 @@ class AppopControl extends CI_Controller{
 		parent::__construct();
 		$this->load->library('session');
 	 	$this->session->set_userdata('UserName', 'Shanjixi');
+	 	$this->load->model("zoopkeeper/ZkopModel");
 	}
 	function load(){
 		
@@ -100,13 +101,40 @@ class AppopControl extends CI_Controller{
 		}
 		echo json_encode($arr);
 	}
-	//通过多个申请单据
+	//通过多个申请单据,所有值赋值为1，表明上线了，但没有ZoopKeeper相关操作
 	function MarkAsOnline(){
 		$this->load->database();
 		$IDs=json_decode($_POST['ID']);
 		$this->load->model('AppOPModel');
-		$result=$AppAndJobInfo=$this->AppOPModel->MarkAsOnline($IDs);	
-		echo json_encode($result);
+		$this->load->model('AppOPModel');
+		
+		$result=$AppAndJobInfo=$this->AppOPModel->MarkAsOnline($IDs);
+		$totalresult;
+		if($result['success']){
+			//此处调用zk相关操作，逐一进行。
+			$sum=$this->AppOPModel->loadByIds($IDs);
+			$executeResult=array();
+			$index=0;
+			$sumflag=true;
+			foreach ($sum as $value) {
+				$JobAppName=$value['JobName'];
+				$token = strtok($JobAppName, ".");
+				$AppName=$token;
+				$token = strtok(".");
+				$JobName=$token;
+				$appinfo=$value['AppInfo'];
+				$jobinfo=$value['JobInfo'];
+				$flag=$this->ZkopModel->SetAppAndJobInfo($JobName,$AppName,$appinfo,$jobinfo);
+				$executeResult[$index]=$flag;
+				$sumflag=$sumflag&&$flag;
+			}
+			$totalresult['success']=$sumflag;
+			$totalresult['msg']=$executeResult;			
+			
+		}else{
+			$AppAndJobInfo=$this->AppOPModel->MarkAsOffline($IDs);
+		}	
+		echo json_encode($totalresult);
 	}
 	
 	function UserModifyByJobName(){

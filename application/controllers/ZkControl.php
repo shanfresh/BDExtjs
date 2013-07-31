@@ -13,9 +13,7 @@ class ZkControl extends CI_Controller{
 		}else {
 			echo "failed";
 			echo $content;
-		}
-
-		
+		}		
 	}
 	function LoadJobbyName($appname="tieba-ocr-pic",$jobname="run-ocr-pic"){
 		

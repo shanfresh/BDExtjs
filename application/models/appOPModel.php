@@ -105,13 +105,12 @@
 	    	$result['success']=true;
 	    	return $result;			    	
 	    }
-	    
-	    function MarkAsOnline($JOBIDS){
+	    function OnlineOp($JobID,$value){
 	    	$this->load->database();
 	    	$result=array();
 	    	$this->db->query("lock TABLES appop WRITE,appop as t1 READ");
-	    	foreach ($JOBIDS as $JobID){
-	    		$query=$this->db->query("UPDATE appop SET Online=1,EffectTime=now() where ID=? AND Review=1",$JobID);
+	    	foreach ($JobID as $JobID){
+	    		$query=$this->db->query("UPDATE appop SET Online=?,EffectTime=now() where ID=? AND Review=1",array($value,$JobID));
 	    		if($this->db->affected_rows()==0){
 	    			$result['Msg']=mysql_error();
 	    			$this->db->query("unlock tables");
@@ -122,8 +121,32 @@
 	    	$this->db->query("unlock tables");
 	    	$this->db->query("FLUSH TABLES");
 	    	$result['success']=true;
-	    	return $result;			    	
+	    	return $result;
 	    }
+	    
+	    function MarkAsOnline($JOBIDS){
+	    	return $this->OnlineOp($JOBIDS,1);	    	
+	    }
+	    
+	    function MarkAsOffline($JoBIDS){
+	    	return $this->OnlineOp($JOBIDS,0);
+	    }
+	    
+	    //$IDS是一个数组
+		function loadByIds($IDs){
+			$this->load->database();
+			$query = $this->db->query('select ID,JobName,UserName,Status,AppInfo,JobInfo from appop where ID in (?)',$IDs);
+			$sum=array();
+			foreach ($query->result() as $row){
+				$arr=array('ID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,
+				'Status'=>$row->Status,
+				'AppInfo'=>$row->AppInfo,
+				'JobInfo'=>$row->JobInfo);
+				array_push($sum, $arr);			
+			}
+			return $sum;	
+			
+		}
 	}
 
 ?>
