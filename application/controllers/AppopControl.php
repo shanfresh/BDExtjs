@@ -165,6 +165,8 @@ class AppopControl extends CI_Controller{
 	}
 	function loadRollbackList(){
 		$jobName=$_GET['page'];
+		$starttime=$_GET['starttime'];
+		$endtime=$_GET['starttime'];
 		$this->load->model('RollbackModel');
 		$alllist=$this->RollbackModel->loadListByJobName($jobName);
 		$result=array();

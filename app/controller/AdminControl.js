@@ -167,8 +167,16 @@ Ext.define('MyApp.controller.AdminControl', {
     	
     },
     ClickFilterButton:function(){
-    	var RollWindow=Ext.getCmp('adminrollwindow');
-    	
+    	var rollwindow=Ext.getCmp('adminrollwindow');
+    	var starttime=rollwindow.down('datefield[fieldLabel=开始时间]').getValue();    	
+    	var endtime=rollwindow.down('datefield[fieldLabel=结束时间]').getValue();
+    	var operation = new Ext.data.Operation({
+    	    action: 'read',
+    	    page:rollwindow.appjobname,
+    	    params:{starttime:starttime,endtime:endtime}
+    	});
+    	var store=rollwindow.down('gridpanel').store;
+    	store.read(operation);
     },
     OnChaneSelect:function(current,target,selected){
     	var changeID=target[0].get('ID');
