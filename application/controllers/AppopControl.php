@@ -159,11 +159,35 @@ class AppopControl extends CI_Controller{
 		foreach ($arrayres2 as $value) {
 			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r\n";
 		}
-	
-		
 		$UserName=$this->session->userdata('UserName');
 		$result=$this->UserAppopModel->UserModify($JobName,$UserName,$appInfoStr,$jobInfoStr);
 		echo json_encode($result);
+	}
+	function loadRollbackList(){
+		$jobName=$_GET['page'];
+		date_default_timezone_set('PRC');
+	    if(isset($_GET["starttime"]))//是否存在"id"的参数
+        {
+            $starttime=$_GET["starttime"];//存在
+        }else{
+        	$starttime=0;
+        }
+		if(isset($_GET["endtime"]))//是否存在"id"的参数
+        {
+            $endtime=$_GET["endtime"];//存在
+        }else{
+        	$endtime=time();
+        }
+		$this->load->model('RollbackModel');
+		$starttime=date('Y-m-d H:i:s', $starttime);
+		$endtime=date('Y-m-d H:i:s',$endtime);
+		$alllist=$this->RollbackModel->loadListByJobNameAndDate($jobName,$starttime,$endtime);
+		$result=array();
+		foreach ($alllist as $value) {
+			array_push($result,$value);
+		}
+		echo json_encode($result);
+		
 	}
 }
 ?>
