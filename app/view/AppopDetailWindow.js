@@ -17,6 +17,7 @@ Ext.define('MyApp.view.AppopDetailWindow', {
     extend: 'Ext.window.Window',
     alias : 'widget.AppopDetailWindow',
     xtype: 'AppopDetailWindow',
+    id:'AppopDetailWindow',
     height: 484,
     width: 613,
     layout: {

@@ -37,8 +37,13 @@ Ext.define('MyApp.controller.AdminControl', {
     	if(selected.length!=1){
     		alert("尚未选择或者选择数目大于1");
     	}
+    	var oldCreatewindow=Ext.getCmp('AppopDetailWindow');
+    	if(oldCreatewindow!=null){
+    		oldCreatewindow.close();
+    	}
     	var createWindow=Ext.widget('AppopDetailWindow');
     	createWindow.show();
+    	createWindow.mask("Loading");
     	var target=selected[0];
     	var JobName=target.get("JobName");
     	var ID=target.get("ID");
@@ -55,6 +60,7 @@ Ext.define('MyApp.controller.AdminControl', {
             },
             params:{ID:Ext.encode(ID),jobname:Ext.encode(JobName)}
         });
+    	createWindow.unmask();
     	
     	
     },
