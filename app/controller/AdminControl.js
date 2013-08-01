@@ -19,6 +19,11 @@ Ext.define('MyApp.controller.AdminControl', {
        		'splitbutton[text=管理员上线] > menu > menuitem[text=单一上线]':{
        			//alert("点击详细信息了");
        			click:this.MarkSelectAsOnline
+       		},
+       		'tabpanel > panel > gridpanel':{
+       	        itemdblclick: function(dataview, record, item, index, e) {
+       	            this.ShowDetail();
+       	        }
        		}
        	});
        	

@@ -31,7 +31,7 @@ Ext.define('MyApp.controller.CreateControl', {
             },
     		'CreateWindow DetailInfoPanel  textareafield[name=RunCmd]': {
     			change:this.OnChangeCmdOrPath
-            }
+            },
     	    
     	});
     	//Ext.getCmp('updatebutton').click();
