@@ -85,8 +85,19 @@ function getDetail(target){
 	//alert(target.get("JobID")+" "+target.get("JobName")+" "+target.get("JobGuarantee")+" "+target.get("InputPath")+" "+target.get("RunCmd"));
 	var createWindow=Ext.widget('CreateWindow');
 	createWindow.show();
-	createWindow.down('AppInfoPanel').down('gridpanel').store.load();
-	createWindow.down('JobInfoPanel').down('gridpanel').store.load();
+	var split=target.get('JobName').split(".");
+	console.log("Get:"+split[0]+"-"+split[1]);
+	
+	var operation = new Ext.data.Operation({
+	    action: 'read',
+	    page:split[0]
+	});
+	var operation2 = new Ext.data.Operation({
+	    action: 'read',
+	    params:{appname:split[0],jobname:split[1]}
+	});
+	createWindow.down('AppInfoPanel').down('gridpanel').store.read(operation);
+	createWindow.down('JobInfoPanel').down('gridpanel').store.read(operation2);
 	createWindow.down('DetailInfoPanel').getForm().loadRecord(target);
 };
 function loadDetailToModifyWindow(selected,target){

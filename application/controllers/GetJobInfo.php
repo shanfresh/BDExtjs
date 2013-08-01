@@ -16,8 +16,74 @@ class GetJobInfo extends CI_Controller {
 	 	parent::__construct();
 	 	$this->load->library('session');
 	 	$this->session->set_userdata('UserName', 'Shanjixi');
+	 	$this->load->model("zoopkeeper/ZkopModel");	 	
 	}
-	function AppInfo()
+	function AppInfo(){
+		$appname=$_GET['page'];
+		$filename;
+		$filecontent;
+		$arr;
+		$flag=$this->ZkopModel->LoadAppInfo($appname,$filename,$filecontent);
+		if($flag){
+			$file = fopen($filename,"r") or exit("Unable to open file!");;
+			while(!feof($file))
+	  		{
+	  			$eachline=fgets($file);
+	  			$eachLineArray=array();
+	  			$lastPosition=0;
+	  			$newPosition=-1;
+	  			for($i=0;$i<2;$i++){
+	  				$newPosition=stripos($eachline," ",$lastPosition);
+	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
+	  				array_push($eachLineArray, $eachWord);
+	  				$lastPosition=$newPosition+1;
+	  			}
+	  			
+	  			$endWord=substr($eachline,$lastPosition);
+	  			$temp=array();
+				$temp['Name']=$eachLineArray[0];
+				$temp['Type']=$eachLineArray[1];
+				$temp['Value']=trim($endWord);
+				array_push($arr, $temp);
+				fclose($file);
+  		}
+		echo json_encode($arr);
+		}
+	}
+	function JobInfo(){
+		$appname=$_GET['appname'];
+		$jobname=$_GET['jobname'];
+		$filename;
+		$filecontent;
+		$arr;
+		$flag=$this->ZkopModel->LoadJobInfo($appname,$jobname,$filename,$filecontent);
+		if($flag){
+			$file = fopen($filename,"r") or exit("Unable to open file!");;
+			while(!feof($file))
+	  		{
+	  			$eachline=fgets($file);
+	  			$eachLineArray=array();
+	  			$lastPosition=0;
+	  			$newPosition=-1;
+	  			for($i=0;$i<2;$i++){
+	  				$newPosition=stripos($eachline," ",$lastPosition);
+	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
+	  				array_push($eachLineArray, $eachWord);
+	  				$lastPosition=$newPosition+1;
+	  			}
+	  			
+	  			$endWord=substr($eachline,$lastPosition);
+	  			$temp=array();
+				$temp['Name']=$eachLineArray[0];
+				$temp['Type']=$eachLineArray[1];
+				$temp['Value']=trim($endWord);
+				array_push($arr, $temp);
+				fclose($file);
+  		}
+		echo json_encode($arr);
+		}
+	}
+	function AppInfo_Old()
 	{
 		$arr=array();
 		$file = fopen("TemplateFile/First.txt","r") or exit("Unable to open file!");;
@@ -45,7 +111,7 @@ class GetJobInfo extends CI_Controller {
 
 		echo json_encode($arr);
 	}
-	function JobInfo()
+	function JobInfo_Old()
 	{
 		$arr=array();
 		$file = fopen("TemplateFile/Second.txt","r") or exit("Unable to open file!");;
