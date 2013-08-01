@@ -19,6 +19,18 @@ class RollbackModel extends CI_Model{
 		}
 	
 	}
+	function loadListByJobNameAndDate($jobName,$starttime,$endtime){
+		$query = $this->db->query('select * from appop where JobName=? and Online=1 and Status <>4 and EffectTime>=? AND EffectTime <=?',array($jobName,$starttime,$endtime));
+		if ($query->num_rows() > 0){
+			$result=array();
+			foreach ($query->result_array() as $row){
+				array_push($result, $row);
+			}
+			return $result;
+		}else{
+			return null;
+		}		
+	}
 	function doRollBack($jobname,$targetID,&$resultMsg){
 		$query=$this->db->query("select ID from appop where Online=1 AND JobName=? order by ID desc limit 1",$jobname);
 		if($query->num_rows()!=1){

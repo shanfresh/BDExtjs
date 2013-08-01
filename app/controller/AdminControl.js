@@ -168,20 +168,24 @@ Ext.define('MyApp.controller.AdminControl', {
     },
     ClickFilterButton:function(){
     	var rollwindow=Ext.getCmp('adminrollwindow');
-    	var starttime=rollwindow.down('datefield[fieldLabel=开始时间]').getValue();    	
-    	var endtime=rollwindow.down('datefield[fieldLabel=结束时间]').getValue();
+    	var starttime=rollwindow.down('datefield[fieldLabel=开始时间]').getValue().getTime( )/1000;    	
+    	var endtime=rollwindow.down('datefield[fieldLabel=结束时间]').getValue().getTime( )/1000+86400;
     	var operation = new Ext.data.Operation({
     	    action: 'read',
     	    page:rollwindow.appjobname,
     	    params:{starttime:starttime,endtime:endtime}
     	});
     	var store=rollwindow.down('gridpanel').store;
+    	store.removeAll(true);
     	store.read(operation);
     },
     OnChaneSelect:function(current,target,selected){
-    	var changeID=target[0].get('ID');
-    	var rollwindow=Ext.getCmp('adminrollwindow');
-    	rollwindow.down('textfield[name=RollBackTo]').setValue(changeID);
+    	if(target[0]!=null){
+    		var changeID=target[0].get('ID');
+        	var rollwindow=Ext.getCmp('adminrollwindow');
+        	rollwindow.down('textfield[name=RollBackTo]').setValue(changeID);
+    	}
+    	
     },
     ConfirmRollback:function(){
     	var rollwindow=Ext.getCmp('adminrollwindow');
