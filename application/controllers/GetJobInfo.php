@@ -29,12 +29,14 @@ class GetJobInfo extends CI_Controller {
 			while(!feof($file))
 	  		{
 	  			$eachline=fgets($file);
-	  			echo $eachline+"\n";
 	  			$eachLineArray=array();
 	  			$lastPosition=0;
 	  			$newPosition=-1;
 	  			for($i=0;$i<2;$i++){
 	  				$newPosition=stripos($eachline," ",$lastPosition);
+	  				if(!$newPosition){
+	  					continue;
+	  				}
 	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
 	  				array_push($eachLineArray, $eachWord);
 	  				$lastPosition=$newPosition+1;
