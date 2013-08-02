@@ -29,7 +29,6 @@ class GetJobInfo extends CI_Controller {
 			while(!feof($file))
 	  		{
 	  			$eachline=fgets($file);
-	  			echo $eachline+"\n";
 	  			$eachLineArray=array();
 	  			$lastPosition=0;
 	  			$newPosition=-1;
