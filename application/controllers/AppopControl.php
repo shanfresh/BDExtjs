@@ -124,7 +124,7 @@ class AppopControl extends CI_Controller{
 			$JobName=$token;
 			$appinfo=$value['AppInfo'];
 			$jobinfo=$value['JobInfo'];
-			$flag=$this->ZkopModel->SetAppAndJobInfo($JobName,$AppName,$appinfo,$jobinfo);
+			$flag=$this->ZkopModel->SetAppAndJobInfo($AppName,$JobName,$appinfo,$jobinfo);
 			$executeResult[$index]=array('ID'=>$value['ID'],'Flag'=>$flag);
 			$sumflag=$sumflag&&$flag;
 		}

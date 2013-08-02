@@ -68,7 +68,7 @@ class ZkopModel extends CI_Model{
 			return false;
 		}
 		$cmd=($this->path)."SET_APP_INFO ".$appname." ".$fileName;
-		//system($cmd,$resultvalue);
+		system($cmd,$resultvalue);
 	
 		echo $cmd;	
 		if($resultvalue==0)
@@ -86,7 +86,7 @@ class ZkopModel extends CI_Model{
 			return false;
 		}
 		$cmd=($this->path)."SET_JOB_INFO ".$appname." ".$jobname." ".$fileName;
-		//system($cmd,$resultvalue);
+		system($cmd,$resultvalue);
 		echo $cmd;
 		if($resultvalue==0)
 			return false;
