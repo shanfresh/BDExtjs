@@ -175,7 +175,7 @@ class GetJobInfo extends CI_Controller {
 			$eacharray=$this->AnalysePathAndCmd->analyse($row->JobInfo);
 			$inputpath=$eacharray['input_dir'];
 			$cmd=$eacharray['cmd'];
-			$arr2 = array ('JobID'=>$row->job_id,'AppopID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,'Status'=>$row->Status,'InputPath'=>$inputpath,'RunCmd'=>$cmd,'ApprovalTime'=>$row->ApprovalTime,'EffectTime'=>$row->EffectTime,'SubmitTime'=>$row->SubmitTime);
+			$arr2 = array ('JobID'=>$row->ID,'AppopID'=>$row->ID,'JobName'=>$row->JobName,'UserName'=>$row->UserName,'Status'=>$row->Status,'InputPath'=>$inputpath,'RunCmd'=>$cmd,'ApprovalTime'=>$row->ApprovalTime,'EffectTime'=>$row->EffectTime,'SubmitTime'=>$row->SubmitTime);
 			array_push($arr, $arr2);
 		}
 		echo json_encode($arr);
