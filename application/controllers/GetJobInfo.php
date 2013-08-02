@@ -61,7 +61,7 @@ class GetJobInfo extends CI_Controller {
 		$jobname=$_GET['jobname'];
 		$filename;
 		$filecontent;
-		$arr;
+		$arr=array();
 		$flag=$this->ZkopModel->LoadJobInfo($appname,$jobname,$filename,$filecontent);
 		if($flag){
 			$file = fopen($filename,"r") or exit("Unable to open file!");;
