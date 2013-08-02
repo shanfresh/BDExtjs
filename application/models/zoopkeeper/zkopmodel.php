@@ -30,7 +30,7 @@ class ZkopModel extends CI_Model{
 	function LoadJobInfo($appname,$jobname,&$filename,&$filecontent){
 		$temp=$this->tempDir;
 		$filename=$this->getAppTempFile($appname);
-		$cmd=($this->path)."GET_APP_INFO ".$appname." ".$jobname." ".">".$filename;
+		$cmd=($this->path)."GET_JOB_INFO ".$appname." ".$jobname." ".">".$filename;
 		system($cmd,$resultvalue);
 		if(file_exists($filename)){
 			$filecontent=fopen($filename,"r");
