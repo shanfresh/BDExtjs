@@ -58,7 +58,7 @@ Ext.define('MyApp.controller.CreateControl', {
         }
     },
     CommitAppInfo:function(action){
-    	Ext.Msg.alert('创建Basic JobInfo 成功', action.result.msg+action.result.newRecordID);
+    	//Ext.Msg.alert('创建Basic JobInfo 成功', action.result.msg+acjobaaction.result.appjobname);
     	console.log("创建AppInfo");
     	var button=Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
       	var countRows  = button.up().down('AppInfoPanel').down('gridpanel').store.getCount();

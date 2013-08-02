@@ -13,7 +13,7 @@ class CreateJob extends CI_Controller {
 		$result[0]=true;
 		$flag=true;
 		$NewID=1;
-		$jobappname=$_POST("JobName");
+		$jobappname=$_POST["JobName"];
 		if($flag){
 			$result=array();
 			$result['success']=$flag;
