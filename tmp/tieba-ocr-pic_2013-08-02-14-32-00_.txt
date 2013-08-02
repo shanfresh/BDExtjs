@@ -1,0 +1,4 @@
+fixed_grp NUM 1
+grp_rule STR unit_0=1-999
+init_grp_num NUM 100
+scheduler STR CsScheduler
