@@ -2,6 +2,7 @@
 class ZkopModel extends CI_Model{
 	var $path="sh /home/work/lamp/apache/htdocs/tools/am_client/bin/am_client.sh ";
 	var $tempDir="/tmp/";
+	//my is lowercase
 //    var $path="Tools/am_client.sh ";
 //	var $tempDir="c:/windows/Temp/";
 	
