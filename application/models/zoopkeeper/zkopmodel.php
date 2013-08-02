@@ -2,7 +2,7 @@
 class ZkopModel extends CI_Model{
 //	var $path="sh /home/work/lamp/apache/htdocs/tools/am_client/bin/am_client.sh ";
 	var $path="cd /home/work/lamp/apache/htdocs/tools/am_client/bin/ && sh am_client.sh ";
-	var $tempDir="/tmp/";
+	var $tempDir="tmp/";
 	//my is lowercase
 //    var $path="Tools/am_client.sh ";
 //	var $tempDir="c:/windows/Temp/";
@@ -13,7 +13,7 @@ class ZkopModel extends CI_Model{
 	}
 	function LoadAppInfo($appname,&$filename,&$filecontent){
 		$temp=$this->tempDir;
-		$filename=$temp.$appname."[".time()."].txt";
+		$filename=$this->getAppTempFile($appname);
 		$cmd=($this->path)."GET_APP_INFO ".$appname." >".$filename;
 		system($cmd,$resultvalue);
 		if(file_exists($filename)){
@@ -29,7 +29,7 @@ class ZkopModel extends CI_Model{
 	}
 	function LoadJobInfo($appname,$jobname,&$filename,&$filecontent){
 		$temp=$this->tempDir;
-		$filename=$temp.$appname."[".time()."].txt";
+		$filename=$this->getAppTempFile($appname);
 		$cmd=($this->path)."GET_APP_INFO ".$appname." ".$jobname." ".">".$filename;
 		system($cmd,$resultvalue);
 		if(file_exists($filename)){
@@ -45,7 +45,8 @@ class ZkopModel extends CI_Model{
 	}
 	function getAppTempFile($appname="bvc_app_null"){
 		$temp=$this->tempDir;
-		$filename=$temp.$appname."[".time()."].txt";
+		$datastr=date("Y-m-d-H-i-s",time());
+		$filename=$temp.$appname."_".$datastr."_.txt";
 		return $filename;
 	}
 	function SetAppAndJobInfo($appname,$jobname,$appinfo,$jobinfo){
