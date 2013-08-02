@@ -40,8 +40,10 @@ class GetJobInfo extends CI_Controller {
 	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
 	  				array_push($eachLineArray, $eachWord);
 	  				$lastPosition=$newPosition+1;
+	  			}	  			
+	  			if(strlen($eachline)<10){
+	  				break;
 	  			}
-	  			
 	  			$endWord=substr($eachline,$lastPosition);
 	  			$temp=array();
 				$temp['Name']=$eachLineArray[0];
