@@ -35,7 +35,7 @@ class GetJobInfo extends CI_Controller {
 	  			for($i=0;$i<2;$i++){
 	  				$newPosition=stripos($eachline," ",$lastPosition);
 	  				if(!$newPosition){
-	  					continue;
+	  					break;
 	  				}
 	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
 	  				array_push($eachLineArray, $eachWord);
@@ -73,20 +73,26 @@ class GetJobInfo extends CI_Controller {
 	  			$newPosition=-1;
 	  			for($i=0;$i<2;$i++){
 	  				$newPosition=stripos($eachline," ",$lastPosition);
+	  				if(!$newPosition){
+	  					break;
+	  				}
 	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
 	  				array_push($eachLineArray, $eachWord);
 	  				$lastPosition=$newPosition+1;
+	  			}	  			
+	  			if(strlen($eachline)<10){
+	  				break;
 	  			}
-	  			
 	  			$endWord=substr($eachline,$lastPosition);
 	  			$temp=array();
 				$temp['Name']=$eachLineArray[0];
 				$temp['Type']=$eachLineArray[1];
 				$temp['Value']=trim($endWord);
 				array_push($arr, $temp);
-				fclose($file);
-  		}
-		echo json_encode($arr);
+				
+  			}
+  			fclose($file);
+			echo json_encode($arr);
 		}
 	}
 	function AppInfo_Old()
