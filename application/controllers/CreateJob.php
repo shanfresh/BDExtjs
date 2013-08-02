@@ -13,11 +13,12 @@ class CreateJob extends CI_Controller {
 		$result[0]=true;
 		$flag=true;
 		$NewID=1;
+		$jobappname=$_POST("JobName");
 		if($flag){
 			$result=array();
 			$result['success']=$flag;
 			$result['msg']="成功创建JOB";
-			$result['newRecordID']=$NewID;
+			$result['jobappname']=$jobappname;
 			echo json_encode($result);
 		}else{
 			$result=array();
@@ -37,14 +38,14 @@ class CreateJob extends CI_Controller {
 		$arrayres=json_decode($data, true);
 		$appInfoStr="";
 		foreach ($arrayres as $value) {
-			$appInfoStr=$appInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r\n";
+			$appInfoStr=$appInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r";
 		}
 		
 		$jobInfoJson=$_POST['jobinfo'];
 		$jobInfoRes=json_decode($jobInfoJson, true);
 		$jobInfoStr="";
 		foreach ($jobInfoRes as $value) {
-			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r\n";
+			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r";
 		}
 		
 		$jobinforow=$this->JobAbstract_model->LoadTheJobInfoByID($id);
