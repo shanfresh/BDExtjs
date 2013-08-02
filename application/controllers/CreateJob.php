@@ -9,9 +9,10 @@ class CreateJob extends CI_Controller {
 	}
 	function CreateNewJob(){
 		$this->load->model('JobAbstract_model');
-		$result=$this->JobAbstract_model->InsertInto($_POST['JobName'],$_POST['JobGuarantee'],$_POST['InputPath'],$_POST['RunCmd']);
-		$flag=$result[0];
-		$NewID=$result[1];
+		//$result=$this->JobAbstract_model->InsertInto($_POST['JobName'],$_POST['JobGuarantee'],$_POST['InputPath'],$_POST['RunCmd']);
+		$result[0]=true;
+		$flag=true;
+		$NewID=1;
 		if($flag){
 			$result=array();
 			$result['success']=$flag;
