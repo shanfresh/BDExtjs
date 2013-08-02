@@ -167,7 +167,7 @@ class GetJobInfo extends CI_Controller {
 	function userJob(){
 		$this->load->database();
 		$username=$this->session->userdata("UserName");
-		$query = $this->db->query('SELECT ID,job_id,JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime,EffectTime FROM appop,jobinfo where appop.UserName=? AND appop.JobName=jobinfo.job_name AND ID in (select max(id) from appop group by JobName) order by job_id desc',$username);
+		$query = $this->db->query('SELECT ID,JobName,UserName,Status,AppInfo,JobInfo,SubmitTime,ApprovalTime,EffectTime FROM appop where appop.UserName=? AND ID in (select max(id) from appop group by JobName) order by ID desc',$username);
 		$arr=array();
 		$this->load->model("AnalysePathAndCmd");
 		foreach ($query->result() as $row)
