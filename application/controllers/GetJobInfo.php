@@ -34,6 +34,9 @@ class GetJobInfo extends CI_Controller {
 	  			$newPosition=-1;
 	  			for($i=0;$i<2;$i++){
 	  				$newPosition=stripos($eachline," ",$lastPosition);
+	  				if(!$newPosition){
+	  					continue;
+	  				}
 	  				$eachWord=substr($eachline,$lastPosition,$newPosition-$lastPosition);
 	  				array_push($eachLineArray, $eachWord);
 	  				$lastPosition=$newPosition+1;
