@@ -29,6 +29,7 @@ class GetJobInfo extends CI_Controller {
 			while(!feof($file))
 	  		{
 	  			$eachline=fgets($file);
+	  			echo $eachline+"\n";
 	  			$eachLineArray=array();
 	  			$lastPosition=0;
 	  			$newPosition=-1;
@@ -45,12 +46,13 @@ class GetJobInfo extends CI_Controller {
 				$temp['Type']=$eachLineArray[1];
 				$temp['Value']=trim($endWord);
 				array_push($arr, $temp);
-				fclose($file);
-  		}
+			}
+  			fclose($file);
 		echo json_encode($arr);
 		}
 	}
 	function JobInfo(){
+		return;
 		$appname=$_GET['appname'];
 		$jobname=$_GET['jobname'];
 		$filename;
