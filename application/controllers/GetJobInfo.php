@@ -56,7 +56,6 @@ class GetJobInfo extends CI_Controller {
 		}
 	}
 	function JobInfo(){
-		return;
 		$appname=$_GET['appname'];
 		$jobname=$_GET['jobname'];
 		$filename;
@@ -68,6 +67,7 @@ class GetJobInfo extends CI_Controller {
 			while(!feof($file))
 	  		{
 	  			$eachline=fgets($file);
+				echo $eachline;
 	  			$eachLineArray=array();
 	  			$lastPosition=0;
 	  			$newPosition=-1;
@@ -93,6 +93,8 @@ class GetJobInfo extends CI_Controller {
   			}
   			fclose($file);
 			echo json_encode($arr);
+		}else{
+			echo $flag;
 		}
 	}
 	function AppInfo_Old()
