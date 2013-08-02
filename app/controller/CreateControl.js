@@ -85,7 +85,7 @@ Ext.define('MyApp.controller.CreateControl', {
              failure:function(){
                  Ext.Msg.alert('错误',"与后台联系时出错")
              },
-             params:{appinfo:Ext.encode(appinfo),jobinfo:Ext.encode(jobinfo),jobappname:action.result.jobappname}
+             params:{appinfo:Ext.encode(appinfo),jobinfo:Ext.encode(jobinfo),jobname:action.result.jobappname}
          });
     	
     	

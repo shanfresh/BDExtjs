@@ -33,7 +33,7 @@ class CreateJob extends CI_Controller {
 		$this->load->model('JobAbstract_model');
 		$result=array();
 		$data=$_POST['appinfo'];
-		$JobName=$_POST['JobName'];
+		$JobName=$_POST['jobname'];
 		$UserName=$this->session->userdata('UserName');
 		$arrayres=json_decode($data, true);
 		$appInfoStr="";
