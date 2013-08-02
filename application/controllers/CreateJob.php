@@ -33,7 +33,7 @@ class CreateJob extends CI_Controller {
 		$this->load->model('JobAbstract_model');
 		$result=array();
 		$data=$_POST['appinfo'];
-		$id=intval($_POST['newID']);
+		$JobName=$_POST['JobName'];
 		$UserName=$this->session->userdata('UserName');
 		$arrayres=json_decode($data, true);
 		$appInfoStr="";
@@ -48,8 +48,8 @@ class CreateJob extends CI_Controller {
 			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r";
 		}
 		
-		$jobinforow=$this->JobAbstract_model->LoadTheJobInfoByID($id);
-		$result=$this->AppOPModel->insertIntoAppOP($jobinforow['job_name'],$UserName,$appInfoStr,$jobInfoStr);
+		
+		$result=$this->AppOPModel->insertIntoAppOP($JobName,$UserName,$appInfoStr,$jobInfoStr);
 		echo $result;
 
 	}
