@@ -87,7 +87,7 @@ class ZkopModel extends CI_Model{
 		}
 		$cmd=($this->path)."SET_JOB_INFO ".$appname." ".$jobname." ".$fileName;
 		echo $cmd;
-		//system($cmd,$resultvalue);
+		system($cmd,$resultvalue);
 		$resultvalue=0;
 		if($resultvalue!=0)
 			return false;
