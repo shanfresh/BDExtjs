@@ -22,7 +22,7 @@ class GetJobInfo extends CI_Controller {
 		$appname=$_GET['page'];
 		$filename;
 		$filecontent;
-		$arr;
+		$arr=array();
 		$flag=$this->ZkopModel->LoadAppInfo($appname,$filename,$filecontent);
 		if($flag){
 			$file = fopen($filename,"r") or exit("Unable to open file!");;
@@ -48,7 +48,7 @@ class GetJobInfo extends CI_Controller {
 				array_push($arr, $temp);
 			}
   			fclose($file);
-		echo json_encode($arr);
+			echo json_encode($arr);
 		}
 	}
 	function JobInfo(){
