@@ -15,7 +15,7 @@ Ext.define('Ext.ux.form.SearchField', {
         me.callParent(arguments);
         me.on('specialkey', function(f, e){
             if (e.getKey() == e.ENTER) {
-                me.onTrigger2Click();
+            	me.onTrigger2Click();
             }
         });
 
@@ -60,7 +60,11 @@ Ext.define('Ext.ux.form.SearchField', {
     	TabInfoPanel.setActiveTab(0);
         if (value.length > 0) {
             // Param name is ignored here since we use custom encoding in the proxy.
-            // id is used by the Store to replace any previous filter
+    // id is used by the Store to replace any previous filter
+        me.store.clearFilter();
+        me.hasSearch = false;
+        me.triggerCell.item(0).setDisplayed(false);
+        me.updateLayout();
         	var filters = [
         	               new Ext.util.Filter({
         	                filterFn: function(item){

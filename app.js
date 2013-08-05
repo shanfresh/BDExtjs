@@ -17,7 +17,7 @@
 Ext.Loader.setConfig({
     enabled: true
 });
-Ext.Loader.setPath('Ext.ux', 'extjs/src/ux');
+Ext.Loader.setPath('Ext.ux.form', 'app/view');
 Ext.require([
              'Ext.ux.form.SearchField'
          ]);
