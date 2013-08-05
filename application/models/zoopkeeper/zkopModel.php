@@ -25,6 +25,24 @@ class ZkopModel extends CI_Model{
 			return false;
 		}
 	}
+
+	function LoadJobInfo($appname,$jobname,&$filename,&$filecontent){
+		$temp=$this->tempDir;
+		$filename=$this->getAppTempFile($appname."_".$jobname);
+		$cmd=($this->path)."GET_JOB_INFO ".$appname." ".$jobname." ".">".$filename;
+		system($cmd,$resultvalue);
+		if(file_exists($filename)){
+			$filecontent=fopen($filename,"r");
+		}else{
+			$filecontent="NULL";
+		}
+		if($resultvalue==0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	function getAppTempFile($appname="bvc_app_null"){
 		$temp=$this->tempDir;
 		$filename=$temp.$appname."[".time()."].txt";
@@ -60,7 +78,7 @@ class ZkopModel extends CI_Model{
 			echo "appname==null";
 			return false;
 		}
-		$fileName=$this->getAppTempFile($appname);
+		$fileName=$this->getAppTempFile($appname."_".$jobname);
 		if (!write_file($fileName, $jobinfo)){
 			return false;
 		}
