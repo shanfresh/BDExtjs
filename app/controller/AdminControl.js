@@ -107,7 +107,8 @@ Ext.define('MyApp.controller.AdminControl', {
             method:'POST',
             url:'AppopControl/MarkAsPassed',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
-                var obj = Ext.decode(response.responseText);
+            	Ext.get('adminpanel').unmask();
+            	var obj = Ext.decode(response.responseText);
                 if(obj.success){
                 	Ext.getCmp('AdminAppop').store.remove(selected);
                     Ext.getCmp('AdminAppopPassed').store.removeAll();
@@ -123,11 +124,12 @@ Ext.define('MyApp.controller.AdminControl', {
                 
             },
             failure:function(){
+            	Ext.get('adminpanel').unmask();
                 Ext.Msg.alert('错误',"与后台联系时出错")
             },
             params:{ID:Ext.encode(ids)}
         });
-    	Ext.get('adminpanel').unmask();
+    	
     	
     	
     },
@@ -151,6 +153,7 @@ Ext.define('MyApp.controller.AdminControl', {
             method:'POST',
             url:'AppopControl/MarkAsOnline',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
+            	Ext.get('adminpanel').unmask();
                 var obj = Ext.decode(response.responseText);
                 if(obj.success){
                 	Ext.getCmp('AdminAppopPassed').store.remove(selected);
@@ -167,11 +170,12 @@ Ext.define('MyApp.controller.AdminControl', {
                 
             },
             failure:function(){
+            	Ext.get('adminpanel').unmask();
                 Ext.Msg.alert('错误',"与后台联系时出错")
             },
             params:{ID:Ext.encode(ids)}
         });
-    	Ext.get('adminpanel').unmask();
+    	
     	
     },
     RollBackSelected:function (){
