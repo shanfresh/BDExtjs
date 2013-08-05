@@ -21,7 +21,8 @@ Ext.define('MyApp.controller.MyController', {
            'MyApp.view.AppInfoPanel',
            'MyApp.view.JobInfoPanel',
            'MyApp.view.TabInfoPanel',
-           'MyApp.view.UserModifyWindow'],
+           'MyApp.view.UserModifyWindow',
+           'MyApp.view.AppopDetailWindow'],
     requires: [
                'MyApp.model.AppInfoModel'
            ],
@@ -36,10 +37,48 @@ Ext.define('MyApp.controller.MyController', {
     		},
     		'MyWindow > toolbar > splitbutton > menu > menuitem[text=单一修改]':{
     			click:this.ModifySelectItem
-    		}
+    		},
+       		'MyWindow tabpanel > gridpanel':{
+       	        itemdblclick: function(dataview, record, item, index, e) {
+       	            this.ShowDetail();
+       	        }
+       		},
     	    
     	});
     	//Ext.getCmp('updatebutton').click();
+    },
+    ShowDetail:function(){
+    	var TabbedPanel=Ext.ComponentQuery.query('MyWindow tabpanel')[0];
+    	var allpanel=TabbedPanel.getActiveTab();
+    	var sm=allpanel.getSelectionModel();
+    	var selected=sm.getSelection();
+    	if(selected.length!=1){
+    		alert("尚未选择或者选择数目大于1");
+    	}
+    	var oldCreatewindow=Ext.getCmp('AppopDetailWindow');
+    	if(oldCreatewindow!=null){
+    		oldCreatewindow.close();
+    	}
+    	var createWindow=Ext.widget('AppopDetailWindow');
+    	createWindow.show();
+    	createWindow.mask("Loading");
+    	var target=selected[0];
+    	var JobName=target.get("JobName");
+    	var ID=target.get("ID");
+    	var control=this;
+    	Ext.Ajax.request({
+            method:'POST',
+            url:'AppopControl/loadById',
+            success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
+                var obj = Ext.decode(response.responseText);
+                control.AddResult(obj,createWindow);
+            },
+            failure:function(){
+                Ext.Msg.alert('错误',"与后台联系时出错")
+            },
+            params:{ID:Ext.encode(ID),jobname:Ext.encode(JobName)}
+        });
+    	createWindow.unmask();
     },
     TryInitMyWindow:function (button){
 		console.log("准备拉取数据到Store");
