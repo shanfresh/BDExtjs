@@ -115,10 +115,9 @@ function loadDetailToModifyWindow(selected,target){
         method:'POST',
         url:'AppopControl/loadById',
         success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
-        	Ext.get("content").unmask();
         	var obj = Ext.decode(response.responseText);
-            Ext.getBody().mask("加载AppJob详细信息");  
             control.addResult(obj,target);
+            Ext.get("content").unmask();
         },
         failure:function(){
         	Ext.get("content").unmask();
