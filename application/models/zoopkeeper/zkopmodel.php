@@ -29,7 +29,7 @@ class ZkopModel extends CI_Model{
 	}
 	function LoadJobInfo($appname,$jobname,&$filename,&$filecontent){
 		$temp=$this->tempDir;
-		$filename=$this->getAppTempFile($appname);
+		$filename=$this->getAppTempFile($appname."_".$jobname);
 		$cmd=($this->path)."GET_JOB_INFO ".$appname." ".$jobname." ".">".$filename;
 		system($cmd,$resultvalue);
 		if(file_exists($filename)){
@@ -80,7 +80,7 @@ class ZkopModel extends CI_Model{
 			echo "appname==null";
 			return false;
 		}
-		$fileName=$this->getAppTempFile($appname);
+		$fileName=$this->getAppTempFile($appname."_".$jobname);
 		if (!write_file($fileName, $jobinfo)){
 			return false;
 		}
