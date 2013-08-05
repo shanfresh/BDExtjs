@@ -58,9 +58,7 @@ Ext.define('MyApp.controller.MyController', {
     		alert("尚未勾选模块")
     		return;
     	}
-    	Ext.get("content").mask("正在载入数据");
     	getDetail(selected[0]);
-    	Ext.get("content").unmask();
     },
     ModifySelectItem:function(){
     	console.log("根据勾选的行来修改");
@@ -86,6 +84,7 @@ function getDetail(target){
 	//alert(target.get("JobID")+" "+target.get("JobName")+" "+target.get("JobGuarantee")+" "+target.get("InputPath")+" "+target.get("RunCmd"));
 	var createWindow=Ext.widget('CreateWindow');
 	createWindow.show();
+	createWindow.mask("正在读取ZK数据......");
 	var split=target.get('JobName').split(".");
 	console.log("Get:"+split[0]+"-"+split[1]);
 	
@@ -100,6 +99,7 @@ function getDetail(target){
 	createWindow.down('AppInfoPanel').down('gridpanel').store.read(operation);
 	createWindow.down('JobInfoPanel').down('gridpanel').store.read(operation2);
 	createWindow.down('DetailInfoPanel').getForm().loadRecord(target);
+	createWindow.unmask();
 };
 function loadDetailToModifyWindow(selected,target){
 	console.log("Prepare To LoadData To ModifyWindow");
