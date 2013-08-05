@@ -38,14 +38,14 @@ class CreateJob extends CI_Controller {
 		$arrayres=json_decode($data, true);
 		$appInfoStr="";
 		foreach ($arrayres as $value) {
-			$appInfoStr=$appInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r";
+			$appInfoStr=$appInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\n";
 		}
 		
 		$jobInfoJson=$_POST['jobinfo'];
 		$jobInfoRes=json_decode($jobInfoJson, true);
 		$jobInfoStr="";
 		foreach ($jobInfoRes as $value) {
-			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\r";
+			$jobInfoStr=$jobInfoStr.$value['Name']." ".$value['Type']." ".$value['Value']."\n";
 		}
 		
 		
