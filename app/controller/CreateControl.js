@@ -80,7 +80,10 @@ Ext.define('MyApp.controller.CreateControl', {
              method:'POST',
              url:'CreateJob/CreateApp',
              success:function(response){//这里值的是请求失败，与业务逻没的任何关系
-                 Ext.Msg.alert('信息',"发送CreateDetailAPP信息成功");
+            	 var obj=Ext.decode(response.responseText);
+            	 if(obj){
+            		 Ext.Msg.alert('成功',"用户创建Job成功");
+            	 }
              },
              failure:function(){
                  Ext.Msg.alert('错误',"与后台联系时出错")
