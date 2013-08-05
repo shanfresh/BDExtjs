@@ -35,7 +35,7 @@ Ext.application({
         'JobStore','AppInfoStore','JobInfoStore','user.MyJobStore'
     ],
     controllers: [
-        'MyController','CreateControl','DeleteControl','UserModifyControl'
+        'MyController','CreateControl','DeleteControl','UserModifyControl','AppJobDetailControl'
     ],
     name: 'MyApp'
 });

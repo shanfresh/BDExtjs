@@ -7,7 +7,6 @@ Ext.define('MyApp.view.JobInfoPanel', {
 	alias : 'widget.JobInfoPanel',
 	xtype: 'JobInfoPanel',
     height: 384,
-    width: 400,
     title: 'JobPanel',
 
     initComponent: function() {
@@ -21,18 +20,32 @@ Ext.define('MyApp.view.JobInfoPanel', {
                     height: 181,
                     title: 'Job Panel',
                     store:'JobInfoStore',
+                    header : false,
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'Name',
                             text: 'Name',
-                            flex:1
+                            flex:1,
+                            editor: 'textfield'
                         },
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'Type',
                             text: 'Type',
-                            flex:1
+                            flex:1,
+                            editor: {
+                                xtype: 'combobox',
+                                typeAhead: true,
+                                triggerAction: 'all',
+                                selectOnTab: true,
+                                store: [
+                                    ['NUM','NUM'],
+                                    ['STR','STR']
+                                ],
+                                lazyRender: true,
+                                listClass: 'x-combo-list-small'
+                            },
                         },
                         {
                             xtype: 'gridcolumn',
@@ -47,6 +60,10 @@ Ext.define('MyApp.view.JobInfoPanel', {
                                   clicksToEdit: 1
                               })
                     ],
+                    tbar: [{
+                    	text: '添加配置',
+                    	icon:'images/add.gif'
+                    }],
                     selType: 'cellmodel'
                 }
             ]

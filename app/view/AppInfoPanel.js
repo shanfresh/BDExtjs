@@ -17,7 +17,6 @@ Ext.define('MyApp.view.AppInfoPanel', {
     extend: 'Ext.panel.Panel',
     xtype:'AppInfoPanel',
     height: 345,
-    width: 400,
     title: 'APP_INFO',
 
     initComponent: function() {
@@ -30,17 +29,31 @@ Ext.define('MyApp.view.AppInfoPanel', {
                     height: 181,
                     title: 'App信息',
                     store:'AppInfoStore',
+                    header : false,
                     columns: [
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'Name',
                             flex: 2,
-                            text: 'Name'
+                            text: 'Name',
+                            editor: 'textfield'
                         },
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'Type',
                             text: 'Type',
+                            editor: {
+                                xtype: 'combobox',
+                                typeAhead: true,
+                                triggerAction: 'all',
+                                selectOnTab: true,
+                                store: [
+                                    ['NUM','NUM'],
+                                    ['STR','STR']
+                                ],
+                                lazyRender: true,
+                                listClass: 'x-combo-list-small'
+                            },
                             flex: 1   	
                         },
                         {
@@ -56,6 +69,12 @@ Ext.define('MyApp.view.AppInfoPanel', {
                               Ext.create('Ext.grid.plugin.CellEditing', {
                                   clicksToEdit: 1
                               })
+                    ],
+                    tbar: [
+                    	{ 	xtype: 'button', 
+                    		text: '添加配置',
+                    		icon:'images/add.gif'
+                    	}
                     ],
                     selType: 'cellmodel'
                 }

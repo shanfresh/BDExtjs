@@ -6,7 +6,6 @@ Ext.define('MyApp.view.TabInfoPanel', {
     xtype:'TabInfoPanel',
     alias : 'widget.TabInfoPanel',
     height: 250,
-    width: 600,
     activeTab: 0,
 
     initComponent: function() {
