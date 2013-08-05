@@ -102,21 +102,32 @@ Ext.define('MyApp.controller.AdminControl', {
     		var target=selected[i];
     		ids[i]=target.get('ID');
     	}
+    	Ext.getBody().mask("正在与服务器通信");
     	Ext.Ajax.request({
             method:'POST',
             url:'AppopControl/MarkAsPassed',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
                 var obj = Ext.decode(response.responseText);
-                Ext.getCmp('AdminAppop').store.remove(selected);
-                Ext.getCmp('AdminAppopPassed').store.removeAll();
-                Ext.getCmp('AdminAppopPassed').store.load();
-                Ext.Msg.alert("返回结果:","操作成功O(∩_∩)O哈哈~");
+                if(obj.success){
+                	Ext.getCmp('AdminAppop').store.remove(selected);
+                    Ext.getCmp('AdminAppopPassed').store.removeAll();
+                    Ext.getCmp('AdminAppopPassed').store.load();
+                    Ext.Msg.alert("返回结果:","审批操作成功");
+                }else{
+                    Ext.Msg.show({title : '错误',
+                        msg : '审批失败',
+                        buttons : Ext.Msg.OK,
+                        icon : Ext.Msg.ERROR
+                    });
+                }
+                
             },
             failure:function(){
                 Ext.Msg.alert('错误',"与后台联系时出错")
             },
             params:{ID:Ext.encode(ids)}
         });
+    	Ext.getBody().unmask();
     	
     	
     },
@@ -135,21 +146,32 @@ Ext.define('MyApp.controller.AdminControl', {
     		var target=selected[i];
     		ids[i]=target.get('ID');
     	}
+    	Ext.getBody().mask("正在与服务器通信");
     	Ext.Ajax.request({
             method:'POST',
             url:'AppopControl/MarkAsOnline',
             success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
                 var obj = Ext.decode(response.responseText);
-                Ext.getCmp('AdminAppopPassed').store.remove(selected);
-                Ext.getCmp('AdminAppopOnline').store.removeAll();
-                Ext.getCmp('AdminAppopOnline').store.load();
-                Ext.Msg.alert("返回结果:","上线成功O(∩_∩)O哈哈~");
+                if(obj.success){
+                	Ext.getCmp('AdminAppopPassed').store.remove(selected);
+                    Ext.getCmp('AdminAppopOnline').store.removeAll();
+                    Ext.getCmp('AdminAppopOnline').store.load();
+                    Ext.Msg.alert("返回结果:","上线成功O(∩_∩)O");
+                }else{
+                    Ext.Msg.show({title : '错误',
+                        msg : '上线操作失败',
+                        buttons : Ext.Msg.OK,
+                        icon : Ext.Msg.ERROR
+                    });
+                }
+                
             },
             failure:function(){
                 Ext.Msg.alert('错误',"与后台联系时出错")
             },
             params:{ID:Ext.encode(ids)}
         });
+    	Ext.getBody().unmask();
     	
     },
     RollBackSelected:function (){
