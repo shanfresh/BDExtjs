@@ -138,7 +138,6 @@ function setvalue(detail,name,value){
  */
 function addResult(obj,window){
 	Ext.get("content").mask("正在载入数据");
-	console.pause();
 	window.down('TabInfoPanel').down("AppInfoPanel").down('gridpanel').store.loadData(obj.AppInfo, false); 
 	window.down('TabInfoPanel').down("JobInfoPanel").down('gridpanel').store.loadData(obj.JobInfo, false); 
 	Ext.get("content").unmask();
