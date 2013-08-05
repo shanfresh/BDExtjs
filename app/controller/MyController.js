@@ -109,11 +109,13 @@ function loadDetailToModifyWindow(selected,target){
 	setvalue(detail,'InputPath',selected.get('InputPath'));
 	setvalue(detail,'RunCmd',selected.get('RunCmd'));
 	var control=this;
+	Ext.getBody().mask("数据重新加载中，请稍等");   
 	Ext.Ajax.request({
         method:'POST',
         url:'AppopControl/loadById',
         success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
             var obj = Ext.decode(response.responseText);
+            Ext.getBody().mask("加载AppJob详细信息");  
             control.addResult(obj,target);
         },
         failure:function(){
@@ -121,6 +123,7 @@ function loadDetailToModifyWindow(selected,target){
         },
         params:{ID:Ext.encode(selected.get('AppopID'))}
     });
+	Ext.getBody().unmask();
 };
 function setvalue(detail,name,value){
 	var t=detail.down('textfield[name='+name+']');
