@@ -66,7 +66,7 @@
 	    }
 	    function CastFromStrToArray($string){
 			$result=array();
-	    	$tok = strtok($string, "\n\r");
+	    	$tok = strtok($string, "\n");
 			while ($tok !== false) {
     			$newPosition=-1;
     			$lastPosition=0;
@@ -82,7 +82,7 @@
     			array_push($eachLineArray,$endWord);
     			$each=array("Name"=>$eachLineArray[0],"Type"=>$eachLineArray[1],"Value"=>$eachLineArray[2]);
     			array_push($result,$each);
-    			$tok = strtok("\n\r");
+    			$tok = strtok("\n");
 			}
 			return $result;
 	    }
