@@ -48,7 +48,6 @@ Ext.define('MyApp.controller.MyController', {
 	},
     
     CreateBySelectItem:function(button){
-    	Ext.get("content").mask("正在载入数据");
     	var sm=Ext.getCmp('AllJobPanel').getSelectionModel();
     	var selected=sm.getSelection();
     	if(selected.length>1){
@@ -59,6 +58,7 @@ Ext.define('MyApp.controller.MyController', {
     		alert("尚未勾选模块")
     		return;
     	}
+    	Ext.get("content").mask("正在载入数据");
     	getDetail(selected[0]);
     	Ext.get("content").unmask();
     },
