@@ -102,7 +102,7 @@ Ext.define('MyApp.controller.AdminControl', {
     		var target=selected[i];
     		ids[i]=target.get('ID');
     	}
-    	Ext.getBody().mask("正在与服务器通信");
+    	Ext.get('adminpanel').mask("正在与服务器通信");
     	Ext.Ajax.request({
             method:'POST',
             url:'AppopControl/MarkAsPassed',
@@ -127,7 +127,7 @@ Ext.define('MyApp.controller.AdminControl', {
             },
             params:{ID:Ext.encode(ids)}
         });
-    	Ext.getBody().unmask();
+    	Ext.get('adminpanel').unmask();
     	
     	
     },
@@ -146,7 +146,7 @@ Ext.define('MyApp.controller.AdminControl', {
     		var target=selected[i];
     		ids[i]=target.get('ID');
     	}
-    	Ext.getBody().mask("正在与服务器通信");
+    	Ext.get('adminpanel').mask("正在与服务器通信");
     	Ext.Ajax.request({
             method:'POST',
             url:'AppopControl/MarkAsOnline',
@@ -171,7 +171,7 @@ Ext.define('MyApp.controller.AdminControl', {
             },
             params:{ID:Ext.encode(ids)}
         });
-    	Ext.getBody().unmask();
+    	Ext.get('adminpanel').unmask();
     	
     },
     RollBackSelected:function (){

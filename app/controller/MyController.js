@@ -48,7 +48,7 @@ Ext.define('MyApp.controller.MyController', {
 	},
     
     CreateBySelectItem:function(button){
-    	console.log("根据勾选的行来创建");
+    	Ext.get("content").mask("正在载入数据");
     	var sm=Ext.getCmp('AllJobPanel').getSelectionModel();
     	var selected=sm.getSelection();
     	if(selected.length>1){
@@ -60,6 +60,7 @@ Ext.define('MyApp.controller.MyController', {
     		return;
     	}
     	getDetail(selected[0]);
+    	Ext.get("content").unmask();
     },
     ModifySelectItem:function(){
     	console.log("根据勾选的行来修改");
@@ -98,21 +99,24 @@ function loadDetailToModifyWindow(selected,target){
 	setvalue(detail,'InputPath',selected.get('InputPath'));
 	setvalue(detail,'RunCmd',selected.get('RunCmd'));
 	var control=this;
-	Ext.getBody().mask("数据重新加载中，请稍等");   
+	Ext.get("content").mask("数据重新加载中，请稍等");   
 	Ext.Ajax.request({
         method:'POST',
         url:'AppopControl/loadById',
         success:function(response,obj){//这里值的是请求失败，与业务逻没的任何关系
-            var obj = Ext.decode(response.responseText);
+        	Ext.get("content").unmask();
+        	var obj = Ext.decode(response.responseText);
             Ext.getBody().mask("加载AppJob详细信息");  
             control.addResult(obj,target);
         },
         failure:function(){
+        	Ext.get("content").unmask();
             Ext.Msg.alert('错误',"与后台联系时出错")
         },
         params:{ID:Ext.encode(selected.get('AppopID'))}
     });
-	Ext.getBody().unmask();
+	
+	
 };
 function setvalue(detail,name,value){
 	var t=detail.down('textfield[name='+name+']');
@@ -122,8 +126,10 @@ function setvalue(detail,name,value){
  * 创建时刻加载信息
  */
 function addResult(obj,window){
+	Ext.get("content").mask("正在载入数据");
+	console.pause();
 	window.down('TabInfoPanel').down("AppInfoPanel").down('gridpanel').store.loadData(obj.AppInfo, false); 
 	window.down('TabInfoPanel').down("JobInfoPanel").down('gridpanel').store.loadData(obj.JobInfo, false); 
-
+	Ext.get("content").unmask();
 	
 };
