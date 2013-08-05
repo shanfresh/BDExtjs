@@ -27,7 +27,7 @@ Ext.application({
         'JobsModel'
     ],
     stores: [
-        'JobStore','AppInfoStore','JobInfoStore','user.MyJobStore'
+        'JobStore','AppInfoStore','JobInfoStore','user.MyJobStore','AppopStore','JobConfigStore','AppConfigStore'
     ],
     controllers: [
         'MyController','CreateControl','DeleteControl','UserModifyControl'
