@@ -50,21 +50,14 @@ Ext.define('MyApp.view.MyWindow', {
     		   				            xtype: 'numbercolumn',
     		   				            dataIndex: 'JobID',
     		   				            text: 'JobID',
-    		   				            flex: 1,
+    		   				            width:40,
     		   				            format: '0000'
     		   				        },
     		   				        {
     		   				            xtype: 'gridcolumn',
     		   				            dataIndex: 'JobName',
     		   				            text: 'JobName',
-    		   				            flex: 4
-    		   				        },
-    		   				        {
-    		   				            xtype: 'gridcolumn',
-    		   				            width: 30,
-    		   				            dataIndex: 'JobGuarantee',
-    		   				            text: 'JobGuarantee',
-    		   				            flex: 1
+    		   				            width:300
     		   				        },
     		   				        {
     		   				            xtype: 'gridcolumn',
@@ -96,14 +89,14 @@ Ext.define('MyApp.view.MyWindow', {
     		   				            xtype: 'numbercolumn',
     		   				            dataIndex: 'JobID',
     		   				            text: 'JobID',
-    		   				            flex: 1,
+    		   				            width:40,
     		   				            format: '0000'
     		   				        },
     		   				        {
     		   				            xtype: 'gridcolumn',
     		   				            dataIndex: 'JobName',
     		   				            text: 'JobName',
-    		   				            flex: 1
+    		   				            width:300
     		   				        },
     		   				        {
     		   				            xtype: 'gridcolumn',
