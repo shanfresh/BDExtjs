@@ -38,9 +38,14 @@ Ext.define('MyApp.controller.MyController', {
     		'MyWindow > toolbar > splitbutton > menu > menuitem[text=单一修改]':{
     			click:this.ModifySelectItem
     		},
-       		'MyWindow tabpanel > gridpanel':{
+       		'MyWindow tabpanel > #MyJobPanel':{
        	        itemdblclick: function(dataview, record, item, index, e) {
        	            this.ShowDetail();
+       	        }
+       		},
+       		'MyWindow tabpanel > #AllJobPanel':{
+       	        itemdblclick: function(dataview, record, item, index, e) {
+       	        	this.CreateBySelectItem();
        	        }
        		},
     	    
@@ -64,7 +69,7 @@ Ext.define('MyApp.controller.MyController', {
     	createWindow.mask("Loading");
     	var target=selected[0];
     	var JobName=target.get("JobName");
-    	var ID=target.get("ID");
+    	var ID=target.get("JobID");
     	var control=this;
     	Ext.Ajax.request({
             method:'POST',
@@ -79,6 +84,16 @@ Ext.define('MyApp.controller.MyController', {
             params:{ID:Ext.encode(ID),jobname:Ext.encode(JobName)}
         });
     	createWindow.unmask();
+    },
+    AddResult:function(obj,createWindow){
+    	createWindow.down("#JobName").setValue(obj.JobName);
+    	createWindow.down("textfield[fieldLabel='申请人']").setValue(obj.UserName);
+    	createWindow.down("textfield[fieldLabel='状态']").setValue(obj.Status);
+    	createWindow.down("textfield[fieldLabel='申请时间']").setValue(obj.SubmitTime);
+    	
+    	createWindow.down("#AppInfoDetailPanel").store.loadData(obj.AppInfo, false); 
+    	createWindow.down("#JobInfoDetailPanel").store.loadData(obj.JobInfo, false); 
+    	
     },
     TryInitMyWindow:function (button){
 		console.log("准备拉取数据到Store");
