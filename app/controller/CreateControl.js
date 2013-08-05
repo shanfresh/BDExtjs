@@ -83,6 +83,8 @@ Ext.define('MyApp.controller.CreateControl', {
             	 var obj=Ext.decode(response.responseText);
             	 if(obj){
             		 Ext.Msg.alert('成功',"用户创建Job成功");
+            		 var UserJobStore=Ext.ComponentQuery.query('MyWindow > tabpanel > #MyJobPanel')[0].getStore().load();
+            		 var UserJobStore=Ext.ComponentQuery.query('MyWindow > tabpanel > #AllJobPanel')[0].getStore().load();
             	 }
              },
              failure:function(){
