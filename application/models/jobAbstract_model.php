@@ -52,6 +52,15 @@ class JobAbstract_model extends CI_Model {
 			return false;
 		}
 	}
+	function CheckExists($name){
+		$this->load->database();
+    	$query2=$this->db->query("SELECT * FROM jobinfo WHERE job_name=?",array($name));
+    	if($query2->num_rows() > 0){
+    		return true;
+    	}else{
+    		return false;
+    	}    	
+	}
 	
 
 }

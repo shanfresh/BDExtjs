@@ -57,8 +57,8 @@ Ext.define('MyApp.controller.CreateControl', {
             });
         }
     },
-    CommitAppInfo:function(action){
-    	Ext.Msg.alert('创建Basic JobInfo 成功', action.result.msg+action.result.newRecordID);
+    CommitAppInfo:function(action,jobname){
+    	Ext.Msg.alert('创建Basic JobInfo 成功', action.result.msg);
     	console.log("创建AppInfo");
     	var button=Ext.ComponentQuery.query('CreateWindow > button[text=立即创建]')[0];
       	var countRows  = button.up().down('AppInfoPanel').down('gridpanel').store.getCount();
@@ -90,7 +90,7 @@ Ext.define('MyApp.controller.CreateControl', {
              failure:function(){
                  Ext.Msg.alert('错误',"与后台联系时出错")
              },
-             params:{appinfo:Ext.encode(appinfo),jobinfo:Ext.encode(jobinfo),newID:action.result.newRecordID}
+             params:{appinfo:Ext.encode(appinfo),jobinfo:Ext.encode(jobinfo),jobname:action.result.jobappname}
          });
     	
     	
