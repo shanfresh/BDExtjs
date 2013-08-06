@@ -23,7 +23,7 @@ Ext.define('MyApp.controller.AdminControl', {
        	        itemdblclick: function(dataview, record, item, index, e) {
        	            this.ShowDetail();
        	        }
-       		},
+       		}
        		'splitbutton[text=管理员回滚] > menu > menuitem[text=回滚]':{
        			//alert("点击详细信息了");
        			click:this.RollBackSelected
